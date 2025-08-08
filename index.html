@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Bohemio | Crónicas de Verdad Incómoda</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background-color: #f4f1eb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #e0c9a6;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .toolbar {
+      background-color: #2c2c2c;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.8rem 0;
+    }
+
+    .toolbar button {
+      background-color: #3d3d3d;
+      color: #e0c9a6;
+      border: 1px solid #555;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .toolbar button:hover {
+      background-color: #5a4a3a;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      gap: 1.5rem;
+    }
+
+    .sidebar {
+      width: 20%;
+      background-color: #e8e3da;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 0.95rem;
+    }
+
+    .sidebar h3 {
+      color: #5a4a3a;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #c9b8a1;
+      padding-bottom: 0.3rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .sidebar ul li a {
+      color: #444;
+      text-decoration: none;
+      font-style: italic;
+      cursor: pointer;
+    }
+
+    .sidebar ul li a:hover {
+      color: #5a4a3a;
+      text-decoration: underline;
+    }
+
+    /* Estilo para imágenes */
+    .sidebar ul li img {
+      width: 100%;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .main-content h1 {
+      color: #5a4a3a;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .main-content blockquote {
+      border-left: 4px solid #c9b8a1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #555;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>El Bohemio</header>
+
+  <div class="toolbar">
+    <button onclick="showSection('quienes')">Quiénes somos</button>
+    <button onclick="showSection('quehacemos')">Qué hacemos</button>
+    <button onclick="showSection('archivos')">Archivos</button>
+    <button onclick="showSection('cronicas')">Crónicas de ElBohemio</button>
+    <button onclick="showSection('voces')">Voces que resisten</button>
+  </div>
+
+  <div class="container">
+    <!-- BARRA IZQUIERDA: Mis Archivos -->
+    <aside class="sidebar">
+      <h3>Mis Archivos</h3>
+      <ul>
+        <li><a onclick="loadArticle('titanes')">¿Titanes jugando a la destrucción?</a></li>
+        <li><a onclick="loadArticle('california')">La disputa California vs. Washington</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO CENTRAL -->
+    <main class="main-content" id="main-content">
+      <h1>Bienvenido a El Bohemio</h1>
+      <p>Un espacio de crónicas incómodas, verdad sin anestesia y pensamiento crítico. Haz clic en un artículo o en una imagen para comenzar.</p>
+    </main>
+
+    <!-- BARRA DERECHA: Mis imágenes -->
+    <aside class="sidebar">
+      <h3>Mis Imágenes</h3>
+      <ul>
+        <li>
+          <strong>El viejo</strong>
+          <img src="img/viejo.jpg" alt="El viejo Anacleto">
+        </li>
+        <li>
+          <strong>La máquina de escribir</strong>
+          <img src="img/maquina.jpg" alt="Máquina de escribir antigua">
+        </li>
+        <li>
+          <strong>El Café El Bohemio</strong>
+          <img src="img/cafe.jpg" alt="Interior del café">
+        </li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- ARTÍCULOS OCULTOS -->
+  <div style="display: none;">
+    <div id="titanes-content">
+      <h1>¿Titanes jugando a la destrucción?</h1>
+      <blockquote>“Cuando los titanes juegan a ser dioses, los pueblos pagan los escombros.”</blockquote>
+      <p>Ya me encontraba en nuestro Café cuando Anacleto llegó con su habitual chaqueta Príncipe de Gales...</p>
+    </div>
+    <div id="california-content">
+      <h1>La disputa California vs. Washington</h1>
+      <blockquote>“Ningún hombre debe obedecer cuando la ley hiere la dignidad.”</blockquote>
+      <p>California no quiere irse... es que ya no se siente parte del mismo país.</p>
+    </div>
+  </div>
+
+  <script>
+    function loadArticle(id) {
+      const contentDiv = document.getElementById('main-content');
+      const article = document.getElementById(id + '-content');
+      if (article) {
+        contentDiv.innerHTML = article.innerHTML;
+      }
+    }
+
+    function showSection(id) {
+      const contentDiv = document.getElementById('main-content');
+      const texts = {
+        quienes: `<h1>¿Quiénes somos?</h1><p>Somos un colectivo de pensadores, escritores y críticos que creen en la palabra como arma de justicia. Desde El Bohemio, desenmascaramos verdades incómodas.</p>`,
+        quehacemos: `<h1>¿Qué hacemos?</h1><p>Escribimos crónicas que no caben en los grandes medios. Denunciamos sin tapujos, con datos duros y verbo ácido. Aquí no hay neutralidad: hay compromiso con la verdad.</p>`,
+        archivos: `<h1>Archivo Completo</h1><p>Accede a todos nuestros artículos, ordenados por fecha, tema o autor. La memoria no se borra. Se defiende.</p>`,
+        cronicas: `<h1>Crónicas de ElBohemio</h1><p>Las voces del rincón. Las verdades del café. Los relatos que el poder no quiere escuchar.</p>`,
+        voces: `<h1>Voces que resisten</h1><p>Desde los márgenes, desde el silencio impuesto, desde la rabia contenida: aquí tienen espacio quienes no callan.</p>`
+      };
+      contentDiv.innerHTML = texts[id] || '<p>Sección en construcción.</p>';
+    }
+  </script>
+
+</body>
+</html>
