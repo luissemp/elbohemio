@@ -15,8 +15,8 @@
     /* Fondo general oscuro */
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
-      background-color: #1a1a1a; /* Fondo oscuro */
-      color: #e0c9a6; /* Texto blanco */
+      background-color: #1a1a1a;
+      color: #e0c9a6;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -31,33 +31,34 @@
       position: relative;
     }
 
-    /* Texto del header */
+    /* Texto del header (movido más cerca de la imagen) */
     .header-text {
       flex: 1;
-      max-width: 500px;
-      padding-right: 2rem;
+      max-width: 450px; /* Más estrecho */
+      padding-right: 1rem; /* Reduce espacio entre texto e imagen */
+      padding-left: 2rem; /* Mueve el texto 2cm hacia la derecha */
     }
 
     .header-text h1 {
       color: #e74c3c; /* Rojo intenso */
-      font-size: 2.2rem; /* Tamaño reducido */
+      font-size: 1.9rem; /* Más pequeño */
       font-weight: bold;
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .header-text p.tagline {
       font-style: italic;
-      font-size: 1.1rem; /* Tamaño más pequeño */
+      font-size: 1.0rem; /* Más pequeño */
       color: #ccc;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .header-text p.description {
       color: #aaa;
-      font-size: 1.05rem; /* Tamaño más contenido */
+      font-size: 0.95rem; /* Aún más contenido */
       text-align: justify;
-      line-height: 1.6; /* Espaciado limpio */
+      line-height: 1.6;
     }
 
     /* Imagen de la máquina de escribir */
@@ -86,13 +87,14 @@
       }
 
       .header-text {
+        padding-left: 0;
         padding-right: 0;
         margin-bottom: 2rem;
         max-width: 100%;
       }
 
       .typewriter-image {
-        order: -1; /* Imagen arriba en móviles */
+        order: -1;
         margin-bottom: 2rem;
       }
 
@@ -100,7 +102,7 @@
         font-size: 2rem;
       }
 
-      .header-text p.tagline, 
+      .header-text p.tagline,
       .header-text p.description {
         font-size: 1rem;
       }
@@ -111,7 +113,7 @@
 
   <!-- ENCABEZADO PRINCIPAL -->
   <header>
-    <!-- Texto -->
+    <!-- Texto (movido más cerca de la imagen) -->
     <div class="header-text">
       <h1>El Bohemio Digital</h1>
       <p class="tagline">"El secreto es la tumba de la libertad."</p>
