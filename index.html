@@ -15,33 +15,30 @@
     /* Fondo general oscuro */
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
-      background-color: #1a1a1a; /* Fondo oscuro */
-      color: #e0c9a6; /* Texto blanco */
+      background-color: #1a1a1a;
+      color: #e0c9a6;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Header con imagen lateral */
+    /* Header con separación exacta de 5 cm (~140px) */
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start; /* Texto a la izquierda, imagen a la derecha */
       padding: 3rem 2rem;
       min-height: 100vh;
-      position: relative;
+      gap: 140px; /* ≈ 5 cm de separación entre texto e imagen */
     }
 
-    /* Texto del header (alineado con la máquina de escribir) */
+    /* Texto del header */
     .header-text {
-      flex: 1;
-      max-width: 400px; /* Reducido para mantener proporción */
-      padding-right: 5rem; /* Alinea el texto con la máquina */
-      padding-left: 2rem; /* Mantenemos espacio izquierdo */
+      max-width: 400px;
     }
 
     .header-text h1 {
-      color: #e74c3c; /* Rojo intenso */
-      font-size: 1.9rem; /* Tamaño contenido */
+      color: #e74c3c;
+      font-size: 1.9rem;
       font-weight: bold;
       line-height: 1.2;
       margin-bottom: 0.8rem;
@@ -49,33 +46,26 @@
 
     .header-text p.tagline {
       font-style: italic;
-      font-size: 1.0rem; /* Tamaño pequeño */
+      font-size: 1.0rem;
       color: #ccc;
       margin-bottom: 1.2rem;
     }
 
     .header-text p.description {
       color: #aaa;
-      font-size: 0.95rem; /* Tamaño contenido */
+      font-size: 0.95rem;
       text-align: justify;
       line-height: 1.6;
     }
 
     /* Imagen de la máquina de escribir */
-    .typewriter-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     .typewriter-image img {
       width: 100%;
       max-width: 400px;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      border: none; /* Elimina el borde visible */
+      border: none; /* Sin borde visible */
     }
 
     /* Media queries para pantallas pequeñas */
@@ -83,28 +73,16 @@
       header {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
         padding: 2rem 1rem;
       }
 
       .header-text {
-        padding-left: 0;
-        padding-right: 0;
-        margin-bottom: 2rem;
         max-width: 100%;
       }
 
       .typewriter-image {
         order: -1;
-        margin-bottom: 2rem;
-      }
-
-      .header-text h1 {
-        font-size: 2rem;
-      }
-
-      .header-text p.tagline,
-      .header-text p.description {
-        font-size: 1rem;
       }
     }
   </style>
@@ -113,7 +91,7 @@
 
   <!-- ENCABEZADO PRINCIPAL -->
   <header>
-    <!-- Texto (alineado con la máquina de escribir) -->
+    <!-- Texto (a 5 cm de la imagen) -->
     <div class="header-text">
       <h1>El Bohemio Digital</h1>
       <p class="tagline">"El secreto es la tumba de la libertad."</p>
