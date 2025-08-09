@@ -5,93 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Bohemio Digital</title>
   <style>
-    /* Estilos generales */
-    body {
-      font-family: 'Georgia', 'Times New Roman', serif;
+    /* Reset básico */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #1a1a1a; /* Fondo oscuro */
-      color: #fff; /* Texto blanco */
+      box-sizing: border-box;
     }
 
-    /* Header */
+    /* Fondo general oscuro */
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background-color: #1a1a1a;
+      color: #e0c9a6;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header con imagen lateral */
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 2rem;
-      background-color: #1a1a1a; /* Mismo fondo oscuro */
+      justify-content: space-between;
+      padding: 3rem 2rem;
+      min-height: 100vh;
+      position: relative;
     }
 
-    header h1 {
+    /* Texto del header */
+    .header-text {
+      flex: 1;
+      max-width: 500px;
+      padding-right: 2rem;
+    }
+
+    .header-text h1 {
       color: #e74c3c; /* Rojo intenso */
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: bold;
-      margin: 0;
-    }
-
-    header p {
-      font-style: italic;
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      color: #ccc; /* Gris claro */
-    }
-
-    /* Contenido principal */
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-
-    .content h2 {
-      font-size: 1.5rem;
+      line-height: 1.2;
       margin-bottom: 1rem;
-      border-left: 4px solid #e74c3c; /* Línea roja */
-      padding-left: 1rem;
     }
 
-    .content p {
+    .header-text p.tagline {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: #ccc;
       margin-bottom: 1.5rem;
     }
 
-    /* Imagen lateral */
-    .typewriter-image {
-      width: 50%;
-      float: right;
-      margin-left: 2rem;
+    .header-text p.description {
+      color: #aaa;
+      font-size: 1.1rem;
+      text-align: justify;
     }
 
-    /* Media queries para dispositivos móviles */
-    @media (max-width: 768px) {
+    /* Imagen de la máquina de escribir */
+    .typewriter-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .typewriter-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      border: 1px solid #333;
+    }
+
+    /* Media queries para pantallas pequeñas */
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .header-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+        max-width: 100%;
+      }
+
       .typewriter-image {
-        width: 100%;
-        float: none;
-        margin: 0 auto;
-        display: block;
+        order: -1; /* Imagen arriba en móviles */
+        margin-bottom: 2rem;
+      }
+
+      .header-text h1 {
+        font-size: 2.3rem;
+      }
+
+      .header-text p.tagline, 
+      .header-text p.description {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado -->
+  <!-- ENCABEZADO PRINCIPAL -->
   <header>
+    <!-- Texto -->
     <div class="header-text">
       <h1>El Bohemio Digital</h1>
-      <p>"Aquí no se esconde la verdad"</p>
+      <p class="tagline">"Aquí no se esconde la verdad"</p>
+      <p class="description">
+        Sí, aquí la tinta aún huele a pólvora, y la verdad no pide permiso para incomodar. 
+        Desde las entrañas del Café Bohemio, donde Anacleto y su coro de voces anónimas 
+        se confiesan sin censura, esta tribuna nació para contar lo que otros callan.
+      </p>
     </div>
-    <img src="img/typewriter.png" alt="Máquina de escribir" class="typewriter-image">
-  </header>
 
-  <!-- Contenido principal -->
-  <div class="content">
-    <p>Bienvenido a El Bohemio Digital. Sí, aquí la tinta aún huele a pólvora, y la verdad no pide permiso para incomodar.</p>
-    <h2>Este no es un portal para tibios</h2>
-    <p>Aquí se escribe con las entrañas, se denuncia con el puño cerrado y la pluma afilada. Desde las entrañas del Café Bohemio, donde Anacleto y su coro de voces anónimas se confiesan sin censura, esta tribuna nació para contar lo que otros callan. Porque cuando el miedo impone silencio, la palabra se vuelve resistencia. Y en tiempos de guerra, geopolítica sucia y cómplices con corbata, no basta con saber: hay que gritar.</p>
-    <p><em>"No venimos a complacer al algoritmo. Venimos a molestar al poder."</em></p>
-  </div>
+    <!-- Imagen de la máquina de escribir -->
+    <div class="typewriter-image">
+      <img src="img/typewriter.jpg" alt="Máquina de escribir antigua bajo una lámpara">
+    </div>
+  </header>
 
 </body>
 </html>
