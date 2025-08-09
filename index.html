@@ -5,107 +5,232 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Bohemio Digital</title>
   <style>
-    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Fondo general oscuro */
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
       background-color: #1a1a1a;
       color: #e0c9a6;
       line-height: 1.6;
-      overflow-x: hidden;
-      display: flex;
-      justify-content: center; /* Centra horizontalmente */
-      align-items: center; /* Centra verticalmente */
-      min-height: 100vh;
     }
 
-    /* Contenedor principal */
-    .header-container {
+    /* HEADER CENTRADO CON TEXTO E IMAGEN CERCANOS */
+    header {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 20px; /* Espacio mínimo entre texto e imagen */
-      max-width: 1200px; /* Ancho máximo para pantallas grandes */
-    }
-
-    /* Texto del header */
-    .header-text {
-      max-width: 500px; /* Ajusta según necesites */
+      gap: 40px;
+      padding: 3rem 2rem;
+      min-height: 100vh;
     }
 
     .header-text h1 {
       color: #e74c3c;
-      font-size: 1.9rem;
+      font-size: 2.4rem;
       font-weight: bold;
-      line-height: 1.2;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
-    .header-text p.tagline {
-      font-style: italic;
-      font-size: 1.0rem;
+    .header-text p {
       color: #ccc;
-      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      max-width: 400px;
     }
 
-    .header-text p.description {
-      color: #aaa;
-      font-size: 0.95rem;
-      text-align: justify;
-      line-height: 1.6;
-    }
-
-    /* Imagen de la máquina de escribir */
     .typewriter-image img {
       width: 100%;
-      max-width: 400px;
-      height: auto;
+      max-width: 380px;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      border: none; /* Sin borde visible */
+      border: none;
     }
 
-    /* Media queries para pantallas pequeñas */
+    /* BARRA DE HERRAMIENTAS */
+    .toolbar {
+      background-color: #2c2c2c;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.8rem 0;
+    }
+
+    .toolbar button {
+      background: none;
+      border: 1px solid #555;
+      color: #e0c9a6;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+    }
+
+    .toolbar button:hover {
+      background-color: #5a4a3a;
+      color: #fff;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      gap: 1.5rem;
+    }
+
+    .sidebar {
+      width: 20%;
+      background-color: #e8e3da;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .sidebar h3 {
+      color: #5a4a3a;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #c9b8a1;
+      padding-bottom: 0.3rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .sidebar ul li a {
+      color: #444;
+      text-decoration: none;
+      font-style: italic;
+      cursor: pointer;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      color: #333;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .main-content h1 {
+      color: #5a4a3a;
+      margin-bottom: 1rem;
+    }
+
+    .main-content blockquote {
+      border-left: 4px solid #c9b8a1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* RESPONSVIDAD */
     @media (max-width: 900px) {
-      .header-container {
+      header {
         flex-direction: column;
         text-align: center;
-        gap: 2rem;
       }
-
-      .header-text {
-        max-width: 100%;
+      .container {
+        flex-direction: column;
       }
-
-      .typewriter-image {
-        order: -1;
+      .sidebar {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ENCABEZADO PRINCIPAL -->
-  <div class="header-container">
-    <!-- Texto (cerca de la imagen) -->
+  <!-- HEADER -->
+  <header>
     <div class="header-text">
-      <h1>El Bohemio Digital</h1>
-      <p class="tagline">"El secreto es la tumba de la libertad."</p>
-      <p class="description">
-        Sí, aquí la tinta aún huele a pólvora, y la verdad no pide permiso para incomodar. Desde las entrañas del Café Bohemio, donde Anacleto y su coro de voces anónimas se confiesan sin censura, esta tribuna nació para contar lo que otros callan.
-      </p>
+      <h1>EL BOHEMIO DIGITAL</h1>
+      <p>"El secreto es la tumba de la libertad."</p>
     </div>
-
-    <!-- Imagen de la máquina de escribir -->
     <div class="typewriter-image">
-      <img src="img/typewriter.jpg" alt="Máquina de escribir antigua bajo una lámpara">
+      <img src="img/typewriter.jpg" alt="Máquina de escribir">
+    </div>
+  </header>
+
+  <!-- BARRA DE HERRAMIENTAS -->
+  <div class="toolbar">
+    <button onclick="showSection('quienes')">Quiénes somos</button>
+    <button onclick="showSection('quehacemos')">Qué hacemos</button>
+    <button onclick="showSection('archivos')">Archivos</button>
+    <button onclick="showSection('cronicas')">Crónicas de ElBohemio</button>
+    <button onclick="showSection('voces')">Voces que resisten</button>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="container">
+
+    <!-- BARRA IZQUIERDA: Mis Archivos -->
+    <aside class="sidebar">
+      <h3>Mis Archivos</h3>
+      <ul>
+        <li><a onclick="loadArticle('misterio')">El Misterio en la Casa Blanca</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO CENTRAL -->
+    <main class="main-content" id="main-content">
+      <h1>Bienvenido a El Bohemio Digital</h1>
+      <p>Haz clic en un artículo para comenzar.</p>
+    </main>
+
+    <!-- BARRA DERECHA: Mis imágenes -->
+    <aside class="sidebar">
+      <h3>Mis Imágenes</h3>
+      <ul>
+        <li>El viejo</li>
+        <li>La máquina de escribir</li>
+        <li>El Café El Bohemio</li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <!-- ARTÍCULOS OCULTOS -->
+  <div style="display: none;">
+    <div id="misterio-content">
+      <h1>El Misterio en la Casa Blanca: Un Cadáver, Un Magnate y un Silencio…</h1>
+      <blockquote>“El secreto es la tumba de la libertad.” — Fiódor Dostoievski</blockquote>
+      <p>Hoy, El Bohemio estaba en silencio. Un silencio raro. Un silencio de esos que no preceden a la tormenta, sino que la contienen, como si el aire supiera algo que nosotros no...</p>
+      <!-- Aquí va todo el contenido del artículo, ya corregido -->
     </div>
   </div>
+
+  <script>
+    function loadArticle(id) {
+      const content = document.getElementById('main-content');
+      const article = document.getElementById(id + '-content');
+      if (article) content.innerHTML = article.innerHTML;
+    }
+
+    function showSection(id) {
+      const content = document.getElementById('main-content');
+      const texts = {
+        quienes: '<h1>¿Quiénes somos?</h1><p>Un colectivo de pensadores, escritores y críticos que creen en la palabra como arma de justicia.</p>',
+        quehacemos: '<h1>¿Qué hacemos?</h1><p>Escribimos crónicas que no caben en los grandes medios. Denunciamos sin tapujos.</p>',
+        archivos: '<h1>Archivo Completo</h1><p>Accede a todos nuestros artículos.</p>',
+        cronicas: '<h1>Crónicas de ElBohemio</h1><p>Las voces del rincón. Las verdades del café.</p>',
+        voces: '<h1>Voces que resisten</h1><p>Desde los márgenes, desde el silencio impuesto.</p>'
+      };
+      content.innerHTML = texts[id] || '<p>Sección en construcción.</p>';
+    }
+  </script>
 
 </body>
 </html>
