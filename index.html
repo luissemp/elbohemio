@@ -19,21 +19,23 @@
       color: #e0c9a6;
       line-height: 1.6;
       overflow-x: hidden;
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      min-height: 100vh;
     }
 
-    /* Header con separación exacta de 5 cm (~140px) */
-    header {
+    /* Contenedor principal */
+    .header-container {
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* Texto a la izquierda, imagen a la derecha */
-      padding: 3rem 2rem;
-      min-height: 100vh;
-      gap: 140px; /* ≈ 5 cm de separación entre texto e imagen */
+      gap: 20px; /* Espacio mínimo entre texto e imagen */
+      max-width: 1200px; /* Ancho máximo para pantallas grandes */
     }
 
     /* Texto del header */
     .header-text {
-      max-width: 400px;
+      max-width: 500px; /* Ajusta según necesites */
     }
 
     .header-text h1 {
@@ -70,11 +72,10 @@
 
     /* Media queries para pantallas pequeñas */
     @media (max-width: 900px) {
-      header {
+      .header-container {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
-        padding: 2rem 1rem;
       }
 
       .header-text {
@@ -90,8 +91,8 @@
 <body>
 
   <!-- ENCABEZADO PRINCIPAL -->
-  <header>
-    <!-- Texto (a 5 cm de la imagen) -->
+  <div class="header-container">
+    <!-- Texto (cerca de la imagen) -->
     <div class="header-text">
       <h1>El Bohemio Digital</h1>
       <p class="tagline">"El secreto es la tumba de la libertad."</p>
@@ -104,7 +105,7 @@
     <div class="typewriter-image">
       <img src="img/typewriter.jpg" alt="Máquina de escribir antigua bajo una lámpara">
     </div>
-  </header>
+  </div>
 
 </body>
 </html>
