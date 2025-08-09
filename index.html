@@ -15,8 +15,8 @@
     /* Fondo general oscuro */
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
-      background-color: #1a1a1a;
-      color: #e0c9a6;
+      background-color: #1a1a1a; /* Fondo oscuro */
+      color: #e0c9a6; /* Texto blanco */
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -31,17 +31,17 @@
       position: relative;
     }
 
-    /* Texto del header (movido más cerca de la imagen) */
+    /* Texto del header (movido aún más cerca de la imagen) */
     .header-text {
       flex: 1;
-      max-width: 450px; /* Más estrecho */
-      padding-right: 1rem; /* Reduce espacio entre texto e imagen */
-      padding-left: 2rem; /* Mueve el texto 2cm hacia la derecha */
+      max-width: 400px; /* Reducido para mantener proporción */
+      padding-right: 5rem; /* Alinea el texto con la máquina */
+      padding-left: 2rem; /* Mantenemos espacio izquierdo */
     }
 
     .header-text h1 {
       color: #e74c3c; /* Rojo intenso */
-      font-size: 1.9rem; /* Más pequeño */
+      font-size: 1.9rem; /* Tamaño contenido */
       font-weight: bold;
       line-height: 1.2;
       margin-bottom: 0.8rem;
@@ -49,14 +49,14 @@
 
     .header-text p.tagline {
       font-style: italic;
-      font-size: 1.0rem; /* Más pequeño */
+      font-size: 1.0rem; /* Tamaño pequeño */
       color: #ccc;
       margin-bottom: 1.2rem;
     }
 
     .header-text p.description {
       color: #aaa;
-      font-size: 0.95rem; /* Aún más contenido */
+      font-size: 0.95rem; /* Tamaño contenido */
       text-align: justify;
       line-height: 1.6;
     }
@@ -113,7 +113,7 @@
 
   <!-- ENCABEZADO PRINCIPAL -->
   <header>
-    <!-- Texto (movido más cerca de la imagen) -->
+    <!-- Texto (alineado con la máquina de escribir) -->
     <div class="header-text">
       <h1>El Bohemio Digital</h1>
       <p class="tagline">"El secreto es la tumba de la libertad."</p>
