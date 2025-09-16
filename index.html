@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Bohemio Digital</title>
   <style>
-    /* === REINICIO DE ESTILOS === */
+    /* === REINICIO CONTROLADO (sin eliminar todo el padding) === */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
@@ -17,6 +15,8 @@
       background-color: #1a1a1a;
       color: #e0c9a6;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
     }
 
     /* === HEADER === */
@@ -37,6 +37,7 @@
     .header-text p {
       font-size: 0.9rem;
       margin-top: 0.3rem;
+      color: #aaa;
     }
 
     .typewriter-image img {
@@ -89,6 +90,9 @@
     .sidebar h3 {
       margin-bottom: 1rem;
       font-size: 1.1rem;
+      color: #e74c3c;
+      border-bottom: 2px solid #555;
+      padding-bottom: 0.3rem;
     }
 
     .sidebar ul {
@@ -139,7 +143,11 @@
       color: #141414 !important;
     }
 
-    /* === CONTROL DE TEXTO Y ÉNFASIS === */
+    /* === ESPACIADO INTERNO DEL TEXTO === */
+    .main-content > div {
+      padding: 0 2rem;
+    }
+
     .main-content p,
     .main-content h1,
     .main-content h2,
@@ -149,9 +157,9 @@
     .main-content blockquote {
       margin: 0 0 1rem 0;
       padding: 0;
-      line-height: 1.8;
     }
 
+    /* Control de énfasis */
     .main-content em,
     .main-content i {
       font-style: italic;
@@ -159,7 +167,7 @@
       display: inline;
     }
 
-    /* Márgenes laterales en el texto */
+    /* Márgenes laterales en el contenido */
     .main-content p,
     .main-content em,
     .main-content blockquote {
@@ -259,7 +267,7 @@
 
   <!-- ARTÍCULOS OCULTOS -->
   <div style="display: none;">
-    
+  
 <!-- PEGA TUS ARTÍCULOS AQUÍ, TAL CUAL ESTÁN -->
  <!-- NUEVO ARTÍCULO -->
   <div id="subversion-content">
@@ -688,8 +696,6 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
     </div>
     <!-- FIN DEL ARTÍCULO EXISTENTE -->
     <!-- NO NECESITAS CAMBIAR NADA EN ELLOS -->
-  </div>
-
   <!-- MODAL DE IMÁGENES -->
   <div id="imageModal" onclick="this.style.display='none'">
     <img id="modalImage">
@@ -701,9 +707,7 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
       const content = document.getElementById('main-content');
       const article = document.getElementById(id + '-content');
       if (article) {
-        // Clonamos para evitar problemas con estilos en línea
         const clone = article.cloneNode(true);
-        // Limpiamos cualquier estilo que fuerce color o margen
         const innerDiv = clone.querySelector('div[style]');
         if (innerDiv) {
           let style = innerDiv.getAttribute('style');
@@ -737,4 +741,4 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
   </script>
 
 </body>
-</html> 
+</html>
