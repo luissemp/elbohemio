@@ -120,58 +120,71 @@
     .sidebar ul li a:hover {
       color: #e74c3c;
     }
-<!-- ESTILOS INTEGRADOS PARA MODO CLARO/OSCURO -->
-  /* ESTILO BASE DEL MAIN: MODO OSCURO */
-  .main-content {
-    background-color: #1c120c;
-    color: #e0c9a6;
-    font-family: 'Georgia', serif;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 80vh;
-  }
+<!-- ESTILOS INTEGRADOS (prioridad alta) -->
+  <style>
+    /* ANCHO FIJO Y CENTRADO DEL CONTENIDO */
+    .main-content {
+      background-color: #1c120c;
+      color: #e0c9a6;
+      font-family: 'Georgia', serif;
+      line-height: 1.8;
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 80vh;
+    }
 
-  /* MODO CLARO: FONDO BEIGE, TEXTO OSCURO (MÁS CONTRASTE) */
-  body.modoclaro .main-content {
-    background-color: #f8f5f2;
-    color: #141414 !important; /* ¡Forzamos el color! */
-  }
+    /* MODO CLARO: FONDO BEIGE, TEXTO OSCURO */
+    body.modoclaro .main-content {
+      background-color: #f8f5f2 !important;
+      color: #141414 !important;
+    }
 
-  /* ASEGURAMOS QUE LOS ARTÍCULOS HEREDEN EL COLOR DEL PADRE */
-  .main-content p,
-  .main-content h1,
-  .main-content span,
-  .main-content em,
-  .main-content blockquote {
-    color: inherit !important;
-    line-height: 1.8;
-  }
+    /* HERENCIA DE COLOR EN TODO EL TEXTO */
+    body.modoclaro .main-content p,
+    body.modoclaro .main-content h1,
+    body.modoclaro .main-content span,
+    body.modoclaro .main-content em,
+    body.modoclaro blockquote,
+    body.modoclaro .article-content {
+      color: #141414 !important;
+      text-shadow: none !important;
+    }
 
-  /* BOTÓN DE CAMBIO DE MODO */
-  .toggle-mode {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: 1px solid #e0c9a6;
-    color: #e0c9a6;
-    font-size: 1rem;
-    padding: 8px 12px;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-family: 'Georgia', serif;
-  }
+    /* BOTÓN FIJO PARA CAMBIAR MODO */
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 1px solid #e0c9a6;
+      color: #e0c9a6;
+      font-size: 1rem;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 1000;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-family: 'Georgia', serif;
+      opacity: 1 !important;
+      display: block !important;
+    }
 
-  /* BOTÓN EN MODO CLARO */
-  body.modoclaro .toggle-mode {
-    border-color: #141414;
-    color: #141414;
-    background: rgba(255, 255, 255, 0.9);
-  }
+    /* BOTÓN EN MODO CLARO */
+    body.modoclaro .toggle-mode {
+      border-color: #141414;
+      color: #141414;
+      background: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* PROTEGER OTROS ELEMENTOS DEL CAMBIO */
+    body.modoclaro aside.sidebar,
+    body.modoclaro footer,
+    body.modoclaro .site-title {
+      background-color: inherit !important;
+      color: inherit !important;
+    }
 
   /* PREVENIR QUE EL ANCHO CREZCA INDEFINIDAMENTE */
   @media (min-width: 768px) {
@@ -244,12 +257,11 @@
     <main class="main-content" id="main-content">
       <h1>Bienvenido a El Bohemio Digital</h1>
       <p>Haz clic en una sección para comenzar.</p>
-        <!-- BOTÓN DE MODO CLARO/OSCURO -->
+           </main>
+ <!-- BOTÓN DE MODO CLARO/OSCURO -->
   <button class="toggle-mode" onclick="document.body.classList.toggle('modoclaro')">
     🌙 / ☀️
   </button>
-    </main>
-
     <!-- BARRA DERECHA: Mis imágenes -->
     <aside class="sidebar">
       <h3>Mis Imágenes</h3>
