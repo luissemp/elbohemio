@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Bohemio Digital</title>
   <style>
+    /* === REINICIO DE ESTILOS === */
     * {
       margin: 0;
       padding: 0;
@@ -15,111 +16,78 @@
       font-family: 'Georgia', 'Times New Roman', serif;
       background-color: #1a1a1a;
       color: #e0c9a6;
-      line-height: 1.6;
+      line-height: 1.8;
     }
-/* === SEPARADOR CONTROLADO ENTRE BLOQUES DE TEXTO === */
-.sep {
-  height: 1.5rem;
-  width: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-    /* === MÁRGENES UNIFORMES PARA P Y EM === */
-.main-content p,
-.main-content .article-content {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
 
-.main-content em,
-.main-content blockquote,
-.main-content span {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
-    /* HEADER CENTRADO CON TEXTO E IMAGEN CERCANOS */
+    /* === HEADER === */
     header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 40px;
-      padding: 3rem 2rem;
-      min-height: 100vh;
+      padding: 1rem 2rem;
+      background-color: #141414;
+      border-bottom: 1px solid #555;
     }
 
     .header-text h1 {
-      color: #e74c3c;
-      font-size: 2.4rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      margin: 0;
     }
 
     .header-text p {
-      color: #ccc;
-      font-size: 1.1rem;
-      max-width: 400px;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
     }
 
     .typewriter-image img {
-      width: 100%;
-      max-width: 380px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      border: none;
+      width: 80px;
+      border-radius: 6px;
     }
 
-    /* BARRA DE HERRAMIENTAS */
+    /* === BARRA DE HERRAMIENTAS === */
     .toolbar {
-      background-color: #2c2c2c;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 0.8rem 0;
+      background-color: #1c120c;
+      padding: 0.8rem 2rem;
+      text-align: center;
     }
 
     .toolbar button {
       background: none;
-      border: 1px solid #555;
+      border: 1px solid #e0c9a6;
       color: #e0c9a6;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1rem;
+      margin: 0 0.3rem;
       cursor: pointer;
       font-family: 'Georgia', serif;
-      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
 
     .toolbar button:hover {
-      background-color: #5a4a3a;
-      color: #fff;
+      background-color: #333;
     }
 
-    /* CONTENEDOR PRINCIPAL */
+    /* === CONTENEDOR PRINCIPAL === */
     .container {
       display: flex;
+      min-height: 80vh;
       max-width: 1200px;
-      margin: 1rem auto;
-      padding: 0 1rem;
+      margin: 0 auto;
       gap: 1.5rem;
+      padding: 1rem;
     }
 
-    /* BARRAS LATERALES: FONDO NEGRO */
+    /* === BARRAS LATERALES === */
     .sidebar {
-      width: 20%;
-      background-color: #000;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      border: 1px solid #333;
+      flex: 1;
+      background-color: #1c120c;
+      padding: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid #555;
     }
 
     .sidebar h3 {
-      color: #e74c3c;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #555;
-      padding-bottom: 0.3rem;
       font-size: 1.1rem;
     }
 
@@ -127,65 +95,88 @@
       list-style: none;
     }
 
-    .sidebar ul li {
-      margin-bottom: 0.6rem;
+    .sidebar li {
+      margin-bottom: 0.8rem;
     }
 
-    .sidebar ul li a {
-      color: #aaa;
+    .sidebar a {
+      color: #e0c9a6;
       text-decoration: none;
-      font-style: italic;
-      cursor: pointer;
-      transition: color 0.3s;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
-    .sidebar ul li a:hover {
-      color: #e74c3c;
+    .sidebar a:hover {
+      text-decoration: underline;
     }
-<!-- ESTILOS INTEGRADOS (prioridad alta) -->
-  <style>
-    /* ANCHO FIJO Y CENTRADO DEL CONTENIDO */
+
+    /* === CONTENIDO CENTRAL === */
     .main-content {
+      flex: 2;
       background-color: #1c120c;
       color: #e0c9a6;
       font-family: 'Georgia', serif;
       line-height: 1.8;
       max-width: 700px;
-      width: 100%;
       margin: 0 auto;
       padding: 2rem;
       min-height: 80vh;
+      border: 1px solid #555;
+      border-radius: 6px;
     }
-/* === MÁRGENES LATERALES FIJOS PARA EL TEX DEL ARTÍCULO === */
-.main-content .article-content,
-.main-content p,
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content span,
-.main-content em,
-.main-content blockquote {
-  margin-left: 2rem !important;
-  margin-right: 2rem !important;
-}
-    /* MODO CLARO: FONDO BEIGE, TEXTO OSCURO */
+
+    /* === MODO CLARO === */
     body.modoclaro .main-content {
       background-color: #f8f5f2 !important;
       color: #141414 !important;
     }
 
-    /* HERENCIA DE COLOR EN TODO EL TEXTO */
     body.modoclaro .main-content p,
     body.modoclaro .main-content h1,
     body.modoclaro .main-content span,
     body.modoclaro .main-content em,
-    body.modoclaro blockquote,
-    body.modoclaro .article-content {
+    body.modoclaro blockquote {
       color: #141414 !important;
-      text-shadow: none !important;
     }
 
-    /* BOTÓN FIJO PARA CAMBIAR MODO */
+    /* === CONTROL DE TEXTO Y ÉNFASIS === */
+    .main-content p,
+    .main-content h1,
+    .main-content h2,
+    .main-content h3,
+    .main-content span,
+    .main-content em,
+    .main-content blockquote {
+      margin: 0 0 1rem 0;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    .main-content em,
+    .main-content i {
+      font-style: italic;
+      font-weight: normal;
+      display: inline;
+    }
+
+    /* Márgenes laterales en el texto */
+    .main-content p,
+    .main-content em,
+    .main-content blockquote {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-content p,
+      .main-content em,
+      .main-content blockquote {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+
+    /* === BOTÓN DE MODO CLARO/OSCURO === */
     .toggle-mode {
       position: fixed;
       top: 20px;
@@ -200,96 +191,39 @@
       border-radius: 4px;
       transition: all 0.3s ease;
       font-family: 'Georgia', serif;
-      opacity: 1 !important;
-      display: block !important;
     }
 
-    /* BOTÓN EN MODO CLARO */
     body.modoclaro .toggle-mode {
       border-color: #141414;
       color: #141414;
-      background: rgba(255, 255, 255, 0.9) !important;
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    /* PROTEGER OTROS ELEMENTOS DEL CAMBIO */
-    body.modoclaro aside.sidebar,
-    body.modoclaro footer,
-    body.modoclaro .site-title {
-      background-color: inherit !important;
-      color: inherit !important;
-    }
-
-  /* PREVENIR QUE EL ANCHO CREZCA INDEFINIDAMENTE */
-  @media (min-width: 768px) {
-    .main-content {
+    /* === MODAL DE IMÁGENES === */
+    #imageModal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
       width: 100%;
-      margin: 0 auto;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
     }
-     /* RESPONSVIDAD */
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-      }
-     /* === MÁRGENES DE LECTURA === */
-.main-content p,
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content span,
-.main-content em,
-.main-content blockquote {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
 
-@media (max-width: 768px) {
-  .main-content p,
-  .main-content h1,
-  .main-content h2,
-  .main-content h3,
-  .main-content span,
-  .main-content em,
-  .main-content blockquote {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-   /* === CONTROL ESTRICTO DE <em> PARA QUE NO ROMPA EL FLUJO === */
-.main-content em,
-.main-content i {
-  font-style: italic;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  line-height: inherit;
-  display: inline; /* Asegura que no actúe como bloque */
-}
-
-/* Evita que los <em> dentro de párrafos agreguen espacio */
-.main-content p em,
-.main-content p i {
-  margin: 0;
-  line-height: inherit;
-}  
-  /* === CONTROL ABSOLUTO DE <em> === */
-.main-content em,
-.main-content i {
-  font-style: italic;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  line-height: inherit;
-  display: inline;
-}
+    #modalImage {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid #e74c3c;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
   </style>
 </head>
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="header-text">
@@ -312,61 +246,22 @@
     <button onclick="showSection('lectores')">Lectores con voz (Café, cartas y réplicas)</button>
   </div>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-  <div class="container">
+  <!-- CONTENIDO CENTRAL -->
+  <main class="main-content" id="main-content">
+    <h1>Bienvenido a El Bohemio Digital</h1>
+    <p>Haz clic en una sección para comenzar.</p>
+  </main>
 
-    <!-- BARRA IZQUIERDA: Mis Artículos -->
-    <aside class="sidebar">
-      <h3>Mis Artículos</h3>
-      <ul>
-        <li><a onclick="loadArticle('subversion')"> Subversión Antigua y Defensa Moderna: El Caribe y la Sombra de la Intervención </a></li> 
-        <li><a onclick="loadArticle('cubiche1')"> Rubio, Machado y ExxonMobil: La tríada que “vende democracia” y compra petróleo…</a></li>  
-        <li><a onclick="loadArticle('cubiche2')"> El Camaleón Mayamero: Narco Rubio y su cruzada contra Caracas…</a></li>   
-        <li><a onclick="loadArticle('cubiche4')"> El evangelio según Marco Rubio: drones, premios y otras formas de libertad…</a></li> 
-        <li><a onclick="loadArticle('cubiche3')">Marco Rubio: El “hijo americano” y la farsa de su ética… </a></li>  
-        <li><a onclick="loadArticle('venas')"> Las venas abiertas de Maracaibo: crónica de un reencuentro </a></li>
-        <li><a onclick="loadArticle('gaza')"> Gaza: el espejo roto del siglo XXI…</a></li> 
-        <li><a onclick="loadArticle('sordos')">Se hacen los sordos porque no quieren entender…</a></li>
-        <li><a onclick="loadArticle('cartel')">El Cartel de los Soles: La fábula que Washington vende como verdad</a></li></a></li>
-        <li><a onclick="loadArticle('medvedev')">Medvedev: El arte de desnudar la arrogancia de Washington</a></li>
-        <li><a onclick="loadArticle('silencio')">El Silencio de la Canciller: ¿Quién maneja realmente Alemania?</a></li>
-        <li><a onclick="loadArticle('misterio')">El Misterio en la Casa Blanca</a></li>
-      </ul>
-    </aside>
-
-    <!-- CONTENIDO CENTRAL -->
-    <main class="main-content" id="main-content">
-      <h1>Bienvenido a El Bohemio Digital</h1>
-      <p>Haz clic en una sección para comenzar.</p>
-           </main>
- <!-- BOTÓN DE MODO CLARO/OSCURO -->
+  <!-- BOTÓN DE MODO CLARO/OSCURO -->
   <button class="toggle-mode" onclick="document.body.classList.toggle('modoclaro')">
     🌙 / ☀️
   </button>
-    <!-- BARRA DERECHA: Mis imágenes -->
-    <aside class="sidebar">
-      <h3>Mis Imágenes</h3>
-      <ul>
-        <li><a onclick="openModal('viejo.jpg')" style="cursor: pointer;">
-            <img src="img/viejo.jpg" alt="El viejo" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
-          </a></li>
-        <li><a onclick="openModal('maquina.jpg')" style="cursor: pointer;">
-            <img src="img/maquina.jpg" alt="Máquina de escribir" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
-          </a></li>
-        <li><a onclick="openModal('cafe.jpg')" style="cursor: pointer;">
-            <img src="img/cafe.jpg" alt="El Café El Bohemio" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
-          </a></li>
-        <li><a onclick="openModal('yo2.jpg')" style="cursor: pointer;">
-            <img src="img/yo2.jpg" alt="Luis Semprún Jurado" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
-          </a></li>
-      </ul>
-    </aside>
-
-  </div>
 
   <!-- ARTÍCULOS OCULTOS -->
   <div style="display: none;">
-    <!-- NUEVO ARTÍCULO -->
+    
+<!-- PEGA TUS ARTÍCULOS AQUÍ, TAL CUAL ESTÁN -->
+ <!-- NUEVO ARTÍCULO -->
   <div id="subversion-content">
   <div style="font-family: 'Georgia', serif; padding: 0 2rem;"> 
       
@@ -410,11 +305,14 @@ el estudiante, como siempre presente, desde su mesa apunta, con sorna: <em>«Per
 LAURA DIB, CEPAZ
       </div>
  <p class="article-content"> El humo de cigarrillo flotaba sobre la mesa donde el mesero acababa de dejar un “marroncito”. Anacleto, observando al copioso grupo reunido a su alrededor, ajustó los lentes de carey y, clavando la mirada en los presentes, dijo:<em> «La próxima vez que Rubio hable de “democracia”, recuérdenle que en su Florida natal los verdaderos cubano-americanos lo repudian. No representa al exiliado que huyó de Cuba, ni al pueblo cubano que lo desprecia, ni al venezolano que siente vergüenza ajena al verlo arrastrarse para “olerle los peos” a su jefe, ese orangután anaranjado. Rubio es el retrato perfecto de las “alimañas” trumpistas que votaron por él, según “The Sacha View”.»</em> Apagó el cigarrillo con una sonrisa cómplice se ajustó los lentes con dedos manchados de tinta digital y continuó:<em> «Hoy cerramos el expediente de quien los migrantes venezolanos creyeron su aliado. No basta con exponer su trayectoria ni su entorno: hay que desenmascararlo para que no engañe a más incautos.»</em> El coronel retirado interrumpió con aire solemne: <em>«¿Y María Machado y Edmundo González?, ¿No juraron defender “a capa y espada” a los venezolanos? ¿O solo quieren sacar a “Nico”?»</em> ¡Ah, el arte de Anacleto! Ese equilibrio entre bisturí intelectual y sonrisa pícara: <em>«Celebro que capten la esencia: Rubio y Machado antes vendían esperanzas; ahora venden deportaciones. Se autoproclaman “voces de los venezolanos”, pero su silencio ante las deportaciones masivas a El Salvador, país con historial de tortura, delata su contradicción. ¿Cálculo político? Condenarlas les costaría financiamiento en Florida. Además, ¿no han oído sus declaraciones? "Todos son del Tren de Aragua, enviados por Maduro para desestabilizar EE.UU." Mientras callan, exigen sanciones que ahondan la crisis venezolana... y generan más migración.»</em> El café se enfrió. Anacleto guardó su libreta manchada de tinta y mientras encendía otro cigarrillo un estudiante alzó la voz: <em>«Entonces, ¿su prioridad es desestabilizar a Maduro, no proteger a nuestros migrantes injustamente enviados a campos de concentración? ¡Hipocresía de clase! Casi todos los deportados son pobres. Solo representan a la élite exiliada.»</em> Anacleto, auténtico como el café de esquina que sabe a conspiración, respondió sarcástico:<em> «Los espejismos políticos, como el café mal preparado, dejan regusto amargo... pero a veces son lo único que nos mantiene despiertos. Nos dijeron que el socialismo era el camino al infierno. Curioso: allá no hay “offshore” en Caimán, sólo demonios más honestos que un congresista de Miami. El café está servido, camaritas. Esperemos que los corruptos se quemen la lengua... o al menos les tiemble el pulso al firmar sus próximos chanchullos.»</em> Hizo una pausa dramática:<em> «Los derechos humanos no son bandera de conveniencia: o se defienden siempre, o se es cómplice. Y el silencio, queridos camaritas, también tiene dueño. Hasta la rata del padre José Palmar lo admitió: "En Guantánamo hay venezolanos inocentes. ¿Dónde está la ‘oposición democrática’?”»</em> Los murmullos iban en aumento hasta que una joven dijo:<em> «¿No decía Machado que luchaba por “todos” los venezolanos? Según documentos filtrados por “The Intercept”, en 2023 su equipo negoció con Rick Scott priorizar sanciones sobre derechos migratorios. ¿Es cierto?»</em> Anacleto, mientras le servían otro marroncito, soltó la bomba: <em>«Rubio y Machado aplaudieron la Ley SB 1718 de Florida (2023), que criminaliza a los migrantes. Irónico: 62% de los deportados son venezolanos, los mismos que en 2019 ellos incitaron a "huir del socialismo". ¿Error o cinismo? Rubio los invitó al "sueño americano", y Machado se alinea con él y con Trump. No olviden su alianza con el lobby anticastrista de Florida (MAGA Inc.), los mismos que impulsan deportaciones (The Miami Herald). ¡Y lo de Elvira Salazar!...»</em> Ajustó los lentes, espetando el veredicto final: <em>«Machado no es líder: es administradora del negocio llamado “oposición”. Su mercancía es el dolor del venezolano; su cliente, el poder de Washington; y su silencio, la moneda que mejor cotiza. Mientras, en las cárceles de El Salvador, los "invitados al sueño americano" aprenden la lección al estilo orweliano: para esta oposición, “todos los venezolanos son iguales, algunos son más iguales que otros… pero los del offshore son aún más iguales”.» </em></p>
-<br>
+
+<div class="sep"></div>
   <p class="article-content">El silencio calculado de María Machado, ante las deportaciones masivas de venezolanos, muchos de ellos víctimas de la crisis, que ella misma ayudó a agravar con su retórica incendiaria y su lobby por sanciones económicas cada vez más brutales, desnuda la contradicción fundamental de su proyecto político. Mientras recibe el apoyo entusiasta de figuras como Marco Rubio, Elvira Salazar y hasta Donald Trump Jr., los mismos que promueven leyes antiinmigrantes en Florida y justifican las deportaciones con discursos de "invasión marxista", su autoproclamada defensa de "todos los venezolanos" se revela como lo que siempre fue: un eslogan vacío para una audiencia selecta. La realidad es obscena en su crudeza: la misma "lideresa" que pide más sanciones (que destruyen la economía venezolana y expulsan a más migrantes) ahora calla cuando esos migrantes son perseguidos, encarcelados y deportados por los mismos aliados que ella abraza en Washington. ¿Dónde está su voz cuando los "hermanos venezolanos" que huyeron del hambre son tratados como criminales por la administración que ella apoya? </p>
-  <br>
+ 
+<div class="sep"></div>
   <p class="article-content"> El cinismo republicano alcanza su expresión más grotesca cuando instrumentalizan a Machado como símbolo contra Maduro, mientras impulsan políticas que desgarran a las mismas familias venezolanas que dicen “querer liberar”. La denuncia de Yorelis Bernal, madre a quien autoridades texanas arrebataron a su hijo de 2 años durante el proceso de deportación, según reportó TeleSUR, revela la hipocresía en estado puro: los mismos, que usan a los migrantes como arma propagandística, ahora los tratan como mercancía desechable. Cuando ya no pueden enviarlos a Guantánamo o El Salvador, recurren al robo de niños bajo el eufemismo de “protección migratoria”, mientras los hijos de estos ideólogos, y los de la propia Machado, duermen libres, a buen resguardo. Esta no es sólo doble moral: es la prueba final de que su retórica “libertaria” siempre operó sobre un mapa excluyente, donde los pobres son moneda de cambio y los niños migrantes, daños colaterales aceptables. ¿Dónde está la voz de la “lideresa” ante estos crímenes? Silenciada por el mismo cálculo político que la lleva a abrazar a quienes ven a los venezolanos no como ciudadanos, sino como instrumentos de su cruzada anticomunista.</p>
-  <br>
+  
+<div class="sep"></div>
   <p class="article-content"> Los hilos que unen a Marco Rubio, María Corina Machado y ExxonMobil tejen una red de intereses geopolíticos y económicos que trasciende la retórica democrática. Exxon, con sus multimillonarias inversiones en las aguas disputadas del Esequibo, ha sido actor clave en la escalada de tensiones entre Venezuela y Guyana, coincidentemente, el mismo escenario donde Rubio ha lanzado alarmas sobre una supuesta 'invasión venezolana' sin presentar evidencia (CNN, 3/10/2023). La sincronía es reveladora: mientras Rubio recibía $350,000 del sector energético en 2019 (OpenSecrets), impulsaba sanciones contra PDVSA que paralizaron la economía venezolana, y la OFAC, bajo presión de estos mismos grupos, revocó la Licencia 41 afectando directamente la producción petrolera nacional. El supuesto financiamiento de Exxon a las actividades de Machado completa este círculo perverso: una “oposición” que hace loby por medidas que estrangulan a su propio pueblo, mientras favorecen los intereses de una corporación que busca seguir explotando recursos en territorio disputado.</p>
 <br> 
 <p class="article-content">Esto no es política exterior: es un cabildo petrolero disfrazado de cruzada libertaria, donde el sufrimiento venezolano se convierte en moneda de cambio para contratos de extracción y ganancias bursátiles. Estas actividades, disfrazadas de "lucha por la libertad", priorizan beneficios geopolíticos y económicos (ej: Ley SB 1718 de Florida) sobre los derechos humanos, dejando a migrantes pobres en condiciones inhumanas. Anacleto lanzaría una pregunta que quedaría flotando como un derrame de crudo en el Caribe: “¿quién libera a Venezuela de sus “liberadores”?
@@ -438,15 +336,20 @@ LAURA DIB, CEPAZ
 SOREN KIERKEGAARD
       </div>
  <p class="article-content"> El ventilador giraba con suavidad y sin ruidos, pero sus oxidadas aspas sabían que apenas les habían aplicado una mano sencilla de barniz, para tratar de cambiar su aspecto, como si con ello cambiaran las verdades que allí discutían. En su mesa, y entre el corretear de mesoneros, Anacleto abre el archivo marcado con un sello de "Clasificado” y alzó la voz: <em>«¿Qué sabe el pueblo norteamericano sobre su "adalid anticomunista"?» </em>Preguntó, ajustándose los lentes.<em> «Menos de lo que deberían... y más de lo que él quisiera. Lo que vamos a diseccionar hoy no es un simple caso de corrupción política: es la autopsia de un camaleón mayamero cuya carrera es un manual avanzado de supervivencia en el pantano de Washington. Marco Rubio ha construido su carrera sobre dos pilares: la retórica anti-Venezuela y una red de conexiones que harían sonrojar a un lobista de los 80. Sin embargo, su pasado, y sus socios, delatan un patrón: el performance de la moralidad es sólo la fachada de un negocio mucho más sucio. Mientras los Díaz-Balart convertían el anticastrismo en negocio familiar, con Radio Martí, Rubio se convertía en su mejor alumno, el que luego heredaría su red. Y Rubio heredó la red. Mientras votaba leyes para endurecer el bloqueo a Cuba, su aliado David Rivera negociaba con la Venezuela de Guaidó. Pero... empecemos por el principio de esta farsa: los años 90, cuando el joven Marco Rubio, “abogado estrella” de Miami, defendía con ahínco a Hugo Sicilia, empresario condenado por lavar $20 millones para cárteles mexicanos. “Simple error contable”, alegaba Rubio. Curiosa defensa para quien hoy se llena la boca llamando narcoestado a Venezuela».</em> Anacleto hablaba con ese aire de quien conoce y desea compartir verdades incómodas: <em>«Pero el verdadero espectáculo viene con el narco-cuñado: Orlando Cicilia, arrestado en 1987 con 75 kilos de cocaína, y sentenciado a 20 años de cárcel, pero libre poco después gracias a un “Senador”, detalle que brilló por su ausencia en su autobiografía “An American Son”... porque la familia es lo primero… hasta que es un lastre».</em> Hojeó el archivo con gesto teatral: <em>«¿Autocensura o simple edición estratégica? Ustedes dirán: ¡Eran los 80! ¡Cosas de familia! Pero en política, el pasado no se borra: se esconde bajo la alfombra junto a los recibos de lavandería. Pocos políticos en EE.UU. han logrado mutar con la elegancia oportunista de Marco Rubio»</em> continuó, bajando la voz. <em>«De joven compinche de dudosos empresarios floridanos a senador redentor del exilio cubano. Pero bajo el traje de defensor de la democracia late un historial de conexiones turbias: desde su narco-cuñado hasta su lobby por petroleras usando dinero venezolano. Porque el verdadero Rubio no emerge hasta que el dinero huele a petróleo»,</em> soltó, dejando caer el sobre manila sobre la mesa. <em>«¿Ironía? No: hipocresía con aroma a gasolina. Avancemos a 2022: David Rivera, el operador histórico de Rubio, es arrestado por actuar como agente extranjero no registrado. Los documentos judiciales mencionan a un misterioso “Senador” que ayudó a obstruir una investigación federal por Ley RICO contra CITGO. En Florida sólo había dos senadores ese año»</em>  susurró Anacleto,<em> «uno era el ex-gobernador Rick Scott... el otro, nuestro protagonista. ¡Pero aquí viene lo bueno!»,</em> prosiguió, mostrando un informe de la Asociación Latinoamericana de Empresarios del Petróleo de Texas: <em>«Alejandro Terán, su director, reveló que Rubio recibió dinero de la Fundación Simón Bolívar (vinculada a CITGO) mientras hacía lobby para Exxon... ¡la misma que luego ganó contratos en Venezuela! ¿Coincidencia? En Miami, las coincidencias se pagan en efectivo»,</em> exclamó, golpeando el documento con el dedo.<em> «Y cuando las pruebas son incómodas, el establishment juega al “shoot the Messenger”. Ahora el trabajo es desacreditar a Terán... pero los documentos no sangran, no lloran, y sobre todo, no mienten. Según Terán, Rubio fue “lobista encubierto” de Exxon, la misma empresa que financió campañas de sus aliados. Los medios que hoy atacan a Terán son los mismos que ignoraron los vínculos de Rubio con Sicilia”.</em> Aquí Anacleto hizo una pausa dramática para preguntar. <em>«Entonces, camaritas, ¿quién necesita enemigos con amigos así?... Rubio es el arquetipo del político gringo-latino: usa el dolor del exilio para vender patriotismo de pacotilla, mientras sus socios juegan monopolio con el petróleo venezolano. Su leyenda de luchador anti corrupción se desmorona como un castillo de naipes frente a los documentos: desde los Díaz-Balart, pasando por Sicilia, hasta CITGO y la Exxon, su carrera es un catálogo de contradicciones. ¿Camaleón?»</em> dijo, encendiendo un cigarrillo.<em> «Sí, camaritas, Rubio convirtió su odio inexplicable a Venezuela en marca personal. Mientras tuiteaba consignas sobre dictadura, su operador Rivera recibía dinero de la Fundación Simón Bolívar (manejada por el equipo de Guaidó) y él tenía reuniones secretas con Lilian Tintori. ¿Solidaridad? No, negocios».</em> Sopló el humo hacia el ventilador y murmuró: <em>«Menos mal que nuestra mejor arma funciona: la foto con Lilian Tintori... ¡tiene muchas… y otras cosas más! Ya le tocó el tiempo de empezar a secarse,»</em> aseveró risueño, <em>“¡Y bajo la vigilancia de Trump!... ¿Mi veredicto?»</em> Se quitó los lentes, cansado, .<em>«En cualquier otro país, esto sería un escándalo nacional. En Miami, es sólo otro martes».</em> El ventilador paró de girar. Las aspas, ahora quietas, guardaban el secreto</p> 
-<br>
+
+<div class="sep"></div>
   <p class="article-content">Los orígenes de Marco Rubio desmienten su propio mito político. La familia Rubio no llegó a Miami como exiliados del comunismo en 1959, sino tres años antes, en 1956, con visa de trabajador temporal, según registro migratorio del Miami Herald, mientras Fidel Castro aún se encontraba en Méjico. Mario, su padre, pasó de barrendero en el bar “La Habana de Batista” a repartidor de leche para Publix (1956-1965) y luego “bartender” en “El Bohío”, legendario bar de la Calle 8 donde, según dichos de viejos parroquianos, se mezclaban ex-agentes de la CIA, mafiosos cubanos y futuros políticos. Para los 80s, ya tenía su propio negocio de limpieza de alfombras, “Magic Carpet Cleaners”; su esposa Orialis cosía en fábricas textiles, como miles de migrantes cubanas. Narco creció entre apartamentos baratos en West Miami y su primer trabajo: vender “hot dogs” en el “Orange Bowl”, poco sugería su futuro meteórico. Allí aprendió su primera lección política: todo es una transacción. La ironía es cruel: ese que hoy maltrata a los migrantes latinos debe su existencia a una visa como tal. Nunca menciona que su ascenso coincidió con conexiones oscuras: desde los Díaz-Balart (que ayudaron a regularizar el estatus familiar) hasta los clientes adinerados de “El Bohío”. La verdadera fábula no es su humilde origen, sino cómo lo reescribió.</p>
-  <br>
+
+<div class="sep"></div>
   <p class="article-content">Jeanette Dousdebés-Rubio, el espejo perfecto de la doble moral que define a su marido. Nació en Nueva Jersey en 1970 en el seno de una familia de refugiados ecuatorianos, su vida parece sacada de un guión de telenovela mayamera: Miss Ecuador USA 1990, coronada con el patrocinio de joyerías dudosas, modelo para agencias como Wilhelmina, y finalmente asistente de vuelo de American Airlines. Allí conoció a Rubio en 1996. Los archivos comerciales de Florida revelan que en 1995, “fue socia de Hugo Sicilia”, el narcotraficante que su entonces novio, Rubio, defendió como "error contable", en una boutique de lujo en Coral Gables. Facturas de esa época muestran transacciones en efectivo por joyas cuyo origen nunca se investigó. El verdadero negocio comenzó en 2006 al crear “Sunshine Properties LLC”, empresa que acumuló $8.7 millones en propiedades en Miami-Dade. Los registros muestran una dirección compartida con el bufete de lobbistas “DC Strategies Group”, cuyos clientes incluían a Exxon y CITGO. En 2010 recibió un “préstamo de $150,000” del Banco Popular de Puerto Rico, sancionado por lavado de dinero en 2018. La foto de sociedad en la revista “Ocean Drive” (1999) la muestra sonriente junto al narcotraficante Sicilia en una fiesta de gala.</p>
-  <br>
+  
+<div class="sep"></div>
   <p class="article-content">El patrimonio de Rubio huele a gasolina refinada con dinero ajeno. Detrás de su fachada de “senador del pueblo” esconde una red de inversiones que ruborizarían a un magnate petrolero. “Sunshine Properties LLC”, la empresa fantasma de su esposa, compró en 2021 una mansión en Miami-Dade por $2.3 millones, año en que Exxon Mobil, donde posee acciones desde 2017, obtuvo contratos millonarios en Venezuela tras las sanciones que él mismo promovió. El 14/03/2017, Rubio votó sanciones a PDVSA. El 22/03, Exxon firmó contrato en Venezuela. El 30/03, Sunshine Properties compró el apartamento en West Palm. ¿Casualidad? Registros del “Banco Sabadell” (Miami) y “Credit Suisse” (Suiza) muestran movimientos sospechosos bajo el nombre “Fondo R-42 Investments”, documentados en las “filtraciones” de 2019. Su apartamento en West Palm Beach funciona como “casa segura” para lobistas energéticos, según reportes de arrendamiento. El Reporte Financiero del Senado (2021, pág. 47) señala $750,000 en ingresos por “consultorías no especificadas”, que coinciden milimétricamente con pagos de la Fundación Simón Bolívar vinculada a CITGO. Los “Paradise Papers” destaparon el último hilo: un “trust en Islas Caimán” a nombre de su hermano, perfecto para esconder lo que el sueldo de senador ($174,000 anuales) jamás podría explicar. “Tres Rolex Daytona” (valor total: $120,000) completan el cuadro. ¿Cómo cuadrar estos números? O Rubio descubrió la piedra filosofal, o alguien está pagando la factura de su hipocresía. Los documentos, como siempre, no mienten: la basura huele, aunque la escondan en paraísos fiscales. ¡Cómo rinde ese sueldo!</p>
-<br> 
+
+<div class="sep"></div>
 <p class="article-content">Apenas Alejandro Terán destapó la cloaca, se activó el manual de contrainsurgencia política: 1) Negar sin pruebas, 2) Distraer con ‘ad hominems’ (¡es chavista!), 3) Borrar el rastro. Pero Terán tiene documentos que prueban que la Fundación Simón Bolívar, manejada por Guaidó, movió fondos a cuentas cercanas a Rubio, “Fondo R-42”. Rubio puede posar de mártir anticomunista, pero los papeles muestran al operador que cobró de CITGO (mientras hundía a Venezuela); sus nexos con narcos, petroleras y “lobbies” venezolanos son imborrables. Terán tiene facturas con sellos notariales, algo que no le perdona la élite de Miami. Por eso, atacar al mensajero es el último recurso de quienes no pueden refutar el mensaje. Terán tiene datos; sus críticos, “sólo desmentidos”. Y como dijo un sabio: “El dinero no huele, pero el petróleo manchado de hipocresía, sí.” Los medios que atacan a Terán no pueden explicar por qué callaron cuando David Rivera recibió $15 millones de PDVSA. Los mismos que tildan a Terán de “poco confiable” son los que celebraron los tweets de Rubio contra Maduro. ¿Su criterio? El dinero que les llega por publicarlos. La diferencia es que ahora hay testigos con copias de seguridad. ¡Quod erat demonstrandum!</p>
-<br> 
+
+<div class="sep"></div> 
 <p class="article-content">¿Perdonará Trump todas las barbaridades, que en su contra, Narco Rubio ha vomitado? Creo que su plan sugiere un patrón de desgaste político calculado. ¿Quemarlo definitivamente? De todas maneras, gracias Lilian por secarlo… ya sabemos lo de la mabita de tus fotos, nunca fallan. Ah… y Manuel López llegó al mundo como un “activo” más en la guerra contra Maduro: su nacimiento fue celebrado por la prensa internacional como “símbolo de resistencia”, pero los cálculos obstétricos dibujan una línea de tiempo incómoda. En Miami, hasta los cuneros pueden ser trinchera.
 </p>
     </div>
@@ -467,14 +370,17 @@ SOREN KIERKEGAARD
             ANTÓN CHÉJOV
       </div>
  <p class="article-content">Al llegar a El Bohemio, lo sentí algo raro. El ambiente se sentía lleno del olor a cigarrillo y había mucho humo. Era media mañana, como de costumbre, y noté la presencia de más gente que de costumbre, que habían llegado a escuchar la charla de mi querido Anacleto. El viejo y raído portafolio descansaba abierto, y Anacleto, con sus gafas ladeadas, me saludó con un ademán para que me sentara a su lado.<em>«¿Qué piensas del flamante Secretario de Estado, Marco Rubio?»</em> me preguntó en voz baja. Observó mi gesto y sonrió. Se volteó y con ironía fingida levantó la voz, inesperadamente, y dijo: <em>«Hoy hablaremos de una historia que parece escrita por Orwell, pero con acento de embajada. Marco Rubio lo ha hecho otra vez. Ah… pero esta vez por “defender la libertad”.» </em>Y soltó una carcajada, como solo él sabe hacer. <em>«¿La libertad de quién?, preguntarán ustedes. La de la libertad y los drones, claro, responderé yo.»</em> La profesora interrumpió: <em>«¿Otra vez ese tipo? ¿No lo habíamos diseccionado ya en tres reuniones?» </em> Anacleto sonrió y respondió cariñosamente: <em> «Sí, mi apreciada camarita… Pero es que esta vez se superó y la botó de jonrón: Se autoproclamó filósofo, “filósofo de la libertad”. Y como buen predicador, dictó su evangelio en Miami, durante la entrega del premio Lech Walesa a Berta Soler, una de sus feligresas más connotadas, en un acto que parecía una misa, pero con patrocinio del Departamento de Estado.» </em>Encendió un cigarrillo y continuó: <em>«Rubio comenzó su sermón con una frase que haría sonrojar a cualquier historiador serio: “La libertad es reciente, frágil, y otorgada por Dios. No por los pueblos, ni por las luchas sociales, ni por los mártires de la historia... ¡No! Por Dios, el mismo que bendice las sanciones, los bloqueos y los bombardeos humanitarios.” Lo dijo como quien recita un pasaje de su “manual de bolsillo para intervenciones”, “La libertad según Marco Rubio.”»</em> Desde el fondo, el pichón de periodista preguntó: <em> «¿Y eso lo dijo en serio?»</em>  Anacleto le miró a los ojos fijamente y respondió: <em> «Tan en serio como sus propuestas de intervención. Según Rubio, si no hay portaaviones, no hay derechos humanos; si no hay sanciones, no hay justicia; y si no hay premios, no hay verdad.» </em> El boticario golpeó la barra y con incredulidad inquirió: <em> «¿Y eso lo aplaudieron?» </em>  Anacleto sacó su pañuelo a cuadros, limpió sus lentes y gruñó: <em> «A rabiar. Porque la libertad que defiende Rubio es la del capital sin fronteras, la de la fe sin contradicciones, la de la política sin pueblo. Es la libertad de explotar, de invadir, de premiar a quien repita el guion. Iraq, Irán, Yugoslavia, Checoslovaquia, Libia, Yemen, Panamá, Honduras, Viet Nam, Camboya, Afganistán… y pare de contar. Ahora intenta invadir a Venezuela… por su petróleo.» </em>Abrió su viejo y raído portafolio y sacó tres hojas: <em> «Ya lo advertimos en charlas anteriores, es su “Trilogía del absurdo”…»</em> El viejo periodista comentó en voz alta: <em> «Ah… ¿Es que ahora se las da de filósofo?»</em> Anacleto, con la paciencia que lo identifica, lo miró cómplicemente y soltó: <em> «No se cree, camarita, se autoproclama. Su “filosofía” es una mezcla de catecismo neoliberal y manual de intervención. Cada vez que dice “libertad”, un dron despega desde Florida… y cada vez que menciona a Cuba, se activa una cuenta bancaria en Coral Gables.»</em> El salón rugió con murmullos. Anacleto bebió un sorbo de su café, negro como la conciencia de Rubio, encendió un nuevo cigarrillo y con tono solemne dijo: <em>«Nosotros, camaritas, desde aquí de El Bohemio, donde la ironía es método y la rabia es archivo, deberíamos crear el “Ministerio de la Verdad según Marco”, un organismo encargado de certificar qué es libertad, quién la merece y cómo se distribuye.» </em>El coronel retirado, con cierto sarcasmo, preguntó: <em> «¿Y cuáles serían sus funciones?» </em> y soltó una carcajada, imitando a Anacleto. <em>«Varias, camarita» </em> respondió<em>  «Otorgar premios a disidentes que hablen inglés y vivan en Miami; redactar discursos donde la historia comienza en 1776 y termina en el Pentágono; traducir “bloqueo y sanciones” como “medidas humanitarias”; reemplazar filósofos por senadores con Biblia y cuentas bancarias.»</em> En medio de risas, la profesora preguntó: <em>«Anacleto… ¿Y nosotros… qué hacemos?» </em>  Mi querido amigo, con una sonrisa de lado a lado, le respondió: <em>«Bueno, mi querida profesora… nosotros lanzamos el “Premio Anacleto al Pensamiento Crítico”, destinado a quienes se atrevan a pensar fuera del guion. Candidatos sobran: médicos cubanos perseguidos por salvar vidas, periodistas que escriben sin patrocinio, migrantes que no caben en la narrativa oficial… y muchos más.»</em> Apagó su cigarrillo en el cenicero, y con tono más académico continuó: <em>«Rubio ha sido premiado por premiar; aplaudido por aplaudir; citado como filósofo por quienes confunden libertad con franquicia. Por eso, mientras existan premios como el suyo, en El Bohemio seguiremos debatiendo con rabia, memoria y sentido del deber, y crearemos “El Bohemio Digital” para publicar y exponer nuestras conclusiones y decisiones sobre temas importantes. Porque la libertad no se predica, se practica, y el pensamiento crítico no se premia en Miami, sino en las calles, en los textos incómodos, en los silencios que incomodan.» </em> Todos murmuran como señal de asentimiento, mientras Carmen le pide al mesonero que sirva más café, la profesora sonríe con tristeza y el viejo periodista cierra su libreta. Anacleto los mira con ternura y les deja un regalo: <em>«Recuerden lo que decía Thomas Paine: “Aquellos que esperan cosechar las bendiciones de la libertad, deberán soportar, como hombres, la fatiga de defenderla”.»</em> </p>
-<br>
+
+<div class="sep"></div>
   <p class="article-content"><b> Rubio y el evangelio del premio - </b> En septiembre de 2025, Marco Rubio participó en la entrega del premio Lech Walesa a Berta Soler, líder de las Damas de Blanco. El evento, celebrado en Miami, fue presentado como un homenaje a la “lucha por la libertad en Cuba”. Sin embargo, lo que se celebró no fue la resistencia popular, sino la narrativa oficial del exilio alineado con Washington. Rubio, en su discurso, afirmó que “la libertad es reciente, frágil y otorgada por Dios”, y que debe ser defendida militarmente. Esta visión teológica-militar de la política no es nueva en su repertorio: ya en 2019 había declarado que “la democracia debe ser protegida con fuerza, incluso fuera de nuestras fronteras”. El acto fue cubierto por medios como <em>Diario Las Américas</em> y <em>Martí Noticias </em> que lo presentaron como un gesto de “solidaridad hemisférica”, sin cuestionar el trasfondo ideológico ni el uso instrumental de los derechos humanos como herramienta de presión geopolítica.</p>
-  <br>
+ 
+<div class="sep"></div>
   <p class="article-content"><b> La trilogía del absurdo como archivo crítico -</b> Los tres artículos que componen la trilogía de Anacleto sobre Marco Rubio, publicados en <em>El Bohemio Digital</em> en el 2025, y en medios independientes como <em>Pueblo Alzao</em>, aporrea.org y <em>El Pepazo,</em> elpepazo.com resaltan la capacidad de desmontar la retórica imperial desde una perspectiva literaria y militante. Quizá debieron renombrarse. “Marco Rubio: El ‘hijo americano’ y la farsa de su ética…” quizá debió llamarse: <em>Rubio y el evangelio del exilio</em>, porque en él se expone la construcción del “cubano libre” como figura mediática, funcional al lobby anticastrista y al negocio de la nostalgia.
   “El Camaleón Mayamero: Narco Rubio y su cruzada contra Caracas…” quizá: <em>”Rubio y el arte de la guerra cultural”</em>, en el que se desmontó la retórica del senador como una operación estética: convertir la política en espectáculo, la mentira en virtud, y la disidencia en mercancía. Y “Rubio, Machado y ExxonMobil: La tríada que ‘vende democracia’ y compra petróleo…” quizá: <em>”Rubio y el algoritmo del miedo”</em>, donde se reveló cómo el senador usa el lenguaje como arma: cada palabra es una bala, cada metáfora, una orden de captura. Estos textos no solo denuncian, sino que proponen una estética de la resistencia: el uso de la sátira, la memoria y la intertextualidad como formas de combate narrativo. Marco Rubio es <em> “el ahijado de la impunidad delictiva”. </em></p>
-  <br>
+  
+<div class="sep"></div>
   <p class="article-content"><b> La libertad como franquicia imperial - </b>La noción de “libertad” defendida por Rubio se inscribe en una tradición de intervencionismo estadounidense que ha justificado guerras, bloqueos y sanciones bajo el pretexto de proteger valores universales. Desde Vietnam hasta Iraq, pasando por Libia y Venezuela, el discurso de la libertad ha servido para encubrir intereses económicos y estratégicos. En el caso de Cuba, Rubio ha sido uno de los principales promotores del endurecimiento del bloqueo, del financiamiento a grupos opositores y de la criminalización de la cooperación médica internacional. En 2021, impulsó la Ley FORCE, que buscaba sancionar a países que aceptaran brigadas médicas cubanas. Su visión de la libertad excluye la soberanía, la autodeterminación y la justicia social. Es una libertad de mercado, de consumo, de obediencia. Una libertad que se premia en Miami y se impone con drones.</p>
-<br>
+
     </div>
   </Div>
   <!-- FIN DEL NUEVO ARTÍCULO -->
@@ -496,15 +402,18 @@ SOREN KIERKEGAARD
       </div>
 
      <p class="article-content">  El Bohemio está lleno del aroma denso del café recién colado. Es media mañana, la luz entra tamizada por las cortinas y los parroquianos saben que Anacleto tiene algo entre manos. El portafolio de cuero descansa abierto, y sus gafas, ladeadas, parecen apuntar cual daga a las mesas donde su auditorio aguarda la charla. <em>«Anacleto, ¿qué piensas del flamante Secretario de Estado, Marco Rubio?»</em> dispara el pichón de periodista, con ironía fingida. Anacleto sonríe, se remueve en la silla y, tras un sorbo de café, deja caer la primera frase: <em>«Un hombre que empieza su autobiografía mintiendo ya nos adelanta la trama. Su Hijo americano (2012) se presenta como descendiente de exiliados que huyeron del comunismo. Y uno lo lee casi con ternura, como si fuera la epopeya de una familia marcada por la tragedia histórica. Pero, ¿qué comunismo en 1956, si Batista aún reinaba en La Habana? Sus padres llegaron como tantos otros: migrantes económicos con visas temporales de trabajo. Él mismo, al escribir, se condenó. Ese libro no es memoria, es un manual de propaganda. Como diría Balzac: “Detrás de cada gran fortuna se esconde un crimen no confesado.”»</em> Hizo una pausa para soltar una reflexión <em>«La trayectoria de Rubio ejemplifica la tensión entre narrativa personal y ética política: mientras construye su imagen como "hijo del sueño americano", acumula contradicciones que sugieren “privilegios de élite, opacidad financiera y dobles estándares en políticas migratorias”. Sé que faltan pruebas concluyentes para hacer acusaciones directas, pero el patrón de su conducta genera “dudas razonables” sobre “conflictos de intereses”. Fíjense como ejemplo, camaritas, que en 2012 Rubio usó tarjeta de crédito republicana para gastos personales, incluido el remodelado de una piscina en su casa por un monto de $34,000 dólares y fue descubierto. Pagó multas éticas, pero no fue procesado judicialmente, según un informe de la Comisión Ética de Florida. Sí… existen contradicciones éticas y morales, conexiones cuestionables y opacidad financiera del senador estadounidense de origen cubano, al que por cierto, en la “Pequeña Habana” tildan de traidor.»</em> La gente en las mesas se agita y murmura. <em>«¿No y que eran exiliados?»</em> pregunta, con sarcasmo el boticario. <em>«No, eran buscadores de pan.» </em>respondió Anacleto <em>«Y vaya que lo encontraron: el padre, de barrendero en La Habana a bartender en La Calle 8; la madre, de ama de casa a costurera. Vidas dignas, sin duda, pero Rubio prefirió disfrazarlas con la épica del exilio. ¿Será que desde el inicio intuyó que su carrera necesitaría mitos más que verdades?... La gente tiene que saber quién es el verdadero “Marquito”, el vendedor de humo, ese que vive en la farsa, que predica una cosa y hace otra.» «Y nunca mencionó a su cuñado, ¿verdad?»</em>  sugirió el viejo periodista <em>«Claro que no.»</em> gruñó Anacleto <em>«Orlando Cicilia, esposo de su hermana Bárbara, fue arrestado en 1987 con 75 kilos de cocaína. Condenado a 12 años, salió en cinco. Se dice que gracias a “altas influencias” ¿Cómo se conjuga esa sombra con la pose de cruzado contra el narcotráfico? Recuerden a Galeano: “La hipocresía es el tributo que el vicio rinde a la virtud.” Rubio ha pagado ese tributo tantas veces que ya se confunde si habla como senador, abogado de narcos o Secretario de Estado.»</em> El coronel retirado golpea la mesa: <em>«¿Y no defendió él mismo a uno que lavaba dinero?» «Exacto, camarita»</em> murmuró Anacleto, luego de apagar su cigarrillo. <em>«A Hugo Sicilia, acusado de lavar 20 millones para el Cártel de Juárez. Rubio. Lo defendió con su bufete Rubio & Becker,  con el argumento de un “error contable”. ¿Error? ¡Jajaja!. Pero, como decía Maquiavelo, “un príncipe nunca carece de razones legítimas para romper su palabra.”»</em> El coronel retirado insiste: <em>«Pero Anacleto, ¿cómo pasa de esas cloacas a la política nacional?»</em> El silencio se hizo pesado. Anacleto tomó otro sorbo, pausado, antes de continuar. <em>«Con padrinos, siempre con padrinos. Los Díaz-Balart, herederos de la vieja élite batistiana, lo apadrinan, le abren Radio Martí, lo bañan en la retórica anticastrista. Y de allí, el salto a senador y a los brazos del lobby petrolero. Exxon, CITGO, los mismos que más tarde coincidirían con sus bienes raíces, su mansión en Miami, los Rolex que brillan más que su discurso.»</em> El sindicalista pregunta con sorna: <em>«¿Y de Venezuela?»</em> Anacleto afila la voz: <em>«Allí está el verdadero escenario. Rubio encontró en el petróleo venezolano la llave para complacer a su jefe naranja. Promovió sanciones que hundieron economías familiares, mientras su esposa compraba propiedades en West Palm Beach y Miami. “Coincidencia”, dirán. Pero los registros muestran depósitos, trusts en Islas Caimán, un flujo de dinero que casualmente acompaña cada sanción aprobada.»</em> La profesora preguntó asombrada <em>«¿Y ahora, en el Caribe?»</em> Anacleto inhaló y exhaló el humo de su cigarrillo y con parsimonia soltó: <em>«El último acto de su farsa. Anuncia “guerra contra el narcotráfico” en aguas donde apenas transita un 5% de la droga. Se fotografía en barcos y bases militares en Ecuador, desde donde sale más del 84% del tráfico hacia EE.UU. y Europa, según la ONU; se reúne con un presidente que todos saben, maneja las rutas del polvo blanco. ¿Será que el mapa del narcotráfico cambia según los intereses de Washington?»</em> El viejo periodista aplaude la ironía y pregunta: <em>«Entonces, ¿qué nos queda, Anacleto?»</em> Anacleto, con la paciencia que da la experiencia, le responde <em>«Nos queda un hombre que habla de moral con un Rolex en la muñeca, que posa como guardián de la democracia con un cuñado narco, que se vende como hijo del exilio cuando sus padres solo buscaron trabajo. Un hombre que, como decía Tolstoi, “se ocupa en engañar a los demás, y termina engañándose a sí mismo.”»</em> Apura el café, cierra la libreta y remata: <em>«Marco Rubio no es el hijo americano: es el ahijado perfecto de la impunidad. Y si ataca a Venezuela con tanto ahínco, no es por principios ni valores, sino porque el petróleo, ese dios moderno, dicta su agenda. Porque, como recordaba Galeano, “los que trabajan tienen miedo de perder el trabajo, los que hablan tienen miedo de hablar, y los políticos tienen miedo de perder el favor de los poderosos.”»</em> Ahora todos querían hablar al mismo tiempo. Anacleto los dejó hablar, como quien disfruta la orquesta de la duda. Finalmente, apoyó ambas manos sobre la mesa. <em>«Marco Rubio representa el modelo perfecto de una ética de alquiler. El niño del “exilio inventado” se convirtió en adulto del “petróleo asegurado”. Nos dice que lucha contra dictaduras, pero calla sobre su dinero en las islas Caimán, sobre David Rivera, su operador detenido por actuar como agente extranjero, sobre las mansiones y relojes que no cuadran con su salario. Y mientras tanto, amenaza a Venezuela como si fuera una guerra personal. Pero lo que está en juego no es la democracia: es el crudo, es el Caribe, es la obediencia a su amo político. ¿Será que algún día la historia se encargue de devolverle la verdad que él quiso borrar de sus primeras páginas?»</em> Con la media sonrisa de quien huele la pólvora antes de que estalle, Anacleto bajó la voz: <em>«Y todavía falta lo mejor, camaritas. Se dice, se comenta, que el jefe naranja le tiene montada una celada a su pupilo. Que lo usará en la Secretaría de Estado hasta diciembre, el tiempo justo para que su hermana se siente en el Senado y el vice Vance se proyecte como presidenciable. Y después, ¡zas!, lo deja en el aire: sin curul, sin cargo, sin paracaídas. ¿O acaso creen que Trump no le conoce las verdaderas intenciones a Rubio? La supuesta lealtad se paga con la moneda del desprecio. Así es el poder: quien juega a serruchar, termina con la rama rota en las manos.»</em> La gente guarda silencio. En El Bohemio, hoy las palabras de Anacleto no dejan certezas, solo preguntas que se clavan como anzuelos en la mente de quien escucha. <em>«El poder, camaritas, no solo desnuda, también exhibe. Y aquí tenemos a un hombre que empezó mintiendo sobre su origen y terminó fabricando enemigos para justificar su fortuna. El verdadero exilio de Rubio no fue de Cuba: fue de la verdad.»</em></p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"><b> El mito fundacional -</b> La narrativa de Rubio se construyó sobre la idea de ser hijo de exiliados del comunismo, pero los archivos migratorios prueban lo contrario. Sus padres llegaron en 1956, tres años antes del triunfo de Fidel Castro, como tantos migrantes económicos. El mito del exilio no solo le dio una base política dentro del electorado cubano de Miami, sino que lo blindó frente a la crítica: cuestionar a Rubio era cuestionar el sufrimiento del exilio. Sin embargo, esa falsedad inicial nos lleva a la pregunta: cuántas otras narrativas en su carrera son artificios. La omisión de su cuñado Orlando Cicilia, traficante condenado, es la segunda capa de silencio. Rubio aprendió pronto que la política en Miami no se alimenta de hechos, sino de relatos. Y si el relato necesita héroes, él está dispuesto a inventar su propia epopeya. Hoy la cubanidad lo tilda de traidor.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"><b>El negocio del petróleo - </b>Desde su llegada al Senado en 2010, Rubio abrazó con fuerza la agenda petrolera. Sus principales donantes provenían de Exxon y lobbies energéticos. Cada sanción contra PDVSA o CITGO coincidía con movimientos financieros en las propiedades familiares, préstamos sospechosos y depósitos en fondos opacos. La cronología habla más fuerte que los discursos: en 2017, tras promover sanciones, Sunshine Properties, empresa ligada a su esposa, adquirió propiedades en West Palm Beach. Ese mismo año, Exxon ganó contratos en Venezuela. Mientras se nos vendía la retórica de libertad y democracia, en los registros aparecían relojes Rolex, mansiones y trusts en paraísos fiscales. La pregunta es inevitable: ¿defendía a los venezolanos o a los accionistas?</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"><b>Narcotráfico y Caribe - </b>La “guerra contra el narcotráfico” en el Caribe es el capítulo más contradictorio de Rubio. Con estadísticas de la ONU en mano, apenas un 5% de la cocaína mundial transita por esa ruta. El 84% sale desde Ecuador y Colombia, pero allí los acuerdos políticos son intocables. Días atrás, Rubio se reunió con el presidente de Ecuador para ratificarle su apoyo, pese a los informes que señalan al país como principal corredor de droga hacia EE.UU. y Europa y a sus empresas como sus exportadoras. Así, mientras se militarizan las aguas del Caribe con buques norteamericanos, los verdaderos cargamentos cruzan el Pacífico y el Atlántico casi sin obstáculos. La guerra, entonces, no es contra la cocaína, sino contra la soberanía. El Caribe se convierte en escenario para presionar a Venezuela y mostrar fuerza, aunque los números expongan la farsa.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"><b>La trampa del jefe naranja - </b>Se dice en los pasillos de Washington que la “lealtad” de Marco Rubio no engaña a su jefe. Trump, experto en cobrar afrentas, no ha olvidado cómo el senador lo llamó “peligroso” durante las primarias de 2016, ni cómo sus operadores tanteaban una agenda presidencial propia. Fuentes allegadas al Partido Republicano han alertado que la silla de Rubio es temporal: la jugada sería mantenerlo como Secretario de Estado hasta diciembre, mientras la hermana de Trump asegura un curul en el Senado y el vicepresidente J.D. Vance refuerza su perfil de candidato sucesor. Después, sin Senado que lo respalde y con el cargo en el gabinete en manos del mismo Trump, quedaría expuesto y prescindible. ¿Será que Rubio no advierte la trampa, o confía demasiado en su habilidad para nadar entre tiburones? Se cree que la ironía es evidente: quien se dedicó a serrucharle la rama a tantos, pudiera terminar cayendo por la sierra de su propio jefe. Y entonces, la “supuesta lealtad” se revelará como lo que siempre fue: una moneda falsa que, tarde o temprano, nadie quiere recibir.</p>
-<br>
     </div>
   </Div>
   <!-- FIN DEL NUEVO ARTÍCULO -->
@@ -526,9 +435,11 @@ SOREN KIERKEGAARD
       </div>
 
 <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;">La mañana estaba fresca y en El Bohemio, el café olía a rescate urbano. Sin ningún tipo de apuro, Anacleto acomodaba su silla al lado de la mía bajo su sombrero raído. Colocó el portafolio sobre la mesa, sorbió un trago de su café, miró a su entorno, sonrió, y expuso:<em>«Buenos días, camaritas, hoy hablaremos de esos raros momentos en que una ciudad encuentra su rumbo... aunque sea por un corto tiempo y de quien la lleva por el camino correcto. Hoy hablaremos del milagro silencioso que vivió Maracaibo entre 2000 y 2008 bajo la batuta de Gian Carlo Di Martino. Estemos claros: no fue un huracán, pero sí una brisa estratégica que reavivó calles olvidadas y confianza ciudadana.»</em> Tomó aire y con gesto de arqueólogo urbano, sacó unas fotos amarillentas del vetusto portafolio. <em>«”2006: La Plaza El Buen Maestro renace tras once meses de trabajo”, fue el titular de Panorama»</em> soltó Anacleto <em>«No fue maquillaje, fue rescate de memoria. Se propuso recuperar la identidad y lo hizo paso a paso. En 2006, convirtió la Plaza El Buen Maestro (1948) en un símbolo de renacimiento urbano. Un trabajo de once meses, considerado “una recuperación integral” por la Fundación Arquitectura y Ciudad. No era una simple inversión cosmética: era una obra que nos devolvió memoria y orgullo a los maracaiberos.»</em> El coronel retirado, saboreando su café, recordó: <em>«Antes, esa plaza era un nido de maleantes.» «¡Exacto!»,</em> asintió Anacleto: <em>«Y la transformó en un sitio público digno de reconocer, un polo cultural en medio de la ciudad.»</em> Hizo una pausa dramática y levantó su voz: <em>«¡Como el Pachencho Romero para la Copa América 2007, camaritas! ¿Quién la trajo a Maracaibo?... Él.»</em> Bajando el tono, más no la excitación, agregó: <em>«Mejoró el Estadio Pachencho Romero, la ciudad brilló y fue sede de la final. Esa fue su carta de presentación al continente: ¡Maracaibo podía ser una anfitriona de primera!; una señal muy clara de que Maracaibo podía mirar al sur sin complejos.»</em> El joven universitario preguntó: <em>«¿Eso no se había intentado antes?»</em> Anacleto respondió: <em>«Antes no había estructura, y después careció de dirección política. Él tuvo las dos: visión urbana y músculo electoral. En 2000, ganó con el 56% postulado por UNT, aunque ya para 2004 fue el MVR quien lo respaldó, marcando así su ruptura con Rosales y su UNT. No fue oportunismo, fue convicción; no fue solo una fractura política, fue un divorcio de visiones.»</em> Anacleto ajustó sus lentes, cuando el boticario de la esquina preguntó: <em>«¿Y la gestión anterior, con Rosales?» «Buena pregunta»,</em> respondió Anacleto. <em>«Rosales puso bases, pero fue Di Martino quien las consolidó. Y cuando tuvo opción de trepar a la Gobernación en 2004, prefirió la Alcaldía. No por comodidad: estaba convencido de que lo que estaba haciendo merecía continuidad.»</em> La tensión subió cuando Anacleto recordó su giro político: <em>«Desde su reelección con el MVR hasta su militancia actual en el PSUV, Di Martino no ha escondido su apuesta: una gestión urbana con músculo político. En 2008 disputó la Gobernación contra Pablo Pérez, pero perdió, lo que demostró que no siempre lo técnico vence a lo partidista, que en Zulia la gente no votaba por obras, sino por su credo… y aquí, por la influencia gringa de los campos petroleros del pasado, siempre ha existido un sentimiento proyanqui opositor. Gian Carlo no fue perfecto en su gestión, pero comparado con lo que había antes y vino después... »</em> Anacleto dejó a propósito la frase en el aire, se acercó a la mesa, levantó su pocillo para darle un sorbo al café y con añoranza dijo: <em>«El solo recordar a la Maracaibo limpia y bella de épocas de feria y navidades, de su gestión, se me ponen los pelos de punta. ¡Qué tiempos aquellos!»</em> Uno que acababa de llegar, preguntó con sarcasmo periodístico: <em>«¿Y las acusaciones de su relación con el ELN?»</em> Anacleto exhaló una bocanada de humo y gruñó: <em>«En 2008, por ZuvisionTV se denunció que enviaba alimentos al ELN. De inmediato él lo refutó como un “montaje” político para afectar su credibilidad, y luego la investigación demostró que era falso, pero… ya el daño estaba hecho, la gente cree lo que quiere más no lo que no debe. Las investigaciones lo exoneraron ya que hasta el supuesto guerrillero desmintió el hecho. El episodio nunca tocó sus obras, y eso es porque sus proyectos hablaban por él… eran más fuertes que los rumores.»</em> Miró a los presentes, su ceño ligeramente fruncido. <em>«Camaritas, no lo enaltezcan como un santo que no es; tampoco escondan su eficacia bajo la bandera partidista. Fue un alcalde serio, eficiente y faro de renacimiento urbano. Comparado con anteriores y posteriores, su gestión fue un oasis de sentido en medio del polvo político.»</em> Apagando su cigarrillo con gesto conclusivo aclaró:<em> «Luego fue cónsul en Milán, y allá aprendió de ciudades que funcionan y de calles que respiran. Imagino que cuando vuelva a gobernar, primero cobijará plazas, calles y estadios… luego se definirá el credo. Eso es lo que hace a un buen alcalde, y a un buen proyecto municipal.»</em> El ventilador siguió girando. Afuera, una Maracaibo muy distinta a la de aquellos años intentaba recordar su momento de brillo.</p>
-<br>
+
+<div class="sep"></div>
 <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;">Sin duda alguna las preguntas claves que se hacen los analistas políticos son: ¿Puede un hombre que gobernó Maracaibo en la era de la bonanza petrolera resolver los problemas de una Maracaibo en ruinas? ¿Servirán sus exitosas recetas del 2000-2008 para lograr el milagro de volver a hacer de nuestra metrópoli “la ciudad más bella que existe en el Continente”? Sí…, analizar el regreso de Di Martino a la alcaldía de Maracaibo, con su experiencia consular en Italia y el respaldo del Polo Patriótico, ofrece un terreno fértil para una evaluación estratégica, sobre todo luego de gobiernos “familiares, partidistas e improvisados” desde Manuel Rosales hasta Adrián Romero Martínez. Manuel abandonó su gestión cuando se convirtió en prófugo de la justicia en el 2009 (voló al Perú y Daniel Ponne culminó su mandato) y Adrián Romero termina la gestión de Rafael Ramírez, hoy reo de la  justicia por corrupción. Es un secreto a voces: los servicios municipales de Maracaibo son un desastre y la recolección de la basura, como en tiempos de Eveling, tiene a la ciudad como un chiquero.</p>
-<br>
+
+<div class="sep"></div>
 <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;">Habrá quien presente como desventaja una supuesta desconexión con la realidad actual de Maracaibo: La ciudad ha sufrido un deterioro significativo en infraestructura, servicios básicos y calidad de vida desde su última gestión. La experiencia en Milán, una ciudad desarrollada, podría no haberlo prepararlo para la complejidad de gestionar una urbe con colapsos recurrentes de servicios. Pero, no olvidemos que es “maracucho rajao”, a pesar de ser hijo de migrantes italianos, y que su familia la tiene aquí, lo que lo mantuvo en un ir y venir perenne. Su paso por el consulado de Milán pudo haberle dado una perspectiva diferente sobre gestión urbana, servicios públicos, y cooperación internacional, ofrecido modelos de ciudades europeas que podrían aplicarse en Maracaibo y profundidad en su visión urbana. Su permanencia al frente de la Alcaldía, pese a tentaciones mayores, reflejó compromiso con la ciudad. Ya no es un muchacho. Su madurez no solo es de edad, sino también política lo que hace posible una gobernanza responsable. La situación actual de Maracaibo hace que su regreso sea un caso de estudio muy interesante.</p>
     </div>
   </div>
@@ -551,11 +462,14 @@ SOREN KIERKEGAARD
 <p><em>«Buena pregunta»,</em> dijo él. <em>«Yo me la he hecho también. Y la respuesta es escalofriante: es ambas cosas. Venganza… y negocio. El trauma del Holocausto se convirtió en licencia para la impunidad. Gaza se volvió un laboratorio: de armas, de control social, de propaganda. ¿Sabe usted cuántas empresas militares prueban tecnología en Gaza antes de venderla al mundo? ¿Sabe cuántos discursos de odio se exportan con sello de ‘defensa’ desde Tel Aviv?»</em> El coronel retirado, hasta ahora en silencio, preguntó: <em>«¿Y qué dice EEUU?»</em> Anacleto soltó una risita ácida. <em>«¿Decir? ¡Lo financia! ¡Lo legitima! ¡Lo aplaude! Hoy, con Donald Trump reeditado y su secretario de Estado Marco “Narco” Rubio al frente, Estados Unidos no solo aplaude: dirige la orquesta desde Washington. Y quizá, sólo quizá, el convicto anaranjado del norte ya tenga preparado el “plan Marshall sionista” para reconstruir Gaza... con hoteles frente al mar, porque donde hoy hay ruinas, tierra arrasada, mañana quieren construir hoteles. Sí, camaritas… no se sorprendan si un día nos venden “el nuevo Dubai palestino”, construido con manos forzadas, memorias quemadas y cemento “made in USA”.»</em> La taza de café se había enfriado, pero nadie se movía.</p>
 <p> Una profesora de literatura preguntó: <em>«¿Y el mundo? ¿la ONU? ¿La Corte Penal?» «Están redactando comunicados»</em> suspiró Anacleto. <em>«Como quien ofrece panfletos a una casa en llamas. La ONU habla, Estados Unidos veta, Europa finge y calla. Las redes vomitan confusión: confunden al sionista con el judío, al asesino con la víctima, al ocupante con el desplazado. Anótenlo: los muertos de Gaza no son daños colaterales. Son parte del negocio»,</em> agregó con parsimonia. <em>«No se trata de erradicar el terrorismo. Se trata de reescribir el mapa. Y como decía mi abuelo… quien necesita borrar un mapa… es porque nunca fue dueño del terreno.»</em> Se levantó despacio. Ajustó su chaqueta. <em>Occidente llora el Holocausto... pero financia uno nuevo en tiempo real. ¡Hipocresía con olor a napalm! Quieren que el mundo confunda fe con fascismo. Y que quien critique al verdugo, sea tachado de antisemita. Pero la verdad, camaritas, es más sencilla: hay niños sin piernas, madres sin leche, hospitales sin oxígeno y gobiernos sin vergüenza. El sionismo no es religión. Es doctrina de exterminio. Y Gaza es su altar sangriento.»</em> Anacleto sonrió, sabiendo que su crítica se quedaba corta ante la evidente realidad. <em>«Escriban, camaritas, escriban. La historia la escriben los sobrevivientes… si alguien los deja vivos. Los muertos, aunque no hablen, no mienten. Que se sepa. Que se recuerde. Porque el olvido también mata, aunque eso es otro capítulo de esta historia. Pero les aseguro que es igual de oscuro y perturbador.»</em></p> 
 <p>Salió hacia los sanitarios, pero en la mesa quedó una idea sin desarrollar, un cigarrillo a medio apagar… y el peso de una verdad que aún el mundo no se atreve a mirar de frente.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"> Solo basta una mirada más allá de los escombros para darnos cuenta de que no es una metáfora el decir que Gaza ha sido transformada en un campo de concentración a cielo abierto: es una realidad numérica. Sólo en mayo, la escuela Fahmi al-Jarjawi fue bombardeada, matando al menos a 36 personas, entre ellas 18 niños. El porcentaje de civiles muertos en Gaza es abrumador: entre 80 % y 90 % según múltiples estudios. Las Naciones Unidas ya califican al territorio como “el lugar más hambriento del planeta”, con el 100 % de la población en riesgo de hambruna, y alertan sobre un desastre absoluto si no se permite el paso de ayuda. Les dicen que es guerra, pero no les dicen la verdad: Gaza sufre un bloqueo total desde marzo. Han congelado los camiones de ayuda, faltan 300 al día, y ahora mueren 470 000 personas en estado crítico de inanición. UNICEF advierte que decenas de miles de niños padecen malnutrición aguda. Con estos datos oficiales cabe preguntarnos: ¿Venganza, negocio o despecho? Porque las tres categorías deben ser tomadas en cuenta a la hora de un análisis profundo.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content">¿Venganza? Puede ser. En el pasado nunca pudieron vencer al pueblo otomano. ¿Interés económico? Por supuesto. Las empresas de armas prueban su nueva artillería allí. ¿El plan de Trump? Fácil: Gaza puede ser “el próximo resort protegido por muros nucleares”, financiado por quienes lucran con la violencia. Si esto de verdad fuera una guerra, existirían líneas del frente y tendríamos dos ejércitos, sin importar que uno fuera mucho más grande. Pero aquí solo hay poblaciones marginadas recibiendo migajas, hambre y sufrimiento. Al final, el sionismo hoy revive la lógica más aberrante del nazismo: un exterminio planificado contra una población desarmada. Eso no es guerra… es genocidio moderno. Y no, no confundan el SIONISMO con el JUDAÍSMO. El primero es una ideología política, con su maquinaria de exterminio, como el NAZISMO. El segundo, una religión antigua que ha sido usada como escudo para justificar el abuso. Es un craso error confundir fe con fanatismo. Como bien dijo Anacleto: “Ahora, las víctimas de ayer son los victimarios de hoy. Y no unos cualquieras: son más crueles, más sistemáticos, más impunes”. Los pueblos oprimidos tienen buena memoria y los palestinos llevan más de setenta años llevando leña del invasor sionista.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"> Matar a 55 mil civiles, bloquear alimentos, bombardear hospitales, disparar en la cabeza a niños que buscan agua... eso no es defensa. Es genocidio. Es limpieza étnica. Es una repetición, con otros uniformes, de lo que se suponía había terminado en 1945. Irán,  en respuesta a un ataque israelí, acaba de atacar en Tel Aviv instalaciones militares y el gobierno genocida de Netanyahu, ese carnicero con corbata de seda y manos manchadas de sangre, empezó a gritar que Irán está cometiendo genocidio contra Israel. Es decir, acusan a Irán de hacer lo que ellos llevan años haciéndole a Palestina. Israhell posee armas nucleares y “pide a EEUU” que no le permita a Irán tenerlas también por el terror que les causa verse en el espejo de Gaza: ruinas, tierra arrasada, desolación y muerte. Como también expresó Anacleto… “eso es otro capítulo de una historia que no ha terminado”. Los palestinos siempre han vivido allí; los “sionistas”, desde la época del imperio otomano, a través de Herzl, pedían un “pedazo” de tierra donde crear su nación. Eso de “la tierra prometida” es el invento más increíble que se ha escuchado. ¿Cuál es la traducción de ISRAEL? La Historia nos la está contando.</p>
     </div>
   </div>
@@ -574,17 +488,23 @@ SOREN KIERKEGAARD
 
 <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;"> Llegué al café y me senté en una silla al lado de la mesa, en la que rodeado por quienes le escuchaban, Anacleto decía. <em>“Camaradas, no se olviden que ha Maquiavelo lo han condenado de por vida al citar equivocadamente aquello de «el fin justifica los medios» como suyo. Nicola jamás dijo eso. Lo que escribió en el «Príncipe», que fue dedicado a los Medici, fue: «Trate, pues, un príncipe de vencer y conservar el Estado, que los medios siempre serán honorables y loados por todos» y se refería a que, como el primer deber de un gobernante es el bienestar y la prosperidad de su pueblo, todo lo que se haga para lograrlo es lícito. No olviden que «El Príncipe» ha sido catalogado como una de las primeras obras de «filosofía política», en la que se considera que la verdad efectiva es más importante que cualquier ideal abstracto. Pero puedo citar sin inconveniente alguno lo dicho por el teólogo alemán Hermmann Busenbaumen su libro ‘Medulla Theologiae Moralis’: «Cum finis est licitus, etiam media sunt licita», traducido ‘Cuando el fin es lícito, también lo son los medios’. ¿No creen ustedes que aguantar el chaparrón ante tantas dificultades, fortuitas o creadas por la mano enemiga, como lo ha hecho dignamente Nico, va a tener un final feliz para todos nosotros y un lugar en la historia? ¡Cualquier otro hubiera ya tirado la toalla! Su resistencia y constancia ha hecho que el «les pido elijan a Nicolás» solicitado por nuestro Gigante HRChF tenga tremenda validez. No me canso de decir que Nico no ha podido gobernar en santa paz ni un solo día desde que fue electo presidente.</em></p>
 <p class="article-content"><em> La opudrición apátrida criolla ha utilizado todas las herramientas en su poder y las que le han dado ‘El Cartel de Lima’, la OEA, los EEUU, la UE y Canadá y pare de contar, para derrocarlo, y no ha podido, gracias a su tenacidad y a la resistencia de nuestro bravo y aguerrido pueblo. ¿O es que acaso la injerencia, con sus ilegales sanciones, de EEUU, la UE y otros países, en los asuntos internos de Venezuela no ha tenido un impacto negativo en la economía, la política y la sociedad del país? ¿Será que la opudrición criolla es la confirmación más viva de que la ignorancia no es innata sino que se cultiva como ella lo hace? ¡Y vaya que lo hace muy bien! ¿Recuerdan cómo murió nuestro Libertador, desterrado, traicionado y hasta olvidado por las naciones que liberó? ¿Recuerdan a los que lo traicionaron por las ambiciones al poder? Al igual que nuestro Simón Bolívar y Chávez, y respetando las distancias, Nico le ha echado una y parte de la otra a la resolución de tantas calamidades y problemas, como ya dije, unos fortuitos y otros creados. Nuestra malinche no ha descansado un minuto en sus petitorios de sanciones, invasiones y bloqueos, en su afán de poder tumbar a Nico para volver a gobernar nuestra patria, y se olvidan que aquí existe un pueblo guerrero, valiente y resistente que a cada rato les grita que jamás volverán. ¿Se hacen los sordos porque no quieren entender? ¡O sea!”.</em></p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"> Lo primero que debemos preguntarnos es: ¿Qué pasaría en EEUU si alguien se auto proclama “Presidente”, en una plaza, y Venezuela y otros países salen a reconocerlo de inmediato? Se puede inferir que eso tendría consecuencias legales y políticas muy graves. Según la Constitución de EEUU, el “presidente” es elegido por un Colegio Electoral que se basa en resultados de elecciones en cada estado. El electo debe jurar el cargo el 20 de enero del año siguiente a las elecciones, ante el presidente del Tribunal Supremo. Si alguien se autoproclama presidente en una plaza, estaría violando la Constitución y el orden democrático, y sería acusado de sedición, rebelión o traición, que conllevan penas de cárcel que van desde 10 hasta 30 años. Además, se enfrentaría al rechazo de la población, instituciones y medios de comunicación, que defenderían la legitimidad del presidente electo y de inmediato rompería relaciones con las naciones que osaran reconocer al impostor. Pero en los países donde aplican sus “golpes blandos” e imponen a sus títeres, hacen todo lo contrario. ¡Hipócritas!</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content">La transparencia de las elecciones en Venezuela ha sido reconocida por veedores y acompañantes internacionales, y hasta por el Centro Carter, por ser un proceso limpio, automatizado, regido por el Consejo Nacional Electoral, y éste supervisa el control del escrutinio. En ellas han ganado gobernaciones, alcaldías, diputaciones y concejalías candidatos de diferentes partidos. El ejemplo más vivo es Manuel Rosales en el Zulia y en el 2015 la mayoría opositora para la Asamblea Nacional. Sin embargo la opudrición criolla siempre grita “fraude” cuando no ganan. Donde ganan, el CNE es bueno; donde pierden es malo. Siempre ofrecen pruebas, como lo hizo Ramos Allup, pero nunca las han presentado, y como nunca han podido ganar la presidencia, los “think tanks” gringos decidieron crear la farsa de la autoproclamación en una plaza y su inmediato reconocimiento, tanto el propio como el de sus lacayos. Nuestra CRBV también prevé para estos casos acusaciones por sedición, rebelión o traición, con penas similares a las ya mencionadas para EEUU. Pero si aquí se cumplen, hay dictadura… allá no.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"> Ahora bien, el si Nico ha tenido éxito en su gestión o si pudiéramos llamarla gesta, es una pregunta compleja y polémica que puede tener diferentes puntos de vista. En este contexto, se podría decir que depende de cómo se mida el éxito y qué objetivos se persigan; el si se reconoce el injerencismo externo y sus agresiones; si se consideran los actos apátridas de la oposición; si se admite el efecto de las ilegales sanciones y bloqueos; o si sólo se va a calificar el acierto o error de Nico ante eso. ¿Olvidamos que a nuestro país le han aplicado ilegalmente bloqueos, sanciones económicas, políticas y diplomáticas, con el objetivo de presionar por un cambio de régimen y apoyar a la oposición liderada por Guaidó, que se autoproclamó presidente interino en 2019 con el reconocimiento de 50 países lacayos de EEUU, y que frente a estas “sanciones” 120 naciones, que agrupa el MNOAL, respaldan al gobierno legítimo de Venezuela y han condenado las medidas coercitivas impuestas por EEUU y la UE, instando al respeto de la soberanía, integridad territorial e independencia política de nuestra patria?</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content">Además, Cuba, Irán, Turquía, Nicaragua, Bolivia y México, y luego de la desaparición del Cartel de Lima, Brasil, Argentina y Uruguay, han expresado su solidaridad con Venezuela y han mantenido, en lo posible, su cooperación en diversos ámbitos, como el comercial, el energético, el humanitario y el diplomático así como han reconocido la legitimidad de Maduro como presidente y han abogado por el diálogo y la negociación, propuestos por Nico, como vías para resolver la crisis. Y es que Nico ha logrado mantener el poder político frente a los intentos de la oposición y la comunidad internacional de propiciar un cambio de régimen; ha logrado conservar el apoyo de las Fuerzas Armadas, el control de las instituciones del Estado y el reconocimiento de países aliados como China, Rusia, Cuba e Irán; ha buscado alternativas económicas frente al bloqueo financiero y comercial impuesto por EEUU y la UE; ha diversificado sus socios comerciales, al vender petróleo y oro a países como Turquía, India y EÁU. No ha sido fácil, pero ya empezamos a ver luz al final del túnel y venceremos.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content"> Sin duda alguna, las ilegales y unilaterales sanciones contra Venezuela, han logrado el deterioro de la situación económica y social, provocando hiperinflación, contracción del producto interno bruto, escasez de alimentos, medicinas y combustible, y la migración de venezolanos hacia otros países, donde, por cierto, los han tratado muy mal y cuyos gobiernos han mercantilizado su situación exigiendo fondos internacionales para poder acogerlos. Muchos de ellos, decepcionados, han regresado al país en vuelos fletados por nuestro gobierno, arrepentidos de haber creído en pajaritos preñados; el plan de  aislar a Nico internacionalmente ha fracasado porque 120 son más que 50, sobre todo si entre ellas están China, Rusia, Irán y los miembros del BRICS, con más del 60% del comercio mundial; ya nadie reconoce al pelanalgas como presidente interino; Venezuela se retiró del Ministerio de las Colonias y pronto será miembro de los BRICS; Nico ha expresado disposición al diálogo con la oposición y con la comunidad internacional para buscar una solución pacífica a la crisis, pero con condiciones.</p>
-<br>
+
+<div class="sep"></div>
 <p class="article-content">En Venezuela SÍ queremos elecciones libres, sí, pero libres de sanciones, bloqueos, injerencias, agresiones e intervencionismo extranjero; queremos respeto a los votos que el pueblo, aún ante tanta adversidad, depositó en las urnas para elegir a Nicolás; queremos respeto a nuestra soberanía e independencia; queremos respeto a nuestras instituciones; queremos el fin del ataque a nuestra moneda y a PDVSA; queremos fin al maltrato a nuestros migrantes, estén donde estén; queremos nos dejen progresar en paz, amor y concordia. Pero más que nada, queremos que los venezolanos dormidos despierten y se den cuenta lo valioso que es el respeto a nuestra constitución y leyes para lograr la armonía necesaria de un pueblo feliz. Soy un creyente convencido que bajo la tutela de Nico y con la ayuda de tan valiosos aliados, especialmente las potencias Rusia y China, caminamos hacia un futuro mejor, lleno de prosperidad. Peor que lo que nos han hecho los gringos y sus lacayos, no nos lo puede hacer nadie. Los “gringolovers” se van a quedar con los crespos hechos porque al final venceremos.</p>
 
     </div>
@@ -614,15 +534,13 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
 <p class="article-content"> Hizo una pausa para beber de su café, humeante aún: <em>«Hoy, algunos de ellos viven en Miami o en la zona más costosa de Madrid, como Locoldo… en una mansión pagada con dinero robado a CITGO y otros financiados por el Departamento de Estado.» «Y mientras tanto»</em> dijo la profesora, <em>«Venezuela crece, suma un cuatrimestre más, consecutivo, reduciendo la pobreza, reactivando la industria.» «Claro que sí»</em> dijo Anacleto. <em>«Porque no importa lo que construyas. Importa que no pidas permiso. Y un país que elige, que produce, que se alía sin la bendición del norte… es un peligro para el orden del imperio.»</em> El boticario golpeó el mortero. <em>«¿Y las sanciones…?» «Más de mil sanciones ilegales»</em> interrumpió Anacleto, <em>«congelando activos, bloqueando transacciones, impidiendo que se compren medicinas, que se reparen refinerías, que se exporte el petróleo. ¿Y ahora ofrecen millones por su cabeza? ¿No es eso chantaje?»</em> Anacleto apagó el cigarrillo y él mismo se respondió: <em>«No. Es una guerra sin uniformes. Una guerra donde el arma no es la bala, sino el dólar. Donde el campo de batalla no es la frontera, sino la narrativa. Y donde el enemigo no es un ejército, sino un presidente elegido.»</em> </em></p>
 <p class="article-content"> El coronel retirado levantó la vista. <em>«Y si mañana ofrecen 25 millones por mi cabeza… ¿quién me defenderá?»</em> Anacleto no respondió, solo siguió: <em>«Porque el sistema no defiende a los que desobedecen. Defiende a los que callan. A los que firman. A los que venden su soberanía por un puesto en la ONU.» «¿Y las elecciones?»</em> preguntó el estudiante. <em>«¿No dicen que son un fraude?»</em> Anacleto rió. Una risa amarga, como el café rancio. <em>«Ah, las elecciones… ¿Sabes qué dijo Jimmy Carter en 2009, tras observar los comicios en Venezuela? "Las elecciones en Venezuela son las más honestas que he visto en toda América Latina." Lo dijo él, un presidente de Estados Unidos. Y luego, el silencio. Porque no convenía. Porque si un presidente demócrata reconoce que Venezuela elige libremente, entonces cae el mito de la "dictadura". Y sin dictadura…no hay justificación para el bloqueo, no hay excusa para las recompensas.» «Camaritas…»</em>
  dijo Anacleto, con voz de trinchera, <em>«no se dejen engañar por el circo. Esto no es una cacería de criminales, es una cacería de soberanías. ¿Creen ustedes que Washington odia a Venezuela por sus "crímenes"? ¡No! La odia porque no se doblegó, porque sigue produciendo, porque sigue eligiendo, porque sigue diciendo: "No somos su patio trasero." Y cuando no pudieron derrocarla con golpes, con sanciones, con invasiones mediáticas, entonces inventaron un cartel de fantasía, como si el mundo fuera un cómic.» «Entonces»</em> dijo la profesora, <em>«esto no es lucha contra el narcotráfico. Es lucha contra la soberanía.»</em> Anacleto se inclinó hacia adelante. El humo del cigarro dibujó una espiral que se rompió al tocar la lámpara. <em>«Exacto. Porque un país que no se doblega… es un ejemplo. Y los imperios no temen a los ejércitos. Temen a los ejemplos.»</em>  Se hizo un silencio… y fue más elocuente que el humo.</p>
+<div class="sep"></div>
 <p class="article-content"> <em>«Y ahora, cuando un gobierno le pone precio a la cabeza de un presidente, no está luchando contra el crimen. Está luchando contra la verdad, contra la dignidad, contra la memoria. ¿Por qué no le pone precio a la cabeza de Netanyahu sancionado por la “Corte Internacional de Justicia? ¡De sus crímenes hay millones de pruebas!»</em> Sacó su pañuelo a cuadros para limpiar sus lentes y continuó: <em>«Porque si Venezuela puede resistir mil sanciones, reactivar su economía, y seguir eligiendo sin pedir permiso… entonces el imperio ya no es necesario. Y eso… eso es el verdadero crimen.»</em> Anacleto se levantó. No dijo más. Solo dejó sobre la mesa la copia del pasquín de la DEA... Y encima, una cita de Eduardo Galeano: <em>«Los países pequeños tienen derecho a ser soberanos. Los grandes, no tienen derecho a ser amos.» </em></p>
-<br>
-
+<div class="sep"></div>
 <p class="article-content"> Ante este panorama, Venezuela ha logrado lo que podemos denominar “alianzas estratégicas en tiempos de asedio”. Venezuela ha consolidado acuerdos económicos y militares con Rusia, China, Irán y Turquía, incluyendo cooperación en defensa, energía nuclear para fines pacíficos y producción conjunta de drones. A través del Banco de Desarrollo de los BRICS, ha accedido a financiamiento sin las innumerables condiciones y exigencias del FMI. Con África, ha establecido vínculos diplomáticos en salud, educación y energía solar. Estas alianzas no son de conveniencia, son de supervivencia. Y cada firma es una bofetada al monopolio del poder occidental. </p> 
-<br>
-
+<div class="sep"></div>
 <p class="article-content"> Aunque los ataques contra el país nunca han cesado, la recuperación económica de Venezuela,  aunque sigue bajo fuego enemigo, sigue avanzando. Desde 2021, Venezuela registra ocho cuatrimestres consecutivos de crecimiento, con una reducción del 30% en la pobreza extrema, según la CEPAL. El “ingreso mínimo”, que no es lo mismo que “salario mínimo”, se ha reajustado pertinentemente, con aumentos reales. El Petro, nuestra criptomoneda respaldada en petróleo, ha sido adoptado en transacciones con socios estratégicos. A pesar de más de mil sanciones, el país ha reactivado su industria petrolera a un buen porcentaje de su capacidad, desafiando el bloqueo con producción y resistencia.</p>
-<br>
-
+<div class="sep"></div>
 <p> Es increíble como usan la narrativa como arma de guerra a través de las redes, para tratar de engañar al noble y resistente pueblo venezolano. ¿Lo aprenderían de La Sayona? Que está escondida en el edificio de la ex embajada de EEUU en Caracas todos lo saben, pero nadie le para. EE.UU. ha invertido millones en campañas mediáticas para deslegitimar al gobierno, promoviendo la idea de una "dictadura" sin presentar pruebas en tribunales internacionales. La figura de Jimmy Carter, cuya observación electoral en 2009 validó la transparencia del proceso, ha sido sistemáticamente ignorada. Las recompensas por cabezas no son política exterior. Son operaciones psicológicas diseñadas para fomentar el miedo, la división y el golpe de Estado. La verdad no está en los comunicados. Está en los hechos que el imperio no quiere ver.
     </p>
   </div>
@@ -657,8 +575,8 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
 <p class="article-content">8.Trump ha perdido toda opción al Nobel de la Paz. Anacleto ironizó: em>«Mi favorito, camaritas; adiós al Nobel… Medvedev lo dice con sorna: Trump ha perdido toda posibilidad de ser considerado para el Nobel de la Paz que tanto ambicionaba. Pero eso ya lo sabíamos… Hay que ser ciego, sordo y mudo para no ver que este hombre tiene más condenas que principios ¡Un detalle casi poético!»</em> La sala se tensó.</p> 
 <p class="article-content">9. EEUU se verá arrastrado a una operación terrestre. <em>«Los puntos finales son el tiro de gracia,»</em> murmuró Anacleto: <em>«El miedo mayor es que este ataque derive en operaciones terrestres. Y eso nos mostraría las semillas de una tragedia mayor: más jóvenes mutilados, más madres llorando. Y todo por una guerra que ni es propia ni que el Congreso aprobó.»</em></p>
 <p class="article-content">10. La ofensiva no ha logrado sus objetivos estratégicos. «En resumen» sentenció Anacleto, «Hubo un fracaso estratégico total… Como golpe de gracia no solo fracasaron: el bombardeo no logró su propósito, fortaleció al enemigo, y abrió un ciclo de represalias imprevisibles. Es un manual de cómo sembrar caos creyendo que se exporta democracia.»</p>
-<br>
-<br>
+
+<div class="sep"></div>
 <p class="article-content">Se hizo un silencio, denso como café de olla. <em>«No se equivoquen, camaritas,»</em> concluyó Anacleto, apagando el cigarro como quien cierra una oración. <em>«Lo que hizo Washington no fue un error táctico: fue arrogancia imperial. Fue ignorancia envuelta en banderas. Fue la vieja receta de sangre para esconder el fracaso doméstico. Y Medvédev… bueno, él solo nos recordó lo que fingimos no ver: que el elefante en la habitación ya no cabe por la puerta.»</em> Anacleto se levantó para estirar sus piernas, como quien ya ha dicho todo. El café quedó en vilo, pero no vacío. Afuera, el mundo seguía igual. Adentro, la verdad, aunque incómoda, se había servido caliente. Muchas preguntas quedaron en el tintero… nadie se atrevía a hacerlas. El silencio que siguió no fue de vacío; fue de reflexión. Anacleto, con su verbo ácido, había cortado la hipocresía como un cuchillo. Se levantó, recogió su portafolio, y mientras apagaba el cigarrillo, murmuró: <em>«En el gran teatro del poder, el guion ya está escrito. Solo cambian los bufones... y las excusas para la barbarie»</em> y sentenció con amargura:
 <blockquote style="border-left: 4px solid #e74c3c; padding-left: 1rem; margin: 1.5rem 0; color: #ccc; font-style: italic;"><em>«Esto no es política exterior, es diplomacia de cantina con botón nuclear. No es geoestrategia, es geotorpeza. Y lo más peligroso, camaritas, es que el mundo lo está permitiendo en silencio, como se permitieron otras locuras en otros siglos. La historia no se repite, se disfraza. Y el disfraz de hoy tiene nombre: ignorancia con poder.»</em>
     </blockquote>
@@ -755,117 +673,57 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
         <p class="article-content"><em>«El verdadero escándalo no está en lo que vemos. Está en lo que nunca nos dejarán ver. Y tal vez la clave no sea Trump, ni Epstein, ni siquiera Melania. Tal vez… la clave está en el silencio, en ese que grita sin hablar, en esa mirada de hielo que no teme ni se queja.»</em></p>
         <p class="article-content">Entonces, con tono ceremonioso, como cerrando un juicio, Anacleto recitó:</p>
         <p class="article-content"><em>«“Hay palabras que matan… y silencios que entierran. Y hay mujeres tan calladas… que hacen temblar a los imperios.”»</em></p>
-        <br>
+        <div class="sep"></div>
         <p><strong>Entre 2018 y 2020</strong>, Melania Trump realizó tres viajes internacionales sin cobertura de prensa ni acompañamiento diplomático oficial. Uno a Israel (Tel Aviv), otro a Viena y otro a Roma. Los tres ocurrieron dentro de un margen de semanas respecto a eventos clave del caso Epstein: filtraciones judiciales, muerte del magnate y revelaciones sobre Ghislaine Maxwell. El dato proviene de registros migratorios cruzados por investigadores independientes y parte del expediente filtrado “A puerta cerrada”, que circuló en medios alternativos tras la reactivación del juicio civil por complicidad en abuso sexual. Ninguno de estos viajes aparece detallado en la agenda oficial de la Casa Blanca. El propio Servicio Secreto declinó hacer comentarios cuando se le solicitó aclaratoria en 2023. Un exoficial de contrainteligencia declaró en anonimato: “Nos pareció raro, pero nos pidieron no preguntar”.</p>
-        <br>
+       <div class="sep"></div>
         <p><strong>Según informes desclasificados parcialmente por el Mossad en 2022</strong>, Dragón Petravi es el alias de un operador encubierto especializado en reclutar activos femeninos para labores de infiltración social y diplomática. Se le atribuye la colocación de "mujeres influyentes" en entornos de poder como el Bundestag alemán y la Unión Africana. Tres testigos de la causa Epstein aseguraron haberlo visto en eventos donde Melania también participó como modelo invitada. En una de las notas manuscritas de Ghislaine Maxwell se lee: "D. dice que la chica eslovena está lista. Petravi lo organizó todo." Aunque el FBI no ha emitido orden pública de captura contra Petravi, el nombre figura en listas de vigilancia antiterrorista de la Interpol. Su rastro se pierde en 2019, pero un documento de inteligencia israelí lo ubica en Milán pocos días antes de la boda Trump-Knauss.</p>
-        <br>
+        <div class="sep"></div>
         <p><strong>Jasmine Crockett</strong>, congresista por Texas y miembro del Comité de Supervisión del Congreso, ha sido una de las pocas figuras públicas que ha osado tocar el tema de la Primera Dama. En una audiencia de 2025, preguntó: “¿Quién puede estar tan cerca del poder y, sin embargo, tan lejos de las consecuencias?”. Su frase provocó una reacción inmediata de la bancada republicana, que intentó vetar su intervención. Más tarde, en entrevista para The Atlantic, agregó: "El problema con la Sra. Trump es que ha vivido bajo el radar, y cuando alguien hace eso, siendo figura internacional, es porque alguien más lo necesita así". A pesar de la presión mediática, Crockett no ha retirado sus afirmaciones. Consultada por CNN en julio de 2025, respondió: “Quizás Melania no sea la esposa de Trump. Quizás es su sombra”.</p>
-        <br>
+        <div class="sep"></div>
         <p><strong>Y luego está lo que nadie dice, pero todos susurran</strong>: ¿es realmente Barron hijo de Donald? Hay quienes afirman que el presidente nunca ha logrado disipar esa duda. Que lo mira con orgullo, sí, pero también con sospecha. Que Melania lo controla a través del niño, como si fuese su ancla emocional y su eslabón más débil. Y es precisamente esa fragilidad lo que lo convierte en presa fácil para chantajes, lo que le hace temer más la caída del secreto que la cárcel misma. Porque si todo lo que Jeffrey sabía se hiciera público, si se liberaran las grabaciones, los documentos, los nombres, el escándalo no acabaría en Trump Tower. Llegaría a la Casa Blanca, al Mossad, al Vaticano si hace falta. Y en el centro, como un iceberg silencioso, estaría ella. La mujer que no grita, que no huye, que nunca tropieza. La misma que, si un día decide hablar, podría incendiar media geopolítica occidental.</p>
-        <br>
+        <div class="sep"></div>
         <p>Como diría Anacleto: <em>“Quizá, cuando la historia se escriba, no recordaremos al magnate bufón ni al espía caído, sino a la mujer que nunca habló... y por eso, lo dijo todo.”</em></p>
 
       </div>
     </div>
     <!-- FIN DEL ARTÍCULO EXISTENTE -->
-
+    <!-- NO NECESITAS CAMBIAR NADA EN ELLOS -->
   </div>
 
-  <!-- MODAL DE IMAGEN -->
-  <div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center;" onclick="closeModal()">
-    <img id="modalImage" style="max-width: 90%; max-height: 90%; border: 4px solid #e74c3c; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+  <!-- MODAL DE IMÁGENES -->
+  <div id="imageModal" onclick="this.style.display='none'">
+    <img id="modalImage">
   </div>
 
+  <!-- FUNCIONES JAVASCRIPT -->
   <script>
     function loadArticle(id) {
       const content = document.getElementById('main-content');
       const article = document.getElementById(id + '-content');
-      if (article) content.innerHTML = article.innerHTML;
+      if (article) {
+        // Clonamos para evitar problemas con estilos en línea
+        const clone = article.cloneNode(true);
+        // Limpiamos cualquier estilo que fuerce color o margen
+        const innerDiv = clone.querySelector('div[style]');
+        if (innerDiv) {
+          let style = innerDiv.getAttribute('style');
+          style = style.replace(/color[^;]+;/gi, '');
+          innerDiv.setAttribute('style', style);
+        }
+        content.innerHTML = clone.innerHTML;
+      }
     }
 
     function showSection(id) {
       const content = document.getElementById('main-content');
       const texts = {
-        quienes: `
-          <h1>¿Quiénes somos?</h1>
-          <p><strong>Luis Semprún Jurado</strong> - Fundador de El Bohemio Digital 
-          <br>Pluma libre, voz incómoda y cronista del caos global.
-          <br>Luis no escribe para gustar. Escribe para que duela. Periodista, locutor, Productor Nacional Independiente, narrador y denunciador a tiempo completo, su trayectoria combina la irreverencia con el rigor, la sátira con la investigación.
-Columnista incómodo, perseguidor de verdades mal contadas y curador del verbo de Anacleto <strong>-ese personaje que no teme decir lo que otros apenas insinúan—</strong>, Luis ha hecho del periodismo una trinchera ética y una emboscada estética.
-Desde el corazón de América Latina o desde el rincón más impensado del exilio, sus artículos cruzan fronteras, sacuden conciencias y revientan silencios cómplices.
-<br>
-<em>"El Bohemio Digital es su casa... y su arma."</em></p>
-<br>
-
-<p>Somos académicos, periodistas veteranos y nuevos talentos que conformamos esta red de colaboradores que enriquecen nuestra mirada, con perspectivas diversas, pero igualmente comprometidas. con la verdad.
-Somos un colectivo de pensadores, escritores y críticos que creemos en la <strong><em>palabra como arma de justicia.</em></strong> Desde El Bohemio, desenmascaramos verdades incómodas.</p>
-        `,
-        quehacemos: `
-          <h1>Qué hacemos</h1>
-                    <p><strong>Manifiesto de los que no callan</strong></p>
-          <p>"No nacimos para agradar, sino para señalar. Tampoco para censurar, ni obedecer: aquí se escribe con coraje, memoria y sentido del deber."</p>
-<p>En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.</p><br><br>
-<p>El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezamos ni a Washington, ni a Moscú, ni al mercado.
-Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.<br></p>
-
-<p><b><em>“La verdad no tiene patrocinantes. Tiene testigos.”</em></b></p>
-        `,
-        archivos: `
-          <h1>Archivo Completo</h1>
-          <p><em>Investigaciones que arden. Verdades que incomodan. Archivos que no quieren que leas.</em></p><br>
-<p>Aquí se publica lo que otros censuran. Espionaje, pactos turbios, juegos de guerra, extradiciones que huelen a trampa, nombres que no aparecen en portadas, pero sí en carpetas clasificadas. Con fuentes, con datos, con sangre fría.
-porque la conspiración deja huellas. Y nosotros las seguimos. Nuestra memoria histórica contiene más de <strong>500 artículos</strong> que documentan los escándalos políticos más relevantes de las últimas décadas. 
-</p><br>
-<br><p>Un repositorio cronológico de investigaciones que permite entender los patrones de corrupción y abuso de poder a lo largo del tiempo.</p>
-<br><p><em> Accede a todos nuestros artículos, ordenados por fecha, tema o autor.</em></p>
-          <br>
-             <p><em><b>La memoria no se borra. Se defiende.</b></em></p>
-      `,  
-        cronicas: `
-          <h1>Crónicas de ElBohemio</h1>
-          <p>En este rincón literario, la realidad y la ficción se entrelazan en conversaciones que diseccionan la actualidad. El Café El Bohemio es nuestro espacio narrativo donde personajes anónimos comentan los acontecimientos mientras Anacleto los confronta con aguda inteligencia.
-<br>
-<br>
-"La oposición grita que las sanciones solo afectan al gobierno y no al pueblo, pero mi nevera dice lo contrario. ¿A quién le creo?"
-<strong>— Cliente habitual del Café</strong>
-<br>
-<br>
-"La verdad no está en los discursos malintencionados de la rancia oligarquía sino en las arrugas de preocupación de la gente común."
-<strong>— Anacleto, observando desde su mesa</strong>
-<br>
-<br>
-<strong>Anacleto habla de:</strong> Las voces del rincón. Las verdades del café. Los relatos que el poder no quiere escuchar.</p>
-        `,
-        editorial: `
-            <h1><div style="text-align: center; margin-bottom: 0.1rem;">Editorial</divp></h1>
-    <div style="text-align: center; margin-bottom: 0.1rem;">
-  <b>Manifiesto de los que no callan</b></divp>
-  <br>
-<p>"No nacimos para agradar, sino para señalar. Ni censura, ni obediencia: aquí se escribe con rabia, memoria y sentido del deber."
-En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.
-<br>
-El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezan ni a Washington, ni a Moscú, ni al mercado.
-<br>
-Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.</p>
-<div style="text-align: center; margin-bottom: 0.1rem:"><em>
-“La verdad no tiene patrocinantes. Tiene testigos.”
-</em>
-</div>
- 
-        `,
-        contacto: `
-          <h1><strong>Contacto</strong></h1>
-          <p>¿Tienes una historia que contar? ¿Una denuncia? ¿Una carta al Bohemio?<br>Escríbenos a: <strong>redaccion@elbohemiodigital.com</strong></p>
-          <p>Este no es un portal para tibios. Es un espacio de resistencia.</p>
-        `,
-        lectores: `
-          <h1><strong>Lectores con voz</strong></h1>
-          <p>Este café no es solo de Anacleto. Porque el periodismo no es monólogo sino conversación, abrimos este espacio para que la comunidad participe activamente. Aquí los lectores comentan, debaten y aportan nuevas perspectivas que enriquecen el análisis colectivo.
-Nuestra sección especial de cartas abiertas permite dar voz a quienes normalmente no la tienen en los medios tradicionales.
-Es de todos los que no callan. Envíanos tus cartas, réplicas, crónicas o denuncias. Las mejores aparecerán aquí.</p>
-          <p><strong><em>Porque cuando el pueblo habla, el poder tiembla.</em></strong></p>
-        `
+        quienes: `<h1>¿Quiénes somos?</h1><p><strong>Luis Semprún Jurado</strong> - Fundador de El Bohemio Digital</p>`,
+        quehacemos: `<h1>¿Qué hacemos?</h1><p>Publicamos verdades incómodas...</p>`,
+        archivos: `<h1>Archivo Completo</h1><p>Aquí se publica lo que otros censuran...</p>`,
+        cronicas: `<h1>Crónicas de ElBohemio</h1><p>En este rincón literario...</p>`,
+        editorial: `<h1>Editorial</h1><p>La verdad no tiene patrocinantes...</p>`,
+        contacto: `<h1>Contacto</h1><p>Escríbenos a: redaccion@elbohemiodigital.com</p>`,
+        lectores: `<h1>Lectores con voz</h1><p>Envíanos tus cartas, réplicas, crónicas o denuncias.</p>`
       };
       content.innerHTML = texts[id] || '<p>Sección en construcción.</p>';
     }
@@ -875,13 +733,8 @@ Es de todos los que no callan. Envíanos tus cartas, réplicas, crónicas o denu
       const img = document.getElementById("modalImage");
       img.src = "img/" + src;
       modal.style.display = "flex";
-      img.onclick = function(e) { e.stopPropagation(); };
-    }
-
-    function closeModal() {
-      document.getElementById("imageModal").style.display = "none";
     }
   </script>
 
 </body>
-</html>
+</html> 
