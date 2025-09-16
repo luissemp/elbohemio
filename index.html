@@ -14,7 +14,7 @@
       --background-dark: #1a1a1a;
       --background-light: #f8f5f2;
       --header-dark: #e74c3c;
-      --highlight: #e0c9a6;
+      --highlight: #e74c3c; /* Color del encabezado, ahora para los títulos */
       --font-serif: 'Cambria', 'Georgia', serif;
       --font-lora: 'Lora', Arial, sans-serif;
     }
@@ -126,7 +126,7 @@
       color: var(--text-light);
       font-family: var(--font-lora);
       line-height: 1.8;
-      max-width: 700px; /* Ancho limitado para mejor legibilidad */
+      max-width: 700px;
       margin: 0 auto;
       padding: 2rem;
       min-height: 80vh;
@@ -217,31 +217,24 @@
       margin-bottom: 1rem;
       text-align: center;
     }
-    .article-author {
-      font-size: 0.95rem;
-      display: block;
-      margin-bottom: 1.5rem;
-      text-align: center;
+    .quote-container {
+      margin: 2rem 0;
+      text-align: right; /* Alinea la cita a la derecha */
     }
     .article-quote {
-      border-left: 4px solid var(--highlight);
-      padding-left: 1rem;
-      margin: 2rem 0;
       font-style: italic;
-    }
-    .article-quote p {
-      font-style: italic;
-      font-size: 1rem;
-      margin-bottom: 0;
+      font-size: 1rem; /* Más pequeño */
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      display: block;
     }
     .quote-author {
-      display: block;
-      text-align: right;
-      font-size: 0.85rem;
+      font-size: 1.1rem; /* Más grande */
       color: var(--highlight);
       font-style: normal;
-      text-transform: uppercase;
+      text-transform: none; /* Sin mayúsculas */
       font-weight: bold;
+      display: block;
     }
     .article-content {
       line-height: 1.8;
@@ -260,7 +253,7 @@
       color: var(--text-dark);
     }
     body.modoclaro .article-quote {
-      border-left: 4px solid var(--text-dark);
+      border-left: none; /* Elimina la línea en modo claro */
     }
   </style>
 </head>
@@ -326,30 +319,29 @@
       </ul>
     </aside>
   </div>
+     <!-- NUEVO ARTÍCULO -->
   <div style="display: none;">
     <div id="subversion-content" class="article-container">
       <h1 class="article-title">Subversión Antigua y Defensa Moderna: El Caribe y la Sombra de la Intervención</h1>
-      <p class="article-author">Por: Luis Semprún Jurado</p>
-      <blockquote class="article-quote">
-        <p>“Los hechos no son nada; lo importante es el eco que despiertan en el espíritu de los pueblos.”</p>
-        <cite class="quote-author">HONORÉ DE BALZAC</cite>
-      </blockquote>
-      <div class="sep"></div>
+      <div class="quote-container">
+        <p class="article-quote">“Los hechos no son nada; lo importante es el eco que despiertan en el espíritu de los pueblos.”</p>
+        <span class="quote-author">HONORÉ DE BALZAC</span>
+      </div>
       <p class="article-content">Estábamos sentados en la mesa de siempre de nuestro Café, mientras la mañana avanzaba lentamente. Anacleto, ese inconfundible que carga con más preguntas que respuestas, entre tazas de café negro y un murmullo de periódicos abiertos, se ajusta los lentes y suelta con ironía: “¿Será que todavía no entendemos que la subversión no empezó ayer?"...
       </p>
       </div>
-    
+    <!-- FINAL DEL ARTÍCULO -->   
+    <!-- NUEVO ARTÍCULO -->
     <div id="cubiche1-content" class="article-container">
       <h1 class="article-title">Rubio, Machado y ExxonMobil: La tríada que “vende democracia” y compra petróleo…</h1>
-      <p class="article-author">Por: Luis Semprún Jurado</p>
-      <blockquote class="article-quote">
-        <p>“Cuando los opositores callan ante atrocidades, dejan claro que su lucha no es por el pueblo, sino por el poder"</p>
-        <cite class="quote-author">LAURA DIB, CEPAZ</cite>
-      </blockquote>
-      <div class="sep"></div>
+      <div class="quote-container">
+        <p class="article-quote">“Cuando los opositores callan ante atrocidades, dejan claro que su lucha no es por el pueblo, sino por el poder"</p>
+        <span class="quote-author">LAURA DIB, CEPAZ</span>
+      </div>
       <p class="article-content">El humo de cigarrillo flotaba sobre la mesa donde el mesero acababa de dejar un “marroncito”. Anacleto, observando al copioso grupo reunido a su alrededor, ajustó los lentes de carey y, clavando la mirada en los presentes, dijo: "La próxima vez que Rubio hable de “democracia”, recuérdenle que en su Florida natal los verdaderos cubano-americanos lo repudian..."
       </p>
       </div>
+    <!-- FINAL DEL ARTÍCULO -->  
   </div>
   <div class="modal" id="imageModal">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -366,80 +358,78 @@
       const content = document.getElementById('main-content');
       const texts = {
         quienes: `
-          <h1>¿Quiénes somos?</h1>
-          <p><strong>Luis Semprún Jurado</strong> - Fundador de El Bohemio Digital 
-          <br>Pluma libre, voz incómoda y cronista del caos global.
+          <h1 class="article-title">¿Quiénes somos?</h1>
+          <p class="article-author"><strong>Luis Semprún Jurado</strong> - Fundador de El Bohemio Digital</p>
+          <p class="article-content">Pluma libre, voz incómoda y cronista del caos global.
           <br>Luis no escribe para gustar. Escribe para que duela. Periodista, locutor, Productor Nacional Independiente, narrador y denunciador a tiempo completo, su trayectoria combina la irreverencia con el rigor, la sátira con la investigación.
           Columnista incómodo, perseguidor de verdades mal contadas y curador del verbo de Anacleto <strong>-ese personaje que no teme decir lo que otros apenas insinúan—</strong>, Luis ha hecho del periodismo una trinchera ética y una emboscada estética.
           Desde el corazón de América Latina o desde el rincón más impensado del exilio, sus artículos cruzan fronteras, sacuden conciencias y revientan silencios cómplices.
           <br>
           <em>"El Bohemio Digital es su casa... y su arma."</em></p>
           <br>
-          <p>Somos académicos, periodistas veteranos y nuevos talentos que conformamos esta red de colaboradores que enriquecen nuestra mirada, con perspectivas diversas, pero igualmente comprometidas. con la verdad.
+          <p class="article-content">Somos académicos, periodistas veteranos y nuevos talentos que conformamos esta red de colaboradores que enriquecen nuestra mirada, con perspectivas diversas, pero igualmente comprometidas con la verdad.
           Somos un colectivo de pensadores, escritores y críticos que creemos en la <strong><em>palabra como arma de justicia.</em></strong> Desde El Bohemio, desenmascaramos verdades incómodas.</p>
         `,
         quehacemos: `
-          <h1>Qué hacemos</h1>
-          <p><strong>Manifiesto de los que no callan</strong></p>
-          <p>"No nacimos para agradar, sino para señalar. Tampoco para censurar, ni obedecer: aquí se escribe con coraje, memoria y sentido del deber."</p>
-          <p>En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.</p><br><br>
-          <p>El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezamos ni a Washington, ni a Moscú, ni al mercado.
-          Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.<br></p>
-          <p><b><em>“La verdad no tiene patrocinantes. Tiene testigos.”</em></b></p>
+          <h1 class="article-title">Qué hacemos</h1>
+          <div class="quote-container">
+              <p class="article-quote">"No nacimos para agradar, sino para señalar. Tampoco para censurar, ni obedecer: aquí se escribe con coraje, memoria y sentido del deber."</p>
+          </div>
+          <p class="article-content">En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.</p>
+          <p class="article-content">El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezamos ni a Washington, ni a Moscú, ni al mercado.
+          Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.</p>
+          <p class="article-content"><b><em><span class="quote-author">“La verdad no tiene patrocinantes. Tiene testigos.”</span></em></b></p>
         `,
         archivos: `
-          <h1>Archivo Completo</h1>
-          <p><em>Investigaciones que arden. Verdades que incomodan. Archivos que no quieren que leas.</em></p><br>
-          <p>Aquí se publica lo que otros censuran. Espionaje, pactos turbios, juegos de guerra, extradiciones que huelen a trampa, nombres que no aparecen en portadas, pero sí en carpetas clasificadas. Con fuentes, con datos, con sangre fría.
-          porque la conspiración deja huellas. Y nosotros las seguimos. Nuestra memoria histórica contiene más de <strong>500 artículos</strong> que documentan los escándalos políticos más relevantes de las últimas décadas. 
-          </p><br>
-          <br><p>Un repositorio cronológico de investigaciones que permite entender los patrones de corrupción y abuso de poder a lo largo del tiempo.</p>
-          <br><p><em> Accede a todos nuestros artículos, ordenados por fecha, tema o autor.</em></p>
-          <br>
-          <p><em><b>La memoria no se borra. Se defiende.</b></em></p>
+          <h1 class="article-title">Archivo Completo</h1>
+          <p class="article-content"><em>Investigaciones que arden. Verdades que incomodan. Archivos que no quieren que leas.</em></p>
+          <p class="article-content">Aquí se publica lo que otros censuran. Espionaje, pactos turbios, juegos de guerra, extradiciones que huelen a trampa, nombres que no aparecen en portadas, pero sí en carpetas clasificadas. Con fuentes, con datos, con sangre fría.
+          porque la conspiración deja huellas. Y nosotros las seguimos. Nuestra memoria histórica contiene más de <strong>500 artículos</strong> que documentan los escándalos políticos más relevantes de las últimas décadas.
+          </p>
+          <p class="article-content">Un repositorio cronológico de investigaciones que permite entender los patrones de corrupción y abuso de poder a lo largo del tiempo.</p>
+          <p class="article-content"><em> Accede a todos nuestros artículos, ordenados por fecha, tema o autor.</em></p>
+          <p class="article-content"><em><b><span class="quote-author">La memoria no se borra. Se defiende.</span></b></em></p>
         `,  
         cronicas: `
-          <h1>Crónicas de ElBohemio</h1>
-          <p>En este rincón literario, la realidad y la ficción se entrelazan en conversaciones que diseccionan la actualidad. El Café El Bohemio es nuestro espacio narrativo donde personajes anónimos comentan los acontecimientos mientras Anacleto los confronta con aguda inteligencia.
-          <br>
-          <br>
-          "La oposición grita que las sanciones solo afectan al gobierno y no al pueblo, pero mi nevera dice lo contrario. ¿A quién le creo?"
-          <strong>— Cliente habitual del Café</strong>
-          <br>
-          <br>
-          "La verdad no está en los discursos malintencionados de la rancia oligarquía sino en las arrugas de preocupación de la gente común."
-          <strong>— Anacleto, observando desde su mesa</strong>
-          <br>
-          <br>
-          <strong>Anacleto habla de:</strong> Las voces del rincón. Las verdades del café. Los relatos que el poder no quiere escuchar.</p>
+          <h1 class="article-title">Crónicas de ElBohemio</h1>
+          <p class="article-content">En este rincón literario, la realidad y la ficción se entrelazan en conversaciones que diseccionan la actualidad. El Café El Bohemio es nuestro espacio narrativo donde personajes anónimos comentan los acontecimientos mientras Anacleto los confronta con aguda inteligencia.</p>
+          <div class="quote-container">
+            <p class="article-quote">"La oposición grita que las sanciones solo afectan al gobierno y no al pueblo, pero mi nevera dice lo contrario. ¿A quién le creo?"</p>
+            <span class="quote-author">— Cliente habitual del Café</span>
+          </div>
+          <div class="quote-container">
+            <p class="article-quote">"La verdad no está en los discursos malintencionados de la rancia oligarquía sino en las arrugas de preocupación de la gente común."</p>
+            <span class="quote-author">— Anacleto, observando desde su mesa</span>
+          </div>
+          <p class="article-content"><strong>Anacleto habla de:</strong> Las voces del rincón. Las verdades del café. Los relatos que el poder no quiere escuchar.</p>
         `,
         editorial: `
-          <h1>Editorial</h1>
-          <div style="text-align: center; margin-bottom: 0.1rem;">
-          <b>Manifiesto de los que no callan</b></divp>
-          <br>
-          <p>"No nacimos para agradar, sino para señalar. Ni censura, ni obediencia: aquí se escribe con rabia, memoria y sentido del deber."
-          En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.
+          <h1 class="article-title">Editorial</h1>
+          <p class="article-content" style="text-align: center;"><b>Manifiesto de los que no callan</b></p>
+          <div class="quote-container">
+            <p class="article-quote">"No nacimos para agradar, sino para señalar. Ni censura, ni obediencia: aquí se escribe con rabia, memoria y sentido del deber."</p>
+          </div>
+          <p class="article-content">En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.
           <br>
           El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezan ni a Washington, ni a Moscú, ni al mercado.
           <br>
           Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.</p>
-          <div style="text-align: center; margin-bottom: 0.1rem:"><em>
-          “La verdad no tiene patrocinantes. Tiene testigos.”
+          <p class="article-content" style="text-align: center;"><em>
+          <span class="quote-author">“La verdad no tiene patrocinantes. Tiene testigos.”</span>
           </em>
-          </div>
+          </p>
         `,
         contacto: `
-          <h1><strong>Contacto</strong></h1>
-          <p>¿Tienes una historia que contar? ¿Una denuncia? ¿Una carta al Bohemio?<br>Escríbenos a: <strong>redaccion@elbohemiodigital.com</strong></p>
-          <p>Este no es un portal para tibios. Es un espacio de resistencia.</p>
+          <h1 class="article-title"><strong>Contacto</strong></h1>
+          <p class="article-content">¿Tienes una historia que contar? ¿Una denuncia? ¿Una carta al Bohemio?<br>Escríbenos a: <strong>redaccion@elbohemiodigital.com</strong></p>
+          <p class="article-content">Este no es un portal para tibios. Es un espacio de resistencia.</p>
         `,
         lectores: `
-          <h1><strong>Lectores con voz</strong></h1>
-          <p>Este café no es solo de Anacleto. Porque el periodismo no es monólogo sino conversación, abrimos este espacio para que la comunidad participe activamente. Aquí los lectores comentan, debaten y aportan nuevas perspectivas que enriquecen el análisis colectivo.
+          <h1 class="article-title"><strong>Lectores con voz</strong></h1>
+          <p class="article-content">Este café no es solo de Anacleto. Porque el periodismo no es monólogo sino conversación, abrimos este espacio para que la comunidad participe activamente. Aquí los lectores comentan, debaten y aportan nuevas perspectivas que enriquecen el análisis colectivo.
           Nuestra sección especial de cartas abiertas permite dar voz a quienes normalmente no la tienen en los medios tradicionales.
           Es de todos los que no callan. Envíanos tus cartas, réplicas, crónicas o denuncias. Las mejores aparecerán aquí.</p>
-          <p><strong><em>Porque cuando el pueblo habla, el poder tiembla.</em></strong></p>
+          <p class="article-content"><strong><em><span class="quote-author">Porque cuando el pueblo habla, el poder tiembla.</span></em></strong></p>
         `
       };
       content.innerHTML = texts[id] || '<p>Sección en construcción.</p>';
