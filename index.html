@@ -262,7 +262,24 @@
     margin-right: 1rem;
   }
     }
-  </style>
+ /* === CONTROL ESTRICTO DE <em> PARA QUE NO ROMPA EL FLUJO === */
+.main-content em,
+.main-content i {
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  display: inline; /* Asegura que no actúe como bloque */
+}
+
+/* Evita que los <em> dentro de párrafos agreguen espacio */
+.main-content p em,
+.main-content p i {
+  margin: 0;
+  line-height: inherit;
+}
+      </style>
 </head>
 <body>
   <!-- HEADER -->
