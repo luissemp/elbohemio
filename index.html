@@ -120,43 +120,47 @@
     .sidebar ul li a:hover {
       color: #e74c3c;
     }
+<!-- ESTILOS INTEGRADOS PARA MODO CLARO/OSCURO -->
+ /* ESTILO BASE DEL MAIN: MODO OSCURO */
+    .main-content {
+      background-color: #1c120c;
+      color: #e0c9a6;
+      font-family: 'Georgia', serif;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 80vh;
+    }
 
-  /* ESTILO BASE: MODO OSCURO */
-.main-content {
-  background-color: #1c120c;
-  color: #e0c9a6;
-  font-family: 'Georgia', serif;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: 80vh;
-}
+    /* MODO CLARO: FONDO BEIGE, TEXTO OSCURO (AJUSTADO A NEGRO SUAVE) */
+    body.modoclaro .main-content {
+      background-color: #f8f5f2;
+      color: #141414;
+    }
 
-/* MODO CLARO: FONDO BEIGE, TEXTO OSCURO */
-body.modoclaro .main-content {
-  background-color: #f8f5f2;
-  color: #2c1810;
-}
-.toggle-mode {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: 1px solid #e0c9a6;
-    color: #e0c9a6;
-    font-size: 1rem;
-    padding: 8px 12px;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-  }
+    /* ESTILO DEL BOTÓN DE CAMBIO DE MODO */
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 1px solid #e0c9a6;
+      color: #e0c9a6;
+      font-size: 1rem;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 1000;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
 
-  body.modoclaro .toggle-mode {
-    border-color: #2c1810;
-    color: #2c1810;
-  }
+    /* BOTÓN EN MODO CLARO: SE ADAPTA AL FONDO */
+    body.modoclaro .toggle-mode {
+      background: white;
+      border-color: #141414;
+      color: #141414;
+    }
     /* RESPONSVIDAD */
     @media (max-width: 900px) {
       header {
