@@ -121,36 +121,42 @@
       color: #e74c3c;
     }
 
-    /* CONTENIDO CENTRAL */
-    .main-content {
-      flex: 1;
-      background-color: #000;
-      padding: 1.5rem;
-      border-radius: 8px;
-      color: #e0c9a6;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      border: 1px solid #333;
-    }
+  /* ESTILO BASE: MODO OSCURO */
+.main-content {
+  background-color: #1c120c;
+  color: #e0c9a6;
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 80vh;
+}
 
-    .main-content h1 {
-      color: #e74c3c;
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
+/* MODO CLARO: FONDO BEIGE, TEXTO OSCURO */
+body.modoclaro .main-content {
+  background-color: #f8f5f2;
+  color: #2c1810;
+}
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 1px solid #e0c9a6;
+    color: #e0c9a6;
+    font-size: 1rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
 
-    .main-content blockquote {
-      border-left: 4px solid #e74c3c;
-      padding-left: 1rem;
-      margin: 1.5rem 0;
-      color: #ccc;
-      font-style: italic;
-    }
-
-    .main-content p {
-      margin-bottom: 1rem;
-    }
-
+  body.modoclaro .toggle-mode {
+    border-color: #2c1810;
+    color: #2c1810;
+  }
     /* RESPONSVIDAD */
     @media (max-width: 900px) {
       header {
@@ -215,6 +221,10 @@
     <main class="main-content" id="main-content">
       <h1>Bienvenido a El Bohemio Digital</h1>
       <p>Haz clic en una sección para comenzar.</p>
+        <!-- BOTÓN DE MODO CLARO/OSCURO -->
+  <button class="toggle-mode" onclick="document.body.classList.toggle('modoclaro')">
+    🌙 / ☀️
+  </button>
     </main>
 
     <!-- BARRA DERECHA: Mis imágenes -->
