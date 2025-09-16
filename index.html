@@ -121,46 +121,65 @@
       color: #e74c3c;
     }
 <!-- ESTILOS INTEGRADOS PARA MODO CLARO/OSCURO -->
- /* ESTILO BASE DEL MAIN: MODO OSCURO */
+  /* ESTILO BASE DEL MAIN: MODO OSCURO */
+  .main-content {
+    background-color: #1c120c;
+    color: #e0c9a6;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 80vh;
+  }
+
+  /* MODO CLARO: FONDO BEIGE, TEXTO OSCURO (MÁS CONTRASTE) */
+  body.modoclaro .main-content {
+    background-color: #f8f5f2;
+    color: #141414 !important; /* ¡Forzamos el color! */
+  }
+
+  /* ASEGURAMOS QUE LOS ARTÍCULOS HEREDEN EL COLOR DEL PADRE */
+  .main-content p,
+  .main-content h1,
+  .main-content span,
+  .main-content em,
+  .main-content blockquote {
+    color: inherit !important;
+    line-height: 1.8;
+  }
+
+  /* BOTÓN DE CAMBIO DE MODO */
+  .toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 1px solid #e0c9a6;
+    color: #e0c9a6;
+    font-size: 1rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
+  }
+
+  /* BOTÓN EN MODO CLARO */
+  body.modoclaro .toggle-mode {
+    border-color: #141414;
+    color: #141414;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  /* PREVENIR QUE EL ANCHO CREZCA INDEFINIDAMENTE */
+  @media (min-width: 768px) {
     .main-content {
-      background-color: #1c120c;
-      color: #e0c9a6;
-      font-family: 'Georgia', serif;
-      line-height: 1.8;
-      max-width: 700px;
+      width: 100%;
       margin: 0 auto;
-      padding: 2rem;
-      min-height: 80vh;
     }
-
-    /* MODO CLARO: FONDO BEIGE, TEXTO OSCURO (AJUSTADO A NEGRO SUAVE) */
-    body.modoclaro .main-content {
-      background-color: #f8f5f2;
-      color: #141414;
-    }
-
-    /* ESTILO DEL BOTÓN DE CAMBIO DE MODO */
-    .toggle-mode {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: 1px solid #e0c9a6;
-      color: #e0c9a6;
-      font-size: 1rem;
-      padding: 8px 12px;
-      cursor: pointer;
-      z-index: 1000;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    /* BOTÓN EN MODO CLARO: SE ADAPTA AL FONDO */
-    body.modoclaro .toggle-mode {
-      background: white;
-      border-color: #141414;
-      color: #141414;
-    }
+  }
     /* RESPONSVIDAD */
     @media (max-width: 900px) {
       header {
@@ -256,7 +275,7 @@
   <div style="display: none;">
     <!-- NUEVO ARTÍCULO -->
   <div id="subversion-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
       
       <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;"> Subversión Antigua y Defensa Moderna: El Caribe y la Sombra de la Intervención</h1>
 
@@ -284,7 +303,7 @@ El estudiante, como siempre presente, desde su mesa apunta, con sorna: <em>«Per
   <!-- FIN DEL NUEVO ARTÍCULO -->
     <!-- NUEVO ARTÍCULO -->
   <div id="cubiche1-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
       
       <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;"> Rubio, Machado y ExxonMobil: La tríada que “vende democracia” y compra petróleo… 
 </h1>
@@ -313,7 +332,7 @@ LAURA DIB, CEPAZ
 
 <!-- NUEVO ARTÍCULO -->
   <div id="cubiche2-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
       
       <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">El Camaleón Mayamero: Narco Rubio y su cruzada contra Caracas </h1>
 
@@ -342,7 +361,7 @@ SOREN KIERKEGAARD
   <!-- FIN DEL NUEVO ARTÍCULO -->
     <!-- NUEVO ARTÍCULO -->
   <div id="cubiche4-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
       
       <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;"> El evangelio según Marco Rubio: drones, premios y otras formas de libertad…</h1>
 
@@ -369,7 +388,7 @@ SOREN KIERKEGAARD
    
   <!-- NUEVO ARTÍCULO -->
   <div id="cubiche3-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
       
       <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">Marco Rubio: El “hijo americano” y la farsa de su ética…
 </h1>
@@ -398,7 +417,7 @@ SOREN KIERKEGAARD
   <!-- FIN DEL NUEVO ARTÍCULO -->
    <!-- NUEVO ARTÍCULO -->
   <div id="venas-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
       
       <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;"> Las venas abiertas de Maracaibo: crónica de un reencuentro</h1>
 
@@ -423,7 +442,7 @@ SOREN KIERKEGAARD
   <!-- FIN DEL NUEVO ARTÍCULO -->
     <!-- NUEVO ARTÍCULO -->
   <div id="gaza-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
             <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">Gaza: el espejo roto del siglo XXI…</h1>
       <span style="font-size: 0.95rem; display: block; margin-bottom: 1.5rem;">Por: Luis Semprún Jurado</span>
 <div style="text-align: right; margin-bottom: 0.1rem;">
@@ -451,7 +470,7 @@ SOREN KIERKEGAARD
 
     <!-- NUEVO ARTÍCULO -->
   <div id="sordos-content">
-    <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+    <div style="font-family: 'Georgia', serif;">
             <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">Se hacen los sordos porque no quieren entender…</h1>
       <span style="font-size: 0.95rem; display: block; margin-bottom: 1.5rem;">Por: Luis Semprún Jurado</span>
 <div style="text-align: right; margin-bottom: 0.1rem;">
@@ -481,7 +500,7 @@ SOREN KIERKEGAARD
 
     <!-- ARTICULOS NUEVOS -->
     <div id="cartel-content">
-  <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+  <div style="font-family: 'Georgia', serif;">
     
     <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">El Cartel de los Soles: La fábula que Washington vende como verdad</h1>
 
@@ -518,7 +537,7 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
 
      <!-- NUEVO ARTÍCULO -->
 <div id="medvedev-content">
-  <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+  <div style="font-family: 'Georgia', serif;">
     
     <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">Medvedev: El arte de desnudar la arrogancia de Washington</h1>
 
@@ -555,7 +574,7 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
     <!-- FIN DEL ARTÍCULO ANTERIOR -->
     <!-- NUEVO ARTÍCULO -->
     <div id="silencio-content">
-      <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+      <div style="font-family: 'Georgia', serif;">
         
         <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">El Silencio de la Canciller: ¿Quién maneja realmente Alemania?</h1>
 
@@ -597,7 +616,7 @@ Hoy, El Bohemio estaba completamente en silencio. Ni siquiera se escuchaba el mu
 
     <!-- ARTÍCULO EXISTENTE -->
     <div id="misterio-content">
-      <div style="font-family: 'Georgia', serif; color: #e0c9a6;">
+      <div style="font-family: 'Georgia', serif;">
         
         <h1 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">El Misterio en la Casa Blanca: Un Cadáver, Un Magnate y un Silencio…</h1>
 
