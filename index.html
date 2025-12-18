@@ -7,31 +7,38 @@
     body {
       margin: 0;
       font-family: Georgia, serif;
-      background-color: #111;
-      color: #eee;
+      background-color: #0b0b0b;
+      color: #eaeaea;
     }
     header {
-      background-color: #000;
+      background: url("static/img/maquina-escribir.jpg") no-repeat center;
+      background-size: cover;
       color: #fff;
-      padding: 20px;
+      padding: 60px 20px;
       text-align: center;
+      border-bottom: 5px solid #c00;
     }
     header h1 {
-      color: #c00;
-      font-size: 2.5em;
+      font-size: 3em;
       margin: 0;
+      color: #c00;
+      text-shadow: 2px 2px 4px #000;
     }
     header p {
       font-style: italic;
-      margin: 5px 0 0 0;
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
     }
     nav {
-      background-color: #222;
+      background-color: #111;
       text-align: center;
-      padding: 10px;
+      padding: 12px;
+      border-bottom: 2px solid #c00;
     }
     nav a {
-      color: #fff;
+      color: #eee;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
@@ -48,18 +55,21 @@
       width: 25%;
       padding: 15px;
       background-color: #1a1a1a;
+      border-right: 2px solid #333;
     }
     .sidebar h2 {
       color: #c00;
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-bottom: 10px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
     }
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
     .sidebar ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .sidebar ul li a {
       color: #eee;
@@ -75,37 +85,43 @@
       padding: 20px;
       background-color: #fff;
       color: #000;
-      text-align: left;
-      min-height: 400px;
+      min-height: 500px;
+      box-shadow: 0 0 10px #000;
     }
     .content h2 {
       margin-top: 0;
+      color: #222;
     }
     .images {
       width: 25%;
       padding: 15px;
       background-color: #1a1a1a;
+      border-left: 2px solid #333;
     }
     .images h2 {
       color: #c00;
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-bottom: 10px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
     }
     .images img {
       width: 100%;
       margin-bottom: 10px;
       border: 2px solid #444;
+      box-shadow: 2px 2px 6px #000;
     }
     footer {
       background-color: #000;
       color: #fff;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       margin-top: 20px;
+      border-top: 2px solid #c00;
     }
   </style>
   <script>
-    // Función para cargar contenido dinámico en el área central
+    // Carga dinámica de contenido en el área central
     function cargarContenido(ruta) {
       fetch(ruta)
         .then(response => response.text())
@@ -165,4 +181,5 @@
   </footer>
 </body>
 </html>
+
 
