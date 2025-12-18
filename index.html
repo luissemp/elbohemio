@@ -2,183 +2,504 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>EL BOHEMIO DIGITAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Bohemio Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --text-dark: #141414;
+      --text-light: #e0c9a6;
+      --background-dark: #1a1a1a;
+      --background-light: #f8f5f2;
+      --header-dark: #e74c3c;
+      --highlight: #e74c3c;
+      --font-serif: 'Cambria', 'Georgia', serif;
+      --font-lora: 'Lora', Arial, sans-serif;
+    }
+    * {
       margin: 0;
-      font-family: "Georgia", serif;
-      background-color: #2b1d0e;
-      color: #f5f0e6;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-lora);
+      background-color: var(--background-light); /* Modo claro por defecto */
+      color: var(--text-dark); /* Texto oscuro por defecto */
+      line-height: 1.6;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    body.modoclaro {
+      background-color: var(--background-light);
+      color: var(--text-dark);
+    }
+    body.modoscuro {
+      background-color: var(--background-dark);
+      color: var(--text-light);
     }
     header {
-      background: url("static/img/maquina-escribir.jpg") no-repeat center;
-      background-size: cover;
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom: 6px solid #a52a2a;
-    }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      color: #f5f0e6;
-      text-shadow: 2px 2px 6px #000;
-    }
-    header p {
-      font-style: italic;
-      font-size: 1.3em;
-      margin-top: 10px;
-      color: #ffd27f;
-      text-shadow: 1px 1px 4px #000;
-    }
-    nav {
-      background-color: #3b2a1a;
-      text-align: center;
-      padding: 12px;
-      border-bottom: 2px solid #a52a2a;
-    }
-    nav a {
-      color: #f5f0e6;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    nav a:hover {
-      color: #ffd27f;
-    }
-    main {
       display: flex;
-      margin: 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 3rem 2rem;
+      min-height: 100vh;
+      background-color: var(--background-dark);
+      color: var(--text-light);
+    }
+    .header-text h1 {
+      color: var(--header-dark);
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .header-text p {
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 400px;
+    }
+    .typewriter-image img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      border: none;
+    }
+    .toolbar {
+      background-color: #2c2c2c;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.8rem 0;
+    }
+    .toolbar button {
+      background: none;
+      border: 1px solid #555;
+      color: var(--text-light);
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      font-family: var(--font-lora);
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .toolbar button:hover {
+      background-color: #5a4a3a;
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      gap: 1.5rem;
     }
     .sidebar {
-      width: 25%;
-      padding: 15px;
-      background-color: #3b2a1a;
-      border-right: 2px solid #a52a2a;
+      width: 20%;
+      background-color: #e9e9e9; /* Modo claro por defecto */
+      color: var(--text-dark);
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      border: 1px solid #ccc;
+      transition: background-color 0.5s, color 0.5s;
     }
-    .sidebar h2 {
-      color: #ffd27f;
-      font-size: 1.3em;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #a52a2a;
-      padding-bottom: 5px;
+    body.modoscuro .sidebar {
+      background-color: #000;
+      color: var(--text-light);
+      border: 1px solid #333;
+    }
+    .sidebar h3 {
+      color: var(--header-dark);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #555;
+      padding-bottom: 0.3rem;
+      font-size: 1.1rem;
     }
     .sidebar ul {
       list-style: none;
-      padding: 0;
     }
     .sidebar ul li {
-      margin-bottom: 10px;
+      margin-bottom: 0.6rem;
     }
     .sidebar ul li a {
-      color: #f5f0e6;
+      color: #555;
       text-decoration: none;
+      font-style: italic;
       cursor: pointer;
+      transition: color 0.3s;
+    }
+    body.modoscuro .sidebar ul li a {
+      color: #aaa;
     }
     .sidebar ul li a:hover {
-      text-decoration: underline;
-      color: #ffd27f;
+      color: var(--header-dark);
     }
-    .content {
-      width: 50%;
-      padding: 20px;
-      background-color: #f5f0e6;
-      color: #2b1d0e;
-      min-height: 500px;
-      box-shadow: 0 0 12px #000;
+    .main-content {
+      flex-grow: 1;
+      background-color: var(--background-light); /* Modo claro por defecto */
+      color: var(--text-dark);
+      font-family: var(--font-lora);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 80vh;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
     }
-    .content h2 {
-      margin-top: 0;
-      color: #3b2a1a;
+    body.modoscuro .main-content {
+      background-color: #1c120c;
+      color: var(--text-light);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    .images {
-      width: 25%;
-      padding: 15px;
-      background-color: #3b2a1a;
-      border-left: 2px solid #a52a2a;
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 1px solid var(--text-dark);
+      color: var(--text-dark);
+      font-size: 1rem;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 1000;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-family: var(--font-lora);
     }
-    .images h2 {
-      color: #ffd27f;
-      font-size: 1.3em;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #a52a2a;
-      padding-bottom: 5px;
+    body.modoscuro .toggle-mode {
+      border-color: var(--text-light);
+      color: var(--text-light);
+      background: rgba(0, 0, 0, 0.5);
     }
-    .images img {
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
       width: 100%;
-      margin-bottom: 10px;
-      border: 2px solid #a52a2a;
-      box-shadow: 2px 2px 6px #000;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
     }
-    footer {
-      background-color: #3b2a1a;
-      color: #f5f0e6;
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+    }
+    /* Nuevos estilos para los artículos */
+    .article-container {
+      padding: 2rem;
+    }
+    .article-title {
+      font-family: var(--font-serif);
+      font-weight: bold;
+      color: var(--highlight);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
       text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-      border-top: 2px solid #a52a2a;
     }
+    body.modoclaro .article-title {
+      color: var(--highlight);
+    }
+    .quote-container {
+      margin: 2rem 0;
+      text-align: right;
+    }
+    .article-quote {
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      display: block;
+      color: var(--text-dark);
+    }
+    body.modoscuro .article-quote {
+      color: var(--text-light);
+    }
+    .quote-author {
+      font-size: 1.1rem;
+      color: var(--highlight);
+      font-style: normal;
+      text-transform: none;
+      font-weight: bold;
+      display: block;
+    }
+    .article-content {
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+    body.modoscuro .article-content {
+      color: var(--text-light);
+    }
+    .sep {
+      margin: 2rem 0;
+      border-bottom: 1px solid #ccc;
+    }
+    body.modoscuro .sep {
+      border-bottom: 1px solid #555;
+    }
+    .article-author {
+    font-family: var(--font-lora);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+body.modoscuro .article-author {
+    color: #ccc;
+}
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
   </style>
-  <script>
-    function cargarContenido(ruta) {
-      fetch(ruta)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('contenido').innerHTML = data;
-        })
-        .catch(error => {
-          document.getElementById('contenido').innerHTML =
-            "<p style='color:red'>No se pudo cargar el contenido.</p>";
-        });
-    }
-  </script>
 </head>
 <body>
   <header>
-    <h1>EL BOHEMIO DIGITAL</h1>
-    <p>El secreto es la tumba de la libertad</p>
+    <div class="header-text">
+      <h1>EL BOHEMIO DIGITAL</h1>
+      <p>"El secreto es la tumba de la libertad."</p>
+    </div>
+    <div class="typewriter-image">
+      <img src="img/typewriter.jpg" alt="Máquina de escribir">
+    </div>
   </header>
-
-  <nav>
-    <a onclick="cargarContenido('secciones/quienes-somos.html')">Quiénes somos</a>
-    <a onclick="cargarContenido('secciones/que-hacemos.html')">Qué hacemos</a>
-    <a onclick="cargarContenido('secciones/archivos.html')">Archivos</a>
-    <a onclick="cargarContenido('secciones/cronicas.html')">Crónicas de ElBohemio</a>
-    <a onclick="cargarContenido('secciones/editorial.html')">Editorial</a>
-    <a onclick="cargarContenido('secciones/contacto.html')">Contacto</a>
-    <a onclick="cargarContenido('secciones/lectores.html')">Lectores con voz</a>
-  </nav>
-
-  <main>
+  <div class="toolbar">
+    <button onclick="showSection('quienes')">Quiénes somos</button>
+    <button onclick="showSection('quehacemos')">Qué hacemos</button>
+    <button onclick="showSection('archivos')">Archivos</button>
+    <button onclick="showSection('cronicas')">Crónicas de ElBohemio</button>
+    <button onclick="showSection('editorial')">Editorial</button>
+    <button onclick="showSection('contacto')">Contacto</button>
+    <button onclick="showSection('lectores')">Lectores con voz (Café, cartas y réplicas)</button>
+  </div>
+  <div class="container">
+    
+    <main class="main-content" id="main-content">
+      <h1>Bienvenido a El Bohemio Digital</h1>
+      <p>Haz clic en una sección para comenzar</p>
+      <button class="toggle-mode" onclick="toggleMode()">
+        🌙 / ☀️
+      </button>
+    </main>
     <aside class="sidebar">
-      <h2>Mis Artículos</h2>
+      <h3>Mis Imágenes</h3>
       <ul>
-        <li><a onclick="cargarContenido('articulos/defensa-caribe.html')">Defensa Moderna en El Caribe ante la Sombra de la Intervención</a></li>
-        <li><a onclick="cargarContenido('articulos/nobel-cinismo.html')">¿Nobel del Cinismo... o Nobel del Descaro?</a></li>
-        <li><a onclick="cargarContenido('articulos/se-hacen-los-sordos.html')">Se hacen los sordos porque no quieren entender...</a></li>
-        <li><a onclick="cargarContenido('articulos/gaza.html')">Gaza: el espejo roto del siglo XXI...</a></li>
-        <li><a onclick="cargarContenido('articulos/maracaibo.html')">Las venas abiertas de Maracaibo: crónica de un reencuentro</a></li>
+        <li><a onclick="openModal('viejo.jpg')" style="cursor: pointer;">
+          <img src="img/viejo.jpg" alt="El viejo" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
+        </a></li>
+        <li><a onclick="openModal('maquina.jpg')" style="cursor: pointer;">
+          <img src="img/maquina.jpg" alt="Máquina de escribir" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
+        </a></li>
+        <li><a onclick="openModal('cafe.jpg')" style="cursor: pointer;">
+          <img src="img/cafe.jpg" alt="El Café El Bohemio" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
+        </a></li>
+        <li><a onclick="openModal('yo2.jpg')" style="cursor: pointer;">
+          <img src="img/yo2.jpg" alt="Luis Semprún Jurado" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
+        </a></li>
       </ul>
     </aside>
+  </div>
+  <div style="display: none;">
+    
+     <!-- AQUÍ IRÁN LOS ARTÍCULOS GENERADOS AUTOMÁTICAMENTE -->
+    
+<div id="contenido-articulos"></div>
+    <!-- FIN DEL NUEVO ARTÍCULO -->
+  <div class="modal" id="imageModal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+  <script>
+    function loadArticle(id) {
+      const content = document.getElementById('main-content');
+      const article = document.getElementById(id + '-content');
+      if (article) content.innerHTML = article.innerHTML;
+    }
+    
+    function showSection(id) {
+      const content = document.getElementById('main-content');
+      const texts = {
+        quienes: `
+          <h1 class="article-title">¿Quiénes somos?</h1>
+          <p class="article-author"><strong>Luis Semprún Jurado</strong> - Fundador de El Bohemio Digital</p>
+          <p class="article-content">Pluma libre, voz incómoda y cronista del caos global.
+          <br>Luis no escribe para gustar. Escribe para que duela. Periodista, locutor, Productor Nacional Independiente, narrador y denunciador a tiempo completo, su trayectoria combina la irreverencia con el rigor, la sátira con la investigación.
+          Columnista incómodo, perseguidor de verdades mal contadas y curador del verbo de Anacleto <strong>-ese personaje que no teme decir lo que otros apenas insinúan—</strong>, Luis ha hecho del periodismo una trinchera ética y una emboscada estética.
+          Desde el corazón de América Latina o desde el rincón más impensado del exilio, sus artículos cruzan fronteras, sacuden conciencias y revientan silencios cómplices.
+          <br>
+          <em>"El Bohemio Digital es su casa... y su arma."</em></p>
+          <br>
+          <p class="article-content">Somos académicos, periodistas veteranos y nuevos talentos que conformamos esta red de colaboradores que enriquecen nuestra mirada, con perspectivas diversas, pero igualmente comprometidas con la verdad.
+          Somos un colectivo de pensadores, escritores y críticos que creemos en la <strong><em>palabra como arma de justicia.</em></strong> Desde El Bohemio, desenmascaramos verdades incómodas.</p>
+        `,
+        quehacemos: `
+          <h1 class="article-title">Qué hacemos</h1>
+          <div class="quote-container">
+              <p class="article-quote">"No nacimos para agradar, sino para señalar. Tampoco para censurar, ni obedecer: aquí se escribe con coraje, memoria y sentido del deber."</p>
+          </div>
+          <p class="article-content">En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.</p>
+          <p class="article-content">El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezamos ni a Washington, ni a Moscú, ni al mercado.
+          Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.<br></p>
+          <p class="article-content"><b><em><span class="quote-author">“La verdad no tiene patrocinantes. Tiene testigos.”</span></em></b></p>
+        `,
+        archivos: `
+          <h1 class="article-title">Archivo Completo</h1>
+          <p class="article-content"><em>Investigaciones que arden. Verdades que incomodan. Archivos que no quieren que leas.</em></p>
+          <p class="article-content">Aquí se publica lo que otros censuran. Espionaje, pactos turbios, juegos de guerra, extradiciones que huelen a trampa, nombres que no aparecen en portadas, pero sí en carpetas clasificadas. Con fuentes, con datos, con sangre fría.
+          porque la conspiración deja huellas. Y nosotros las seguimos. Nuestra memoria histórica contiene más de <strong>500 artículos</strong> que documentan los escándalos políticos más relevantes de las últimas décadas.
+          </p>
+          <p class="article-content">Un repositorio cronológico de investigaciones que permite entender los patrones de corrupción y abuso de poder a lo largo del tiempo.</p>
+          <p class="article-content"><em> Accede a todos nuestros artículos, ordenados por fecha, tema o autor.</em></p>
+          <p class="article-content"><em><b><span class="quote-author">La memoria no se borra. Se defiende.</span></b></em></p>
+        `,  
+        cronicas: `
+          <h1 class="article-title">Crónicas de ElBohemio</h1>
+          <p class="article-content">En este rincón literario, la realidad y la ficción se entrelazan en conversaciones que diseccionan la actualidad. El Café El Bohemio es nuestro espacio narrativo donde personajes anónimos comentan los acontecimientos mientras Anacleto los confronta con aguda inteligencia.</p>
+          <div class="quote-container">
+            <p class="article-quote">"La oposición grita que las sanciones solo afectan al gobierno y no al pueblo, pero mi nevera dice lo contrario. ¿A quién le creo?"</p>
+            <span class="quote-author">— Cliente habitual del Café</span>
+          </div>
+          <div class="quote-container">
+            <p class="article-quote">"La verdad no está en los discursos malintencionados de la rancia oligarquía sino en las arrugas de preocupación de la gente común."</p>
+            <span class="quote-author">— Anacleto, observando desde su mesa</span>
+          </div>
+          <p class="article-content"><strong>Anacleto habla de:</strong> Las voces del rincón. Las verdades del café. Los relatos que el poder no quiere escuchar.</p>
+        `,
+        editorial: `
+          <h1 class="article-title">Editorial</h1>
+          <p class="article-content" style="text-align: center;"><b>Manifiesto de los que no callan</b></p>
+          <div class="quote-container">
+            <p class="article-quote">"No nacimos para agradar, sino para señalar. Ni censura, ni obediencia: aquí se escribe con rabia, memoria y sentido del deber."</p>
+          </div>
+          <p class="article-content">En un mundo donde los medios masivos se arrodillan ante el poder, nosotros permanecemos de pie. Nuestra pluma no conoce dueño ni acepta sobornos. Cada línea es un compromiso con la verdad, por incómoda que resulte. Un café, una sospecha y una verdad que no se vende. Aquí no obedecemos líneas editoriales ni le tememos a las consecuencias. Aquí no se escribe por clics, se escribe por principios.
+          <br>
+          El Bohemio Digital es un espacio de denuncia, sátira y análisis feroz, donde la crítica política no se disfraza de cortesía diplomática. Es un refugio para quienes prefieren la verdad incómoda al silencio cómplice. Cada artículo es una bala de tinta contra la hipocresía. Cada análisis es una cornada a la mentira institucional. Y cada intervención de Anacleto, una bofetada al cinismo moderno. Somos los que dudan en voz alta; los que ven una farsa y la llaman farsa; los que no le rezan ni a Washington, ni a Moscú, ni al mercado.
+          <br>
+          Este medio nace para decir lo que muchos piensan y pocos se atreven. Para sacar a la luz los secretos que se esconden detrás de las guerras, tratados, deportaciones, magnicidios frustrados y las sonrisas de plástico en la Casa Blanca. Aquí no vendemos esperanza en frasquitos… ni neutralidad. Aquí se toma café negro, se escribe sin permiso y se conspira con palabras.</p>
+          <p class="article-content" style="text-align: center;"><em>
+          <span class="quote-author">“La verdad no tiene patrocinantes. Tiene testigos.”</span>
+          </em>
+          </p>
+        `,
+        contacto: `
+          <h1 class="article-title"><strong>Contacto</strong></h1>
+          <p class="article-content">¿Tienes una historia que contar? ¿Una denuncia? ¿Una carta al Bohemio?<br>Escríbenos a: <strong>redaccion@elbohemiodigital.com</strong></p>
+          <p class="article-content">Este no es un portal para tibios. Es un espacio de resistencia.</p>
+        `,
+        lectores: `
+          <h1 class="article-title"><strong>Lectores con voz</strong></h1>
+          <p class="article-content">Este café no es solo de Anacleto. Porque el periodismo no es monólogo sino conversación, abrimos este espacio para que la comunidad participe activamente. Aquí los lectores comentan, debaten y aportan nuevas perspectivas que enriquecen el análisis colectivo.
+          Nuestra sección especial de cartas abiertas permite dar voz a quienes normalmente no la tienen en los medios tradicionales.
+          Es de todos los que no callan. Envíanos tus cartas, réplicas, crónicas o denuncias. Las mejores aparecerán aquí.</p>
+          <p class="article-content"><strong><em><span class="quote-author">Porque cuando el pueblo habla, el poder tiembla.</span></em></strong></p>
+        `
+      };
+      content.innerHTML = texts[id] || '<p>Sección en construcción.</p>';
+    }
 
-    <section class="content" id="contenido">
-      <h2>Bienvenido a El Bohemio Digital</h2>
-      <p>Haz clic en una sección o artículo para comenzar.</p>
-    </section>
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImage");
+      img.src = "img/" + src;
+      modal.style.display = "flex";
+      img.onclick = function(e) { e.stopPropagation(); };
+    }
 
-    <aside class="images">
-      <h2>Mis Imágenes</h2>
-      <img src="static/img/maquina-escribir.jpg" alt="Máquina de escribir">
-      <img src="static/img/biblioteca.jpg" alt="Biblioteca">
-      <img src="static/img/retrato-bohemio.jpg" alt="Retrato bohemio">
-    </aside>
-  </main>
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
 
-  <footer>
-    © 2025 El Bohemio Digital — El secreto es la tumba de la libertad
-  </footer>
+    function toggleMode() {
+      const body = document.body;
+      if (body.classList.contains('modoscuro')) {
+        body.classList.remove('modoscuro');
+      } else {
+        body.classList.add('modoscuro');
+      }
+    }
+    function openModal(src) {
+  const modal = document.getElementById("imageModal");
+  const img = document.getElementById("modalImage");
+  img.src = "img/" + src;
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+  </script>
 </body>
-</html>
+  </html>
 
 
 
