@@ -9,6 +9,7 @@ CARPETA_POSTS = r"C:\Users\Usuario\Documents\elbohemio\posts"
 CARPETA_SCRIPTS = r"C:\Users\Usuario\Documents\elbohemio\scripts"
 
 def extraer_epigrafe(contenido_md):
+    """Extrae la primera cita del Markdown (formato > cita o > cita\n> — Autor)"""
     lineas = contenido_md.split('\n')
     cita = ""
     autor = ""
@@ -23,6 +24,20 @@ def extraer_epigrafe(contenido_md):
                 autor = partes[1].strip()
             break
     return cita, autor
+
+def limpiar_metadatos(contenido_md):
+    """Elimina los metadatos YAML (--- ... ---) del contenido"""
+    lineas = contenido_md.split('\n')
+    
+    # Buscar bloque de metadatos (--- al inicio)
+    if lineas and lineas[0].strip() == '---':
+        for i in range(1, len(lineas)):
+            if lineas[i].strip() == '---':
+                # Devolver el contenido después de los metadatos
+                return '\n'.join(lineas[i+1:]).strip()
+    
+    # Si no hay metadatos, devolver el contenido original
+    return contenido_md
 
 def generar_html_articulo(archivo_md):
     with open(archivo_md, 'r', encoding='utf-8') as f:
@@ -41,10 +56,14 @@ def generar_html_articulo(archivo_md):
         titulo = nombre.replace('.md', '').replace('-', ' ').title()
         id_articulo = re.sub(r'[^a-z0-9-]', '', titulo.lower().replace(' ', '-'))
     
-    cita, autor_cita = extraer_epigrafe(contenido_md)
+    # Limpiar metadatos del contenido
+    contenido_sin_metadatos = limpiar_metadatos(contenido_md)
+    
+    # Extraer epígrafe (cita)
+    cita, autor_cita = extraer_epigrafe(contenido_sin_metadatos)
     
     # Remover la línea de la cita del contenido
-    lineas = contenido_md.split('\n')
+    lineas = contenido_sin_metadatos.split('\n')
     contenido_sin_cita = []
     skip = False
     for i, linea in enumerate(lineas):
@@ -62,7 +81,7 @@ def generar_html_articulo(archivo_md):
     html_contenido = markdown.markdown(contenido_limpio, extensions=['extra'])
     html_contenido = html_contenido.replace('<hr />', '<div class="sep"></div>')
     
-    # HTML final del artículo
+    # HTML final del artículo (sin metadatos visibles)
     html_articulo = f"""<div id="{id_articulo}-content" class="article-container">
       <h1 class="article-title">{titulo}</h1>
       <p class="article-author">Por Luis Semprún Jurado</p>
@@ -88,7 +107,7 @@ def generar_lista_lateral(articulos):
 
 def main():
     print("=" * 50)
-    print("🚀 EL BOHEMIO DIGITAL - MIGRADOR DEFINITIVO")
+    print("🚀 EL BOHEMIO DIGITAL - MIGRADOR DEFINITIVO (CORREGIDO)")
     print("=" * 50)
     
     # Crear carpetas si no existen
