@@ -1,7 +1,3 @@
----
-titulo: "El Camaleón Mayamero: Narco Rubio y su cruzada contra Caracas"
-numero: 11
----
 
 > Hay dos formas de ser engañado: una consiste en creer en lo que no es cierto y la otra en negarse a creer lo que es cierto
 > — SOREN KIERKEGAARD

@@ -1,7 +1,3 @@
----
-titulo: "Defensa Moderna en El Caribe ante la Sombra de la Intervención"
-numero: 13
----
 
 > Los hechos no son nada; lo importante es el eco que despiertan en el espíritu de los pueblos.
 > — HONORÉ DE BALZAC

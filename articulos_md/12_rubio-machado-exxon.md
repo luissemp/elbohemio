@@ -1,7 +1,3 @@
----
-titulo: "Rubio, Machado y ExxonMobil: La tríada que 'vende democracia' y compra petróleo…"
-numero: 3
----
 
 > Cuando los opositores callan ante atrocidades, dejan claro que su lucha no es por el pueblo, sino por el poder
 > — LAURA DIB, CEPAZ
