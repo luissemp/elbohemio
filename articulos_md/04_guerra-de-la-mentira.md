@@ -1,3 +1,7 @@
+---
+titulo: "La Guerra de la Mentira: Geopolítica y Medios contra Venezuela..."
+numero: 4
+---
 
 > Los pueblos que se entregan, pierden hasta el derecho de llamarse pueblos.
 > — RÓMULO GALLEGOS

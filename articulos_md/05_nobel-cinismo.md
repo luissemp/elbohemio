@@ -1,3 +1,7 @@
+---
+titulo: "¿Nobel del Cinismo… o Nobel del Descaro?"
+numero: 5
+---
 
 > La curiosidad surge cuando hay un espacio entre lo que sabemos y lo que queremos saber.
 > — ANACLETO

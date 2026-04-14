@@ -1,3 +1,7 @@
+---
+titulo: "Medvedev: El arte de desnudar la arrogancia de Washington..."
+numero: 2
+---
 
 > La ventaja de ser inteligente es que se puede fingir ser imbécil, mientras que al revés es imposible
 > — WOODY ALLEN

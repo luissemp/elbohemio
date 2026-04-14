@@ -1,3 +1,7 @@
+---
+titulo: "Gaza: el espejo roto del siglo XXI…"
+numero: 7
+---
 
 > Quien fue víctima y se hace verdugo, no busca justicia: busca perpetuar el trauma como poder.
 > — ANACLETO
