@@ -30,6 +30,7 @@
     <button onclick="showSection('lectores')">Lectores con voz (Café, cartas y réplicas)</button>
   </div>
   <div class="container">
+<<<<<<< HEAD
     <aside class="sidebar">
       <h3>Mis Artículos</h3>
       <ul>
@@ -46,8 +47,23 @@
         <li><a onclick="loadArticle('medvedev')">3. Medvedev: El arte de desnudar la arrogancia de Washington</a></li>
         <li><a onclick="loadArticle('silencio')">2. El Silencio de la Canciller: ¿Quién maneja realmente Alemania?</a></li>
         <li><a onclick="loadArticle('misterio')">1. El Misterio en la Casa Blanca</a></li>
+=======
+  <h3>Mis Artículos</h3>
+<ul>
+        <li><a onclick="loadArticle('defensa-moderna-caribe')">13. Defensa Moderna Caribe</a></li>
+        <li><a onclick="loadArticle('rubio-machado-exxon')">12. Rubio Machado Exxon</a></li>
+        <li><a onclick="loadArticle('camaleon-mayamero')">11. Camaleon Mayamero</a></li>
+        <li><a onclick="loadArticle('rey-desnudo-muertos-sin-cruz')">10. Rey Desnudo Muertos Sin Cruz</a></li>
+        <li><a onclick="loadArticle('hijo-americano')">9. Hijo Americano</a></li>
+        <li><a onclick="loadArticle('venas-abiertas-maracaibo')">8. Venas Abiertas Maracaibo</a></li>
+        <li><a onclick="loadArticle('gaza-espejo-roto')">7. Gaza Espejo Roto</a></li>
+        <li><a onclick="loadArticle('se-hacen-sordos')">6. Se Hacen Sordos</a></li>
+        <li><a onclick="loadArticle('nobel-cinismo')">5. Nobel Cinismo</a></li>
+        <li><a onclick="loadArticle('guerra-de-la-mentira')">4. Guerra De La Mentira</a></li>
+        <li><a onclick="loadArticle('medvedev-arrogancia')">2. Medvedev Arrogancia</a></li>
+        <li><a onclick="loadArticle('mi-prueba')">1. Mi Prueba</a></li>
+>>>>>>> 158cff79e00c32d74a75db91a1a4432cc8cf70fa
       </ul>
-    </aside>
     <main class="main-content" id="main-content">
       <div class="article-container">
         <h1 class="article-title">Bienvenido a El Bohemio Digital</h1>
@@ -91,6 +107,7 @@
       </ul>
     </aside>
   </div>
+<<<<<<< HEAD
   <div style="display: none;">
 ----------- Aquí comienza el artículo .........
     <div id="subversion-content" class="article-container">
@@ -260,17 +277,34 @@
     </div>
   </div>
 
+=======
+/// AQUI ESTABAN LOS ARTICS ///
+>>>>>>> 158cff79e00c32d74a75db91a1a4432cc8cf70fa
   <div class="modal" id="imageModal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImage">
   </div>
 
   <script>
-    function loadArticle(id) {
-      const content = document.getElementById('main-content');
-      const article = document.getElementById(id + '-content');
-      if (article) content.innerHTML = article.innerHTML;
-    }
+   function loadArticle(id) {
+  const content = document.getElementById('main-content');
+  
+  // Mostrar mensaje mientras carga
+  content.innerHTML = '<div class="article-container"><p style="text-align:center;">📖 Cargando artículo...</p></div>';
+  
+  // Cargar el artículo desde la carpeta posts/
+  fetch(`posts/${id}.html`)
+    .then(response => {
+      if (!response.ok) throw new Error('Artículo no encontrado');
+      return response.text();
+    })
+    .then(html => {
+      content.innerHTML = html;
+    })
+    .catch(error => {
+      content.innerHTML = `<div class="article-container"><h1>Error</h1><p>No se pudo cargar el artículo: ${error.message}</p></div>`;
+    });
+}
     
     function showSection(id) {
       const content = document.getElementById('main-content');
