@@ -1,6 +1,7 @@
 ---
 titulo: "Defensa Moderna en el Caribe ante la Sombra de la Intervención"
 numero: 13
+id: defensa-moderna-caribe
 ---
 
 > Los hechos no son nada; lo importante es el eco que despiertan en el espíritu de los pueblos.

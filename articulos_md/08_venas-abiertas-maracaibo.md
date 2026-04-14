@@ -1,6 +1,7 @@
 ---
 titulo: "Las venas abiertas de Maracaibo: crónica de un reencuentro..."
 numero: 8
+id: venas-abiertas-maracaibo
 ---
 
 > Hay ciudades que se desvanecen en la penumbra, y otras que reaparecen con decisión renovada.

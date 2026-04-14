@@ -1,6 +1,7 @@
 ---
 titulo: "El Rey Desnudo y los Muertos Sin Cruz: Crónica de una Sentencia Sin Jueces…"
 numero: 10
+id: rey-desnudo-muertos-sin-cruz
 ---
 
 > No hay tiranía más grande que la que se ejerce a nombre de la libertad.

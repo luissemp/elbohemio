@@ -24,25 +24,27 @@ def extraer_epigrafe(contenido_md):
             break
     return cita, autor
 
-def extraer_titulo_y_numero(contenido_md, nombre_archivo):
-    """Extrae título y número de los metadatos YAML"""
+def extraer_metadatos(contenido_md, nombre_archivo):
+    """Extrae titulo, numero e id de los metadatos YAML"""
     titulo = None
     numero = None
+    id_articulo = None
     
     # Buscar bloque de metadatos: --- ... ---
     match = re.search(r'^---\s*\n(.*?)\n---\s*\n', contenido_md, re.DOTALL)
     if match:
         metadatos_bloque = match.group(1)
-        # Buscar titulo:
         titulo_match = re.search(r'titulo:\s*["\']?([^"\'\n]+)["\']?', metadatos_bloque)
         if titulo_match:
             titulo = titulo_match.group(1).strip()
-        # Buscar numero:
         numero_match = re.search(r'numero:\s*(\d+)', metadatos_bloque)
         if numero_match:
             numero = int(numero_match.group(1))
+        id_match = re.search(r'id:\s*["\']?([^"\'\n]+)["\']?', metadatos_bloque)
+        if id_match:
+            id_articulo = id_match.group(1).strip()
     
-    # Si no encontró título en metadatos, usar el nombre del archivo
+    # Si no encontró título, usar el nombre del archivo
     if not titulo:
         nombre_sin_extension = nombre_archivo.replace('.md', '')
         nombre_sin_numero = re.sub(r'^\d+[_\-]', '', nombre_sin_extension)
@@ -53,13 +55,18 @@ def extraer_titulo_y_numero(contenido_md, nombre_archivo):
         match_num = re.match(r'(\d+)[_\-]', nombre_archivo)
         numero = int(match_num.group(1)) if match_num else 999
     
-    return titulo, numero
+    # Si no encontró ID, generarlo del título
+    if not id_articulo:
+        id_articulo = re.sub(r'[^a-z0-9-]', '', titulo.lower().replace(' ', '-'))
+        id_articulo = re.sub(r'-+', '-', id_articulo).strip('-')
+        # Limitar longitud del ID a 50 caracteres
+        id_articulo = id_articulo[:50]
+    
+    return titulo, numero, id_articulo
 
 def limpiar_metadatos(contenido_md):
     """Elimina el bloque de metadatos YAML del contenido"""
-    # Eliminar el bloque --- ... --- del inicio
-    contenido_limpio = re.sub(r'^---\s*\n.*?\n---\s*\n', '', contenido_md, flags=re.DOTALL)
-    return contenido_limpio
+    return re.sub(r'^---\s*\n.*?\n---\s*\n', '', contenido_md, flags=re.DOTALL)
 
 def generar_html_articulo(archivo_md):
     with open(archivo_md, 'r', encoding='utf-8') as f:
@@ -67,24 +74,20 @@ def generar_html_articulo(archivo_md):
     
     nombre_archivo = os.path.basename(archivo_md)
     
-    # Extraer título y número de los metadatos
-    titulo, numero = extraer_titulo_y_numero(contenido_md, nombre_archivo)
+    # Extraer metadatos
+    titulo, numero, id_articulo = extraer_metadatos(contenido_md, nombre_archivo)
     
-    # Generar ID a partir del título
-    id_articulo = re.sub(r'[^a-z0-9-]', '', titulo.lower().replace(' ', '-'))
-    id_articulo = re.sub(r'-+', '-', id_articulo).strip('-')
-    
-    # Limpiar metadatos del contenido (eliminar el bloque ---...---)
+    # Limpiar metadatos del contenido
     contenido_sin_metadatos = limpiar_metadatos(contenido_md)
     
-    # Extraer epígrafe (cita)
+    # Extraer epígrafe
     cita, autor_cita = extraer_epigrafe(contenido_sin_metadatos)
     
     # Remover la línea de la cita del contenido
     lineas = contenido_sin_metadatos.split('\n')
     contenido_sin_cita = []
     skip = False
-    for i, linea in enumerate(lineas):
+    for linea in lineas:
         if linea.startswith('> '):
             skip = True
             continue
@@ -99,7 +102,7 @@ def generar_html_articulo(archivo_md):
     html_contenido = markdown.markdown(contenido_limpio, extensions=['extra'])
     html_contenido = html_contenido.replace('<hr />', '<div class="sep"></div>')
     
-    # HTML final del artículo
+    # HTML final
     html_articulo = f"""<div id="{id_articulo}-content" class="article-container">
       <h1 class="article-title">{titulo}</h1>
       <p class="article-author">Por Luis Semprún Jurado</p>
@@ -124,7 +127,7 @@ def generar_lista_lateral(articulos):
 
 def main():
     print("=" * 50)
-    print("🚀 EL BOHEMIO DIGITAL - MIGRADOR CORREGIDO")
+    print("🚀 EL BOHEMIO DIGITAL - MIGRADOR CON IDs MANUALES")
     print("=" * 50)
     
     Path(CARPETA_MD).mkdir(parents=True, exist_ok=True)
@@ -153,7 +156,7 @@ def main():
             'archivo': md_file.name
         })
         
-        print(f"   ✅ {numero} - {titulo} → posts/{id_art}.html")
+        print(f"   ✅ {numero} - {titulo[:50]}... → posts/{id_art}.html")
     
     lista_lateral = generar_lista_lateral(articulos)
     
@@ -164,6 +167,7 @@ def main():
     print("✅ MIGRACIÓN COMPLETADA")
     print("=" * 50)
     print(f"\n📁 Los artículos están en: {CARPETA_POSTS}")
+    print("\n📋 Si quieres IDs personalizados, agrega 'id: mi-id-corto' en los metadatos de cada .md")
 
 if __name__ == "__main__":
     main()

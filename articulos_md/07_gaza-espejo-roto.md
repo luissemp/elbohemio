@@ -1,6 +1,7 @@
 ---
 titulo: "Gaza: el espejo roto del siglo XXI…"
 numero: 7
+id: gaza-espejo-roto
 ---
 
 > Quien fue víctima y se hace verdugo, no busca justicia: busca perpetuar el trauma como poder.

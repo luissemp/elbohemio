@@ -1,6 +1,7 @@
 ---
 titulo: "Se hacen los sordos porque no quieren entender…"
 numero: 6
+id: se-hacen-sordos
 ---
 
 > El árbol que no echa raíces en tiempos difíciles, con el primer viento se desploma.

@@ -1,6 +1,7 @@
 ---
 titulo: "Marco Rubio: El 'hijo americano' y la farsa de su ética…"
 numero: 9
+id: hijo-americano
 ---
 
 > El secreto de la vida es la honestidad y el juego limpio, si puedes simular eso, lo has conseguido todo.
