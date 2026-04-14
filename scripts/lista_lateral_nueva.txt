@@ -1,15 +1,15 @@
 <h3>Mis Artículos</h3>
 <ul>
-        <li><a onclick="loadArticle('defensa-moderna-caribe')">13. Defensa Moderna Caribe</a></li>
-        <li><a onclick="loadArticle('rubio-machado-exxon')">12. Rubio Machado Exxon</a></li>
-        <li><a onclick="loadArticle('camaleon-mayamero')">11. Camaleon Mayamero</a></li>
-        <li><a onclick="loadArticle('rey-desnudo-muertos-sin-cruz')">10. Rey Desnudo Muertos Sin Cruz</a></li>
-        <li><a onclick="loadArticle('hijo-americano')">9. Hijo Americano</a></li>
-        <li><a onclick="loadArticle('venas-abiertas-maracaibo')">8. Venas Abiertas Maracaibo</a></li>
-        <li><a onclick="loadArticle('gaza-espejo-roto')">7. Gaza Espejo Roto</a></li>
-        <li><a onclick="loadArticle('se-hacen-sordos')">6. Se Hacen Sordos</a></li>
-        <li><a onclick="loadArticle('nobel-cinismo')">5. Nobel Cinismo</a></li>
-        <li><a onclick="loadArticle('guerra-de-la-mentira')">4. Guerra De La Mentira</a></li>
-        <li><a onclick="loadArticle('medvedev-arrogancia')">2. Medvedev Arrogancia</a></li>
+        <li><a onclick="loadArticle('defensa-moderna-en-el-caribe-ante-la-sombra-de-la-intervencin')">13. Defensa Moderna en el Caribe ante la Sombra de la Intervención</a></li>
+        <li><a onclick="loadArticle('rubio-machado-y-exxonmobil-la-trada-que')">12. Rubio, Machado y ExxonMobil: La tríada que</a></li>
+        <li><a onclick="loadArticle('el-camalen-mayamero-narco-rubio-y-su-cruzada-contra-caracas')">11. El Camaleón Mayamero: Narco Rubio y su cruzada contra Caracas…</a></li>
+        <li><a onclick="loadArticle('el-rey-desnudo-y-los-muertos-sin-cruz-crnica-de-una-sentencia-sin-jueces')">10. El Rey Desnudo y los Muertos Sin Cruz: Crónica de una Sentencia Sin Jueces…</a></li>
+        <li><a onclick="loadArticle('marco-rubio-el')">9. Marco Rubio: El</a></li>
+        <li><a onclick="loadArticle('las-venas-abiertas-de-maracaibo-crnica-de-un-reencuentro')">8. Las venas abiertas de Maracaibo: crónica de un reencuentro...</a></li>
+        <li><a onclick="loadArticle('gaza-el-espejo-roto-del-siglo-xxi')">7. Gaza: el espejo roto del siglo XXI…</a></li>
+        <li><a onclick="loadArticle('se-hacen-los-sordos-porque-no-quieren-entender')">6. Se hacen los sordos porque no quieren entender…</a></li>
+        <li><a onclick="loadArticle('nobel-del-cinismo-o-nobel-del-descaro')">5. ¿Nobel del Cinismo… o Nobel del Descaro?</a></li>
+        <li><a onclick="loadArticle('la-guerra-de-la-mentira-geopoltica-y-medios-contra-venezuela')">4. La Guerra de la Mentira: Geopolítica y Medios contra Venezuela...</a></li>
+        <li><a onclick="loadArticle('medvedev-el-arte-de-desnudar-la-arrogancia-de-washington')">2. Medvedev: El arte de desnudar la arrogancia de Washington...</a></li>
         <li><a onclick="loadArticle('mi-prueba')">1. Mi Prueba</a></li>
       </ul>

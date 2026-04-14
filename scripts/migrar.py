@@ -9,7 +9,6 @@ CARPETA_POSTS = r"C:\Users\Usuario\Documents\elbohemio\posts"
 CARPETA_SCRIPTS = r"C:\Users\Usuario\Documents\elbohemio\scripts"
 
 def extraer_epigrafe(contenido_md):
-    """Extrae la primera cita del Markdown (formato > cita o > cita\n> — Autor)"""
     lineas = contenido_md.split('\n')
     cita = ""
     autor = ""
@@ -25,38 +24,57 @@ def extraer_epigrafe(contenido_md):
             break
     return cita, autor
 
+def extraer_titulo_y_numero(contenido_md, nombre_archivo):
+    """Extrae título y número de los metadatos YAML"""
+    titulo = None
+    numero = None
+    
+    # Buscar bloque de metadatos: --- ... ---
+    match = re.search(r'^---\s*\n(.*?)\n---\s*\n', contenido_md, re.DOTALL)
+    if match:
+        metadatos_bloque = match.group(1)
+        # Buscar titulo:
+        titulo_match = re.search(r'titulo:\s*["\']?([^"\'\n]+)["\']?', metadatos_bloque)
+        if titulo_match:
+            titulo = titulo_match.group(1).strip()
+        # Buscar numero:
+        numero_match = re.search(r'numero:\s*(\d+)', metadatos_bloque)
+        if numero_match:
+            numero = int(numero_match.group(1))
+    
+    # Si no encontró título en metadatos, usar el nombre del archivo
+    if not titulo:
+        nombre_sin_extension = nombre_archivo.replace('.md', '')
+        nombre_sin_numero = re.sub(r'^\d+[_\-]', '', nombre_sin_extension)
+        titulo = nombre_sin_numero.replace('-', ' ').replace('_', ' ').title()
+    
+    # Si no encontró número, extraer del nombre
+    if not numero:
+        match_num = re.match(r'(\d+)[_\-]', nombre_archivo)
+        numero = int(match_num.group(1)) if match_num else 999
+    
+    return titulo, numero
+
 def limpiar_metadatos(contenido_md):
-    """Elimina los metadatos YAML (--- ... ---) del contenido"""
-    lineas = contenido_md.split('\n')
-    
-    # Buscar bloque de metadatos (--- al inicio)
-    if lineas and lineas[0].strip() == '---':
-        for i in range(1, len(lineas)):
-            if lineas[i].strip() == '---':
-                # Devolver el contenido después de los metadatos
-                return '\n'.join(lineas[i+1:]).strip()
-    
-    # Si no hay metadatos, devolver el contenido original
-    return contenido_md
+    """Elimina el bloque de metadatos YAML del contenido"""
+    # Eliminar el bloque --- ... --- del inicio
+    contenido_limpio = re.sub(r'^---\s*\n.*?\n---\s*\n', '', contenido_md, flags=re.DOTALL)
+    return contenido_limpio
 
 def generar_html_articulo(archivo_md):
     with open(archivo_md, 'r', encoding='utf-8') as f:
         contenido_md = f.read()
     
-    # Extraer título del nombre del archivo
-    nombre = os.path.basename(archivo_md)
-    match = re.match(r'(\d+)[_\-](.+)\.md', nombre)
-    if match:
-        numero = int(match.group(1))
-        titulo_raw = match.group(2).replace('-', ' ').replace('_', ' ')
-        titulo = titulo_raw.title()
-        id_articulo = re.sub(r'[^a-z0-9-]', '', titulo_raw.lower().replace(' ', '-'))
-    else:
-        numero = 999
-        titulo = nombre.replace('.md', '').replace('-', ' ').title()
-        id_articulo = re.sub(r'[^a-z0-9-]', '', titulo.lower().replace(' ', '-'))
+    nombre_archivo = os.path.basename(archivo_md)
     
-    # Limpiar metadatos del contenido
+    # Extraer título y número de los metadatos
+    titulo, numero = extraer_titulo_y_numero(contenido_md, nombre_archivo)
+    
+    # Generar ID a partir del título
+    id_articulo = re.sub(r'[^a-z0-9-]', '', titulo.lower().replace(' ', '-'))
+    id_articulo = re.sub(r'-+', '-', id_articulo).strip('-')
+    
+    # Limpiar metadatos del contenido (eliminar el bloque ---...---)
     contenido_sin_metadatos = limpiar_metadatos(contenido_md)
     
     # Extraer epígrafe (cita)
@@ -81,7 +99,7 @@ def generar_html_articulo(archivo_md):
     html_contenido = markdown.markdown(contenido_limpio, extensions=['extra'])
     html_contenido = html_contenido.replace('<hr />', '<div class="sep"></div>')
     
-    # HTML final del artículo (sin metadatos visibles)
+    # HTML final del artículo
     html_articulo = f"""<div id="{id_articulo}-content" class="article-container">
       <h1 class="article-title">{titulo}</h1>
       <p class="article-author">Por Luis Semprún Jurado</p>
@@ -95,7 +113,6 @@ def generar_html_articulo(archivo_md):
     return id_articulo, titulo, numero, html_articulo
 
 def generar_lista_lateral(articulos):
-    """Genera la lista HTML para la barra lateral ordenada por número descendente"""
     articulos_ordenados = sorted(articulos, key=lambda x: x['numero'], reverse=True)
     
     lista_html = '<h3>Mis Artículos</h3>\n<ul>\n'
@@ -107,10 +124,9 @@ def generar_lista_lateral(articulos):
 
 def main():
     print("=" * 50)
-    print("🚀 EL BOHEMIO DIGITAL - MIGRADOR DEFINITIVO (CORREGIDO)")
+    print("🚀 EL BOHEMIO DIGITAL - MIGRADOR CORREGIDO")
     print("=" * 50)
     
-    # Crear carpetas si no existen
     Path(CARPETA_MD).mkdir(parents=True, exist_ok=True)
     Path(CARPETA_POSTS).mkdir(parents=True, exist_ok=True)
     
@@ -126,7 +142,6 @@ def main():
     for md_file in sorted(archivos_md):
         id_art, titulo, numero, html = generar_html_articulo(md_file)
         
-        # Guardar como archivo HTML independiente
         archivo_html = Path(CARPETA_POSTS) / f"{id_art}.html"
         with open(archivo_html, 'w', encoding='utf-8') as f:
             f.write(html)
@@ -140,23 +155,15 @@ def main():
         
         print(f"   ✅ {numero} - {titulo} → posts/{id_art}.html")
     
-    # Generar lista lateral
     lista_lateral = generar_lista_lateral(articulos)
     
-    # Guardar la lista lateral
     with open(Path(CARPETA_SCRIPTS) / "lista_lateral_nueva.txt", 'w', encoding='utf-8') as f:
         f.write(lista_lateral)
     
     print("\n" + "=" * 50)
     print("✅ MIGRACIÓN COMPLETADA")
     print("=" * 50)
-    print("\n📋 AHORA DEBES:")
-    print("   1. Reemplazar la función loadArticle() en tu index.html")
-    print("   2. Reemplazar la lista de la barra lateral con el contenido de:")
-    print(f"      {CARPETA_SCRIPTS}\\lista_lateral_nueva.txt")
-    print("   3. Eliminar el <div style=\"display: none;\"> con todos los artículos")
     print(f"\n📁 Los artículos están en: {CARPETA_POSTS}")
-    print("🚀 ¡Tu blog ahora es liviano y fácil de mantener!")
 
 if __name__ == "__main__":
     main()
