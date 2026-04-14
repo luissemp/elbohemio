@@ -266,11 +266,25 @@
   </div>
 
   <script>
-    function loadArticle(id) {
-      const content = document.getElementById('main-content');
-      const article = document.getElementById(id + '-content');
-      if (article) content.innerHTML = article.innerHTML;
-    }
+   function loadArticle(id) {
+  const content = document.getElementById('main-content');
+  
+  // Mostrar mensaje mientras carga
+  content.innerHTML = '<div class="article-container"><p style="text-align:center;">📖 Cargando artículo...</p></div>';
+  
+  // Cargar el artículo desde la carpeta posts/
+  fetch(`posts/${id}.html`)
+    .then(response => {
+      if (!response.ok) throw new Error('Artículo no encontrado');
+      return response.text();
+    })
+    .then(html => {
+      content.innerHTML = html;
+    })
+    .catch(error => {
+      content.innerHTML = `<div class="article-container"><h1>Error</h1><p>No se pudo cargar el artículo: ${error.message}</p></div>`;
+    });
+}
     
     function showSection(id) {
       const content = document.getElementById('main-content');
