@@ -1,0 +1,1 @@
+        <li><a onclick="loadArticle('miprueba')">1. Mi Prueba</a></li>

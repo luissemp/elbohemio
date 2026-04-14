@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÍTULO DEL ARTÍCULO - El Bohemio Digital</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="modoscuro">
+    <!-- HEADER (igual que en index) -->
+    <header>
+        <div class="header-text">
+            <h1>EL BOHEMIO DIGITAL</h1>
+            <p>"El secreto es la tumba de la libertad."</p>
+        </div>
+        <div class="typewriter-image">
+            <img src="../img/typewriter.jpg" alt="Máquina de escribir">
+        </div>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN (igual que en index) -->
+    <div class="toolbar">
+        <button onclick="location.href='../index.html#quienes'">Quiénes somos</button>
+        <button onclick="location.href='../index.html#quehacemos'">Qué hacemos</button>
+        <button onclick="location.href='../index.html#archivos'">Archivos</button>
+        <button onclick="location.href='../index.html'">🏠 Inicio</button>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+        <!-- SIDEBAR IZQUIERDA (lista de artículos) -->
+        <aside class="sidebar">
+            <h3>Mis Artículos</h3>
+            <ul>
+                <li><a href="nobel1.html">13. ¿Nobel del Cinismo…</a></li>
+                <li><a href="subversion.html">12. Defensa Moderna…</a></li>
+                <!-- ... todos los artículos ... -->
+                <li><a href="misterio.html">1. El Misterio en la Casa Blanca</a></li>
+            </ul>
+        </aside>
+
+        <!-- CONTENIDO DEL ARTÍCULO (esto cambia en cada archivo) -->
+        <main class="main-content">
+            <div class="article-container">
+                <!-- AQUÍ PEGAS EL CONTENIDO DE CADA ARTÍCULO -->
+                <h1 class="article-title">TÍTULO DEL ARTÍCULO AQUÍ</h1>
+                <p class="article-author">Por Luis Semprún Jurado</p>
+                
+                <div class="quote-container">
+                    <p class="article-quote">"CITA DESTACADA DEL ARTÍCULO"</p>
+                    <span class="quote-author">AUTOR DE LA CITA</span>
+                </div>
+                
+                <p class="article-content">
+                    <!-- TODO EL TEXTO DEL ARTÍCULO AQUÍ -->
+                    Párrafo 1...<br><br>
+                    Párrafo 2...<br><br>
+                    <!-- etc -->
+                </p>
+                
+                <div class="sep"></div>
+                
+                <p class="article-content"><b>Subtítulo 1 - </b> Texto explicativo...</p>
+                <div class="sep"></div>
+                <!-- más secciones si las hay -->
+            </div>
+            
+            <!-- BOTÓN DE MODO OSCURO/CLARO -->
+            <button class="toggle-mode" onclick="toggleMode()">🌙 / ☀️</button>
+        </main>
+
+        <!-- SIDEBAR DERECHA (imágenes) -->
+        <aside class="sidebar">
+            <h3>Mis Imágenes</h3>
+            <ul>
+                <li><a onclick="openModal('../img/viejo.jpg')" style="cursor: pointer;">
+                    <img src="../img/viejo.jpg" alt="El viejo" style="width: 80px; border-radius: 6px;">
+                </a></li>
+                <!-- otras imágenes -->
+            </ul>
+        </aside>
+    </div>
+
+    <!-- MODAL PARA IMÁGENES -->
+    <div class="modal" id="imageModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('modoscuro');
+        }
+        
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("imageModal").style.display = "flex";
+        }
+        
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

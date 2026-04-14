@@ -1,0 +1,15 @@
+<h3>Mis Artículos</h3>
+<ul>
+        <li><a onclick="loadArticle('defensa-moderna-caribe')">13. Defensa Moderna Caribe</a></li>
+        <li><a onclick="loadArticle('rubio-machado-exxon')">12. Rubio Machado Exxon</a></li>
+        <li><a onclick="loadArticle('camaleon-mayamero')">11. Camaleon Mayamero</a></li>
+        <li><a onclick="loadArticle('rey-desnudo-muertos-sin-cruz')">10. Rey Desnudo Muertos Sin Cruz</a></li>
+        <li><a onclick="loadArticle('hijo-americano')">9. Hijo Americano</a></li>
+        <li><a onclick="loadArticle('venas-abiertas-maracaibo')">8. Venas Abiertas Maracaibo</a></li>
+        <li><a onclick="loadArticle('gaza-espejo-roto')">7. Gaza Espejo Roto</a></li>
+        <li><a onclick="loadArticle('se-hacen-sordos')">6. Se Hacen Sordos</a></li>
+        <li><a onclick="loadArticle('nobel-cinismo')">5. Nobel Cinismo</a></li>
+        <li><a onclick="loadArticle('guerra-de-la-mentira')">4. Guerra De La Mentira</a></li>
+        <li><a onclick="loadArticle('medvedev-arrogancia')">2. Medvedev Arrogancia</a></li>
+        <li><a onclick="loadArticle('mi-prueba')">1. Mi Prueba</a></li>
+      </ul>
