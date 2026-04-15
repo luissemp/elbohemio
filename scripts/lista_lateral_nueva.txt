@@ -1,10 +1,11 @@
 <h3>Mis Artículos</h3>
 <ul>
+        <li><a onclick="loadArticle('los-archivos-gritan')">14. Los archivos gritan, el petróleo manda y el imperio tiembla</a></li>
         <li><a onclick="loadArticle('defensa-moderna-caribe')">13. Defensa Moderna en el Caribe ante la Sombra de la Intervención</a></li>
-        <li><a onclick="loadArticle('rubio-machado-exxon')">12. Rubio, Machado y ExxonMobil: La tríada que vende democracia y compra petróleo</a></li>
+        <li><a onclick="loadArticle('rubio-machado-exxon')">12. Rubio, Machado y ExxonMobil: La tríada que</a></li>
         <li><a onclick="loadArticle('camaleon-mayamero')">11. El Camaleón Mayamero: Narco Rubio y su cruzada contra Caracas…</a></li>
         <li><a onclick="loadArticle('rey-desnudo-muertos-sin-cruz')">10. El Rey Desnudo y los Muertos Sin Cruz: Crónica de una Sentencia Sin Jueces…</a></li>
-        <li><a onclick="loadArticle('hijo-americano')">9. Marco Rubio: El hijo americano y la farsa de su ética</a></li>
+        <li><a onclick="loadArticle('hijo-americano')">9. Marco Rubio: El</a></li>
         <li><a onclick="loadArticle('venas-abiertas-maracaibo')">8. Las venas abiertas de Maracaibo: crónica de un reencuentro...</a></li>
         <li><a onclick="loadArticle('gaza-espejo-roto')">7. Gaza: el espejo roto del siglo XXI…</a></li>
         <li><a onclick="loadArticle('se-hacen-sordos')">6. Se hacen los sordos porque no quieren entender…</a></li>

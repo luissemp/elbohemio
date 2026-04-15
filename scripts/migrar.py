@@ -156,7 +156,7 @@ def main():
             'archivo': md_file.name
         })
         
-        print(f"   ✅ {numero} - {titulo[:50]}... → posts/{id_art}.html")
+       print(f"   ✅ {numero} - {titulo} → posts/{id_art}.html")
     
     lista_lateral = generar_lista_lateral(articulos)
     

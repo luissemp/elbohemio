@@ -1,5 +1,5 @@
 ---
-titulo: "Rubio, Machado y ExxonMobil: La tríada que 'vende democracia' y compra petróleo…"
+titulo: "Rubio, Machado y ExxonMobil: La tríada que 'vende democracia' y compra petróleo..."
 numero: 12
 id: rubio-machado-exxon 
 ---

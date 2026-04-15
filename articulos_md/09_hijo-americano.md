@@ -1,5 +1,5 @@
 ---
-titulo: "Marco Rubio: El 'hijo americano' y la farsa de su ética…"
+titulo: "Marco Rubio: El 'hijo americano' y la farsa de su etica..."
 numero: 9
 id: hijo-americano
 ---
