@@ -133,6 +133,7 @@ body.modoscuro .sidebar {
   font-style: italic;
   cursor: pointer;
   transition: color 0.3s;
+  font-size: 13px;   /* <-- ESTA LÍNEA NUEVA */
 }
 
 body.modoscuro .sidebar ul li a {
