@@ -76,7 +76,7 @@ def generar_html_articulo(archivo_md):
     html_contenido = html_contenido.replace('<hr />', '<div class="sep"></div>')
     
     # Generar el ID del artículo (sin números ni caracteres especiales)
-    id_articulo = re.sub(r'[^a-z0-9]', '', titulo.lower().replace(' ', ''))[:30]
+    id_articulo = re.sub(r'[^a-z0-9\-]', '', titulo.lower().replace(' ', '-'))[:30]
     
     # Construir el HTML final del artículo
     html_articulo = f"""<div id="{id_articulo}-content" class="article-container">
