@@ -358,3 +358,14 @@ body.modoscuro .article-author {
   border-left: 3px solid var(--header-dark);
   padding-left: 5px;
 }
+
+.quote-container p.article-quote {
+    margin-bottom: 0;
+}
+
+.quote-container span.quote-author {
+    margin-top: 0;
+    display: block;
+    font-style: italic;
+    color: var(--highlight);
+}
