@@ -366,6 +366,5 @@ body.modoscuro .article-author {
 .quote-container span.quote-author {
     margin-top: 0;
     display: block;
-    font-style: italic;
     color: var(--highlight);
 }
