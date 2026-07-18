@@ -134,6 +134,7 @@ body.modoscuro .sidebar {
   cursor: pointer;
   transition: color 0.3s;
   font-size: 13px;   /* <-- ESTA LÍNEA NUEVA */
+  line-height: 1.3;  /* <-- ESTA TAMBIEN */
 }
 
 body.modoscuro .sidebar ul li a {
