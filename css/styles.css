@@ -120,7 +120,7 @@ body.modoscuro .sidebar {
 }
 
 .sidebar ul {
-  list-style: none;
+   line-height: 1.2;   /* Ajuste adicional para el ul */
 }
 
 .sidebar ul li {
@@ -135,7 +135,7 @@ body.modoscuro .sidebar {
   cursor: pointer;
   transition: color 0.3s;
   font-size: 13px;   /* <-- ESTA LÍNEA NUEVA */
-  line-height: 1.2;  /* Cambiar de 1.3 a 1.2 */
+  line-height: 1.2;   /* Ajuste solo para la barra lateral */
 }
 
 body.modoscuro .sidebar ul li a {
