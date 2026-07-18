@@ -124,7 +124,8 @@ body.modoscuro .sidebar {
 }
 
 .sidebar ul li {
-  margin-bottom: 0.6rem;
+   margin-bottom: 2px;  /* Reduce el espacio entre elementos */
+    padding: 0;
 }
 
 .sidebar ul li a {
