@@ -120,11 +120,11 @@ body.modoscuro .sidebar {
 }
 
 .sidebar ul {
-   line-height: 1.2;   /* Ajuste adicional para el ul */
+   line-height: 1.1;   /* Ajuste adicional para el ul */
 }
 
 .sidebar ul li {
-   margin-bottom: 2px;  /* Reduce el espacio entre elementos */
+   margin-bottom: 6px;  /* ¡MÁS SEPARACIÓN! Un respiro entre título y título */
     padding: 0;
 }
 
