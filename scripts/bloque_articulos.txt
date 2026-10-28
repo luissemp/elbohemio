@@ -435,14 +435,14 @@ id: prensa-derecha-escombros</p>
       <h1 class="article-title">La Obra Y El Ruido</h1>
       <p class="article-author">Por Luis Semprún Jurado</p>
       <div class="quote-container">
-        <p class="article-quote">"“Las mentiras más peligrosas son verdades ligeramente deformadas.”"</p>
-        <span class="quote-author">FRIEDRICH NIETZSCHE</span>
+        <p class="article-quote">""</p>
+        <span class="quote-author">ANACLETO</span>
       </div>
-      <div class="sep"></div>
-<p>titulo: La Obra Y El Ruido
+      <p>titulo: "La obra y el ruido: cuando la intriga intenta sustituir a la realidad…"
 numero: 17
 id: la-obra-y-el-ruido</p>
-<div class="sep"></div>
+<p>“Las mentiras más peligrosas son verdades ligeramente deformadas.”
+FRIEDRICH NIETZSCHE</p>
 <p>El Bohemio estaba más lleno de murmullos que de clientes. Afuera, la ciudad hervía como siempre; adentro, las palabras parecían sudar sospecha. Anacleto llegó y, como de costumbre, se sentó a mi lado y pidió un café. Yo le cedí el que me acababan de traer y con una seña a Carmen, ordené otro. Lo dejó ahí, intacto, como si supiera que lo importante no era beberlo, sino dejarlo enfriar. Entonces, me dijo en voz baja: <em>«Camarita… hay personajes que no informan: insinúan, no prueban: sugieren, no construyen: erosionan.»</em> Se acomodó los lentes de carey. <em>«Y cuando uno empieza a rascar, descubre que no es periodismo… es oficio de intriga.»</em></p>
 <p>Alguien que escuchó mencionó al “periodista”. No hizo falta decir el nombre.</p>
 <p>Anacleto levantó una ceja. <em>«Ah, sí… el mismo que cada cierto tiempo reaparece como cometa viejo, dejando una estela de sospechas sin pruebas.»</em> Un sorbo breve. Ahora sí.</p>
