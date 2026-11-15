@@ -7,9 +7,9 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/styles.css">
-  </head>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
   <header>
     <div class="header-text">
@@ -28,29 +28,30 @@
     <button onclick="showSection('archivos')">Archivos</button>
     <button onclick="showSection('lectores')">Lectores con voz (Café, cartas y réplicas)</button>
     <button onclick="showSection('contacto')">Contacto</button>
-</div>
+  </div>
   <div class="container">
-  <aside class="sidebar">
-  <h3>Mis Artículos</h3>
-        <li><a onclick="loadArticle('la-obra-y-el-ruido')">17. La Obra Y El Ruido</a></li>
-        <li><a onclick="loadArticle('prensa-derecha-escombros')">16. Prensa Derecha Escombros</a></li>
-        <li><a onclick="loadArticle('iran-estrangulamiento-imperio')">15. Iran Estrangulamiento Imperio</a></li>
-        <li><a onclick="loadArticle('los-archivos-gritan')">14. Los Archivos Gritan</a></li>
-        <li><a onclick="loadArticle('defensa-moderna-caribe')">13. Defensa Moderna Caribe</a></li>
-        <li><a onclick="loadArticle('rubio-machado-exxon')">12. Rubio Machado Exxon</a></li>
-        <li><a onclick="loadArticle('camaleon-mayamero')">11. Camaleon Mayamero</a></li>
-        <li><a onclick="loadArticle('rey-desnudo-muertos-sin-cruz')">10. Rey Desnudo Muertos Sin Cruz</a></li>
-        <li><a onclick="loadArticle('hijo-americano')">9. Hijo Americano</a></li>
-        <li><a onclick="loadArticle('venas-abiertas-maracaibo')">8. Venas Abiertas Maracaibo</a></li>
-        <li><a onclick="loadArticle('gaza-espejo-roto')">7. Gaza Espejo Roto</a></li>
-        <li><a onclick="loadArticle('se-hacen-sordos')">6. Se Hacen Sordos</a></li>
-        <li><a onclick="loadArticle('nobel-cinismo')">5. Nobel Cinismo</a></li>
-        <li><a onclick="loadArticle('guerra-de-la-mentira')">4. Guerra De La Mentira</a></li>
-        <li><a onclick="loadArticle('maracaibo-oscuras')">3. Maracaibo Oscuras</a></li>
-        <li><a onclick="loadArticle('medvedev-arrogancia')">2. Medvedev Arrogancia</a></li>
-        <li><a onclick="loadArticle('mi-prueba')">1. Mi Prueba</a></li>
-
- </aside>
+    <aside class="sidebar">
+      <h3>Mis Artículos</h3>
+      <ul>
+        <li><a onclick="loadArticle('17-la-obra-y-el-ruido')">17. La Obra Y El Ruido</a></li>
+        <li><a onclick="loadArticle('16-prensa-derecha-escombros')">16. Prensa Derecha Escombros</a></li>
+        <li><a onclick="loadArticle('15-iran-estrangulamiento-imperio')">15. Iran Estrangulamiento Imperio</a></li>
+        <li><a onclick="loadArticle('14-los-archivos-gritan')">14. Los Archivos Gritan</a></li>
+        <li><a onclick="loadArticle('13-defensa-moderna-caribe')">13. Defensa Moderna Caribe</a></li>
+        <li><a onclick="loadArticle('12-rubio-machado-exxon')">12. Rubio Machado Exxon</a></li>
+        <li><a onclick="loadArticle('11-camaleon-mayamero')">11. Camaleon Mayamero</a></li>
+        <li><a onclick="loadArticle('10-rey-desnudo-muertos-sin-cruz')">10. Rey Desnudo Muertos Sin Cruz</a></li>
+        <li><a onclick="loadArticle('09-hijo-americano')">9. Hijo Americano</a></li>
+        <li><a onclick="loadArticle('08-venas-abiertas-maracaibo')">8. Venas Abiertas Maracaibo</a></li>
+        <li><a onclick="loadArticle('07-gaza-espejo-roto')">7. Gaza Espejo Roto</a></li>
+        <li><a onclick="loadArticle('06-se-hacen-sordos')">6. Se Hacen Sordos</a></li>
+        <li><a onclick="loadArticle('05-nobel-cinismo')">5. Nobel Cinismo</a></li>
+        <li><a onclick="loadArticle('04-guerra-de-la-mentira')">4. Guerra De La Mentira</a></li>
+        <li><a onclick="loadArticle('03-maracaibo-oscuras')">3. Maracaibo Oscuras</a></li>
+        <li><a onclick="loadArticle('02-medvedev-arrogancia')">2. Medvedev Arrogancia</a></li>
+        <li><a onclick="loadArticle('01-mi-prueba')">1. Mi Prueba</a></li>
+      </ul>
+    </aside>
     <main class="main-content" id="main-content">
       <div class="article-container">
         <h1 class="article-title">Bienvenido a El Bohemio Digital</h1>
@@ -67,7 +68,7 @@
         </p>
         <div class="sep"></div>
         <p class="article-content" style="text-align: center;">
-          <strong>¿Primera vez aquí?</strong> Te recomendamos empezar por <a onclick="loadArticle('nobel1')" style="color: var(--highlight); cursor: pointer;">¿Nobel del Cinismo… o Nobel del Descaro?</a>
+          <strong>¿Primera vez aquí?</strong> Te recomendamos empezar por <a onclick="loadArticle('05-nobel-cinismo')" style="color: var(--highlight); cursor: pointer;">¿Nobel del Cinismo… o Nobel del Descaro?</a>
         </p>
       </div>
       <button class="toggle-mode" onclick="toggleMode()">
@@ -88,38 +89,40 @@
         </a></li>
         <li><a onclick="openModal('yo2.jpg')" style="cursor: pointer;">
           <img src="img/yo2.jpg" alt="Luis Semprún Jurado" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
-         <li><a onclick="openModal('1 yo.jpg')" style="cursor: pointer;">
+        </a></li>
+        <li><a onclick="openModal('1 yo.jpg')" style="cursor: pointer;">
           <img src="img/1 yo.jpg" alt="Luis A. Semprún Jurado" style="width: 80px; height: auto; border-radius: 6px; border: 1px solid #555;">
-                </a></li>
+        </a></li>
       </ul>
     </aside>
 
-  <div class="modal" id="imageModal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImage">
+    <div class="modal" id="imageModal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Imagen ampliada">
+    </div>
   </div>
 
   <script>
-   function loadArticle(id) {
-  const content = document.getElementById('main-content');
-  
-  // Mostrar mensaje mientras carga
-  content.innerHTML = '<div class="article-container"><p style="text-align:center;">📖 Cargando artículo...</p></div>';
-  
-  // Cargar el artículo desde la carpeta posts/
-  fetch(`posts/${id}.html`)
-    .then(response => {
-      if (!response.ok) throw new Error('Artículo no encontrado');
-      return response.text();
-    })
-    .then(html => {
-      content.innerHTML = html;
-    })
-    .catch(error => {
-      content.innerHTML = `<div class="article-container"><h1>Error</h1><p>No se pudo cargar el artículo: ${error.message}</p></div>`;
-    });
-}
-    
+    function loadArticle(id) {
+      const content = document.getElementById('main-content');
+
+      // Mostrar mensaje mientras carga
+      content.innerHTML = '<div class="article-container"><p style="text-align:center;">📖 Cargando artículo...</p></div>';
+
+      // Cargar el artículo desde la carpeta posts/
+      fetch(`posts/${id}.html`)
+        .then(response => {
+          if (!response.ok) throw new Error('Artículo no encontrado');
+          return response.text();
+        })
+        .then(html => {
+          content.innerHTML = html;
+        })
+        .catch(error => {
+          content.innerHTML = `<div class="article-container"><h1>Error</h1><p>No se pudo cargar el artículo: ${error.message}</p></div>`;
+        });
+    }
+
     function showSection(id) {
       const content = document.getElementById('main-content');
       const texts = {
@@ -127,7 +130,7 @@
           <h1 class="article-title">¿Quiénes somos?</h1>
           <p class="article-author"><strong>Luis Semprún Jurado</strong> - Fundador de El Bohemio Digital</p>
           <p class="article-content">Pluma libre, voz incómoda y cronista del caos global, Luis no escribe para gustar. Escribe para que duela. Periodista, locutor, Productor Nacional Independiente, narrador y denunciador a tiempo completo, su trayectoria combina la irreverencia con el rigor, la sátira con la investigación.
-          Columnista incómodo, perseguidor de verdades mal contadas y curador del verbo de Anacleto <strong>-ese personaje que no teme decir lo que otros apenas insinúan—</strong>, Luis ha hecho del periodismo una trinchera ética y una emboscada estética. 
+          Columnista incómodo, perseguidor de verdades mal contadas y curador del verbo de Anacleto <strong>-ese personaje que no teme decir lo que otros apenas insinúan—</strong>, Luis ha hecho del periodismo una trinchera ética y una emboscada estética.
           Desde el corazón de América Latina o desde el rincón más impensado del exilio, sus artículos cruzan fronteras, sacuden conciencias y revientan silencios cómplices.
           </p>
           <p class="article-content" style="text-align: center;"><em>
@@ -145,7 +148,7 @@
          <p class="article-content"><b>En El Bohemio Digital no hacemos periodismo de trinchera: hacemos periodismo de mesa de café.</b> Aquí las noticias no se leen, se discuten; los datos no se citan, se confrontan; y las mentiras no se repiten, se desmontan con el bisturí de la ironía y el peso de los hechos.</p>
          <p class="article-content">Cada artículo es una exhumación: desenterramos cadáveres políticos que otros prefieren mantener enterrados. Analizamos la geopolítica sin los lentes del imperio, denunciamos la hipocresía sin el barniz de la neutralidad, y le damos voz a quienes no caben en los titulares de la prensa oficial.</p>
          <p class="article-content"><b>Esto no es un medio digital. Es un café con ventanal al mundo.</b> Aquí Anacleto, la profesora, el coronel, el boticario y el pichón de periodista se sientan a desmenuzar la realidad mientras el humo del cigarrillo se enreda con las ideas. Si busca respuestas fáciles, este no es su lugar. Si busca preguntas incómodas, bienvenido.</p>
-         <p class="article-content"style="text-align: center;"><i><span class="quote-author">"La verdad no tiene prisa, pero tampoco se queda callada."</span></i></p>
+         <p class="article-content" style="text-align: center;"><i><span class="quote-author">"La verdad no tiene prisa, pero tampoco se queda callada."</span></i></p>
         `,
         archivos: `
           <h1 class="article-title">Archivo Completo</h1>
@@ -156,7 +159,7 @@
           <p class="article-content">Un repositorio cronológico de investigaciones que permite entender los patrones de corrupción y abuso de poder a lo largo del tiempo.</p>
           <p class="article-content"><em> Accede a todos nuestros artículos, ordenados por fecha, tema o autor.</em></p>
           <p class="article-content"><em><b><span class="quote-author">La memoria no se borra. Se defiende.</span></b></em></p>
-        `,  
+        `,
         cronicas: `
           <h1 class="article-title">Crónicas de ElBohemio</h1>
           <p class="article-content">En este rincón literario, la realidad y la ficción se entrelazan en conversaciones que diseccionan la actualidad. El Café El Bohemio es nuestro espacio narrativo donde personajes anónimos comentan los acontecimientos mientras Anacleto los confronta con aguda inteligencia.</p>
@@ -201,7 +204,7 @@
       };
       content.innerHTML = texts[id] || '<p>Sección en construcción.</p>';
     }
-<!-- Fuerza actualización - 14 abril 2026 -->
+
     function openModal(src) {
       const modal = document.getElementById("imageModal");
       const img = document.getElementById("modalImage");
@@ -227,7 +230,7 @@
     console.log("✅ Página cargada correctamente");
     console.log("✅ Título:", document.title);
     console.log("✅ JavaScript activo");
-    console.log("✅ Número de artículos ocultos:", document.querySelectorAll('[id$="-content"]').length);
+    console.log("✅ Artículos en sidebar:", document.querySelectorAll('.sidebar ul li').length);
     console.log("=== DIAGNÓSTICO COMPLETADO ===");
   </script>
 </body>
