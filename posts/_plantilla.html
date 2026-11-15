@@ -1,0 +1,68 @@
+<!--
+  ============================================================
+  PLANTILLA CANÓNICA - EL BOHEMIO DIGITAL
+  Formato Anacleto / Protocolo Anacleto
+  ------------------------------------------------------------
+  INSTRUCCIONES DE USO:
+  1. Copiar este archivo a posts/NN-slug-del-articulo.html
+  2. Reemplazar todos los {{PLACEHOLDERS}} por el contenido real.
+  3. NO tocar la estructura de clases (article-container,
+     article-title, article-author, quote-container,
+     article-quote, quote-author, article-content, sep, h3).
+  4. Los diálogos de Anacleto van SIEMPRE en <em>.
+  5. Los epígrafes van SIEMPRE dentro de quote-container.
+  6. Los bloques de apoyo (contexto, datos, cronología) usan <h3>.
+  7. Guardar en UTF-8. Sin BOM.
+  ============================================================
+-->
+<div class="article-container">
+
+  <!-- TÍTULO -->
+  <h1 class="article-title">{{TITULO_DEL_ARTICULO}}</h1>
+
+  <!-- AUTOR / BAJADA -->
+  <p class="article-author">{{AUTOR_O_BAJADA}}</p>
+
+  <!-- EPÍGRAFE (opcional pero recomendado) -->
+  <div class="quote-container">
+    <p class="article-quote">"{{EPIGRAFE}}"</p>
+    <span class="quote-author">— {{AUTOR_DEL_EPIGRAFE}}</span>
+  </div>
+
+  <!-- CUERPO PRINCIPAL -->
+  <p class="article-content">
+    {{PARRAFO_DE_ENTRADA}}
+  </p>
+
+  <p class="article-content">
+    {{PARRAFO_DE_DESARROLLO}}
+  </p>
+
+  <!-- DIÁLOGO ANACLETIANO (si aplica) -->
+  <p class="article-content">
+    <em>— {{DIALOGO_DE_ANACLETO}}</em><br>
+    <em>— {{RESPUESTA_DEL_INTERLOCUTOR}}</em><br>
+    <em>— {{REMATE_DE_ANACLETO}}</em>
+  </p>
+
+  <!-- BLOQUE DE APOYO 1 (contexto, datos, cronología) -->
+  <h3>{{TITULO_DEL_BLOQUE_1}}</h3>
+  <p class="article-content">
+    {{CONTENIDO_DEL_BLOQUE_1}}
+  </p>
+
+  <!-- BLOQUE DE APOYO 2 (opcional) -->
+  <h3>{{TITULO_DEL_BLOQUE_2}}</h3>
+  <p class="article-content">
+    {{CONTENIDO_DEL_BLOQUE_2}}
+  </p>
+
+  <!-- SEPARADOR -->
+  <div class="sep"></div>
+
+  <!-- CIERRE / REMATE -->
+  <p class="article-content" style="text-align: center;">
+    <em><span class="quote-author">"{{FRASE_DE_CIERRE}}"</span></em>
+  </p>
+
+</div>
